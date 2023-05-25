@@ -1,0 +1,10 @@
+
+module testbench();
+	reg D, CLK;
+	wire Q;
+	
+	
+
+
+
+endmodule

@@ -1,0 +1,39 @@
+|jkff_with_asynch_reset
+J => G1.IN1
+K => G3.IN1
+R => R.IN1
+CLK => CLK.IN1
+Q << d_flip_flop_with_asynch_reset:G5.Q
+NQ << d_flip_flop_with_asynch_reset:G5.NQ
+
+
+|jkff_with_asynch_reset|d_flip_flop_with_asynch_reset:G5
+D => D.IN1
+R => R.IN1
+CLK => CLK.IN1
+Q <= d_latch_with_asynch_reset:G3.Q
+NQ <= d_latch_with_asynch_reset:G3.NQ
+
+
+|jkff_with_asynch_reset|d_flip_flop_with_asynch_reset:G5|d_latch_with_asynch_reset:G2
+D => G3.IN0
+D => G2.IN0
+R => G4.IN1
+R => G5.IN1
+CLK => G2.IN1
+CLK => G3.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+NQ <= G7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|jkff_with_asynch_reset|d_flip_flop_with_asynch_reset:G5|d_latch_with_asynch_reset:G3
+D => G3.IN0
+D => G2.IN0
+R => G4.IN1
+R => G5.IN1
+CLK => G2.IN1
+CLK => G3.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+NQ <= G7.DB_MAX_OUTPUT_PORT_TYPE
+
+
