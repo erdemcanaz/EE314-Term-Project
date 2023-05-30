@@ -1,5 +1,5 @@
 Flow report for BCD_counter
-Fri May 26 02:24:14 2023
+Fri May 26 10:47:46 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Fri May 26 02:24:14 2023      ;
+; Flow Status                     ; Successful - Fri May 26 10:47:46 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; BCD_counter                                ;
-; Top-level Entity Name           ; jkff_with_asynch_reset                     ;
+; Top-level Entity Name           ; jkff_chatgpt                               ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Preliminary                                ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
-; Total registers                 ; 0                                          ;
+; Total registers                 ; 2                                          ;
 ; Total pins                      ; 6                                          ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
@@ -67,28 +67,28 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/26/2023 02:24:14 ;
+; Start date & time ; 05/26/2023 10:47:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BCD_counter         ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                ;
-+-------------------------------------+---------------------------------+---------------+------------------------+----------------+
-; Assignment Name                     ; Value                           ; Default Value ; Entity Name            ; Section Id     ;
-+-------------------------------------+---------------------------------+---------------+------------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 150241222627911.168505705318828 ; --            ; --                     ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --                     ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --                     ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --                     ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --                     ; --             ;
-; PARTITION_COLOR                     ; 16764057                        ; --            ; jkff_with_asynch_reset ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; jkff_with_asynch_reset ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; jkff_with_asynch_reset ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --                     ; --             ;
-; TOP_LEVEL_ENTITY                    ; jkff_with_asynch_reset          ; BCD_counter   ; --                     ; --             ;
-+-------------------------------------+---------------------------------+---------------+------------------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                      ;
++-------------------------------------+---------------------------------+---------------+--------------+----------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name  ; Section Id     ;
++-------------------------------------+---------------------------------+---------------+--------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 150241222627911.168508726516732 ; --            ; --           ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --           ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --           ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --           ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --           ; --             ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; jkff_chatgpt ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; jkff_chatgpt ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; jkff_chatgpt ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --           ; --             ;
+; TOP_LEVEL_ENTITY                    ; jkff_chatgpt                    ; BCD_counter   ; --           ; --             ;
++-------------------------------------+---------------------------------+---------------+--------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -96,8 +96,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 4668 MB             ; 00:00:01                           ;
-; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
+; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 4668 MB             ; 00:00:01                           ;
+; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:01                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

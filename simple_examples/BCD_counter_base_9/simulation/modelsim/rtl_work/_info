@@ -3,63 +3,23 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\Levovo20x\Documents\GitHub\EE314-Term-Project\simple_examples\BCD_counter_base_9\simulation\modelsim
-vd_flip_flop_with_asynch_reset
-IYaEo1ZkJAB6D=Mgfbcg082
-Vj4RiLQhlX`36DKa_6m=eP0
+vjkff_chatgpt
+!i10b 1
+!s100 WRkknmNAaHUWLVb7RdJ>]2
+IEG:0R=V`[55gdA_3o=c1z0
+Vk[35@m14ki>lRzz08Eg>d0
 Z1 dC:\Users\Levovo20x\Documents\GitHub\EE314-Term-Project\simple_examples\BCD_counter_base_9\simulation\modelsim
-w1685053685
-8C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_flip_flop_with_asynch_reset.v
-FC:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_flip_flop_with_asynch_reset.v
-L0 3
-Z2 OV;L;10.1d;51
-r1
-31
-Z3 o-vlog01compat -work work -O0
-Z4 !s92 -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 -O0
-!i10b 1
-!s100 k`Vo>e3j8c3k<d;56h<Db0
-!s85 0
-!s108 1685057095.601000
-!s107 C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_flip_flop_with_asynch_reset.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9|C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_flip_flop_with_asynch_reset.v|
-!s101 -O0
-vd_latch_with_asynch_reset
-IlD6>XPlRC?NTWWHM==KS[1
-VQ_hTd:8ZFdgFV[1Q]`O_:2
-R1
-w1685052284
-8C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_latch_with_asynch_reset.v
-FC:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_latch_with_asynch_reset.v
-L0 9
-R2
-r1
-31
-R3
-R4
-!i10b 1
-!s100 `_Xe2`e5^;fC:]H1Dz;GA1
-!s85 0
-!s108 1685057095.556000
-!s107 C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_latch_with_asynch_reset.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9|C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_latch_with_asynch_reset.v|
-!s101 -O0
-vjkff_with_asynch_reset
-!i10b 1
-!s100 ISzWlfO?;bcf:Y464c2NZ3
-IZB`A<iG4jNdP?]4Mm2DUK2
-VeC[CndTJLX:IUn`A?Mn1k0
-R1
-w1685056730
-8C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_with_asynch_reset.v
-FC:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_with_asynch_reset.v
-L0 3
-R2
+w1685057812
+8C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_chatgpt.v
+FC:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_chatgpt.v
+L0 1
+OV;L;10.1d;51
 r1
 !s85 0
 31
-!s108 1685057095.644000
-!s107 C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_with_asynch_reset.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9|C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_with_asynch_reset.v|
+!s108 1685085520.126000
+!s107 C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_chatgpt.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9|C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_chatgpt.v|
 !s101 -O0
-R3
-R4
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 -O0

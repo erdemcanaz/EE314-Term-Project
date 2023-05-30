@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Levovo20x\Documents\GitHub\EE314-Term-Project\simple_examples\Alarm_clock\simulation\qsim
+vclock_module
+!i10b 1
+!s100 LHifzDfg53:9AYoNTQOZ>0
+I:@Ico5]3Q:k`XIWFR@B:E1
+Va3XQW=LczJz0J4__JjLJd2
+Z1 dC:\Users\Levovo20x\Documents\GitHub\EE314-Term-Project\simple_examples\Alarm_clock\simulation\qsim
+w1685483830
+8C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v
+FC:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v
+L0 2
+Z2 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1685484062.597000
+!s107 C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock|C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock -O0

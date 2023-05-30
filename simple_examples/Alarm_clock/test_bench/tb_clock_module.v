@@ -1,0 +1,34 @@
+
+
+module tb_clock_module();
+
+reg hardware_clk;
+wire clock_module_output;
+
+clock_module tested_clock_module(.clk_in(hardware_clock), .clk_out(clock_module_output));
+
+initial
+	begin
+	hardware_clk = 0;
+	end
+	
+
+always
+	begin
+	#10;	
+	hardware_clk = ~hardware_clk;	
+	end	
+
+
+endmodule
+
+
+
+
+
+
+
+
+
+
+

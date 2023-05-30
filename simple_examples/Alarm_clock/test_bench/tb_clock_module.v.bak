@@ -1,0 +1,17 @@
+
+
+module tb_clock_module();
+reg hardware_clk;
+always 
+	begin
+	
+	
+	end
+
+
+
+endmodule
+
+
+
+

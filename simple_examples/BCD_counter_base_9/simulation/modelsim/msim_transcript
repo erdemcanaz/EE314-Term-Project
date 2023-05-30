@@ -10,71 +10,10 @@
 # ** Warning: Copied C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_latch_with_asynch_reset.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_chatgpt.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module d_latch_with_asynch_reset
+# -- Compiling module jkff_chatgpt
 # 
 # Top level modules:
-# 	d_latch_with_asynch_reset
-# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_flip_flop_with_asynch_reset.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module d_flip_flop_with_asynch_reset
+# 	jkff_chatgpt
 # 
-# Top level modules:
-# 	d_flip_flop_with_asynch_reset
-# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_with_asynch_reset.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module jkff_with_asynch_reset
-# 
-# Top level modules:
-# 	jkff_with_asynch_reset
-# 
-vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/testbench_jkff_with_asynch_reset.v
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module testbench_4
-# 
-# Top level modules:
-# 	testbench_4
-.main clear
-vsim +altera -do BCD_counter_run_msim_rtl_verilog.do -l msim_transcript -gui work.testbench_4
-# vsim +altera -do BCD_counter_run_msim_rtl_verilog.do -l msim_transcript -gui work.testbench_4 
-# Loading work.testbench_4
-# Loading work.jkff_with_asynch_reset
-# Loading work.d_flip_flop_with_asynch_reset
-# Loading work.d_latch_with_asynch_reset
-# ** Warning: (vsim-3015) C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_flip_flop_with_asynch_reset.v(8): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'R'. The port definition is at: C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_latch_with_asynch_reset.v(9).
-# 
-#         Region: /testbench_4/jkff_with_asynch_reset/G5/G2
-# do BCD_counter_run_msim_rtl_verilog.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_latch_with_asynch_reset.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module d_latch_with_asynch_reset
-# 
-# Top level modules:
-# 	d_latch_with_asynch_reset
-# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/d_flip_flop_with_asynch_reset.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module d_flip_flop_with_asynch_reset
-# 
-# Top level modules:
-# 	d_flip_flop_with_asynch_reset
-# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9 {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/BCD_counter_base_9/jkff_with_asynch_reset.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module jkff_with_asynch_reset
-# 
-# Top level modules:
-# 	jkff_with_asynch_reset
-# 
-add wave sim:/testbench_4/*
-run
-run
-run
-run
-run

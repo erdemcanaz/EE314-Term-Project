@@ -1,0 +1,10 @@
+
+
+module clock_block(clk_in);
+
+
+
+
+
+
+endmodule

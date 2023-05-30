@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Levovo20x\Documents\GitHub\EE314-Term-Project\simple_examples\Alarm_clock\simulation\qsim
+vclock_module
+Z1 IlMb<go>gRKXJK53Voh1_J0
+Z2 VzA2UY=WPIWGgS6bZZ_l5>3
+Z3 dC:\Users\Levovo20x\Documents\GitHub\EE314-Term-Project\simple_examples\Alarm_clock\simulation\qsim
+Z4 w1685483878
+Z5 8alarm_clock_entity.vo
+Z6 Falarm_clock_entity.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+!i10b 1
+Z9 !s100 5_nLY9^N<O=T1o418<gl@0
+!s85 0
+Z10 !s108 1685483878.788000
+Z11 !s107 alarm_clock_entity.vo|
+Z12 !s90 -work|work|alarm_clock_entity.vo|
+!s101 -O0
+vclock_module_vlg_check_tst
+!i10b 1
+!s100 ?DPc05PZfAZLZbMSVB=o>2
+IzI8ZnTN8]LL@C<]M1[?l11
+VlRP[AW=7iFiGMh>eNWeKB1
+R3
+Z13 w1685483877
+Z14 8clock_module_vvf_sim.vwf.vt
+Z15 Fclock_module_vvf_sim.vwf.vt
+L0 57
+R7
+r1
+!s85 0
+31
+Z16 !s108 1685483878.844000
+Z17 !s107 clock_module_vvf_sim.vwf.vt|
+Z18 !s90 -work|work|clock_module_vvf_sim.vwf.vt|
+!s101 -O0
+R8
+vclock_module_vlg_sample_tst
+!i10b 1
+!s100 dJN8R8903L7Cg_n?13UKI3
+I6H5hkCgz3P`JI9hEeX=820
+V[C1jUUaTegAY]<o;>Ulbk1
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8
+vclock_module_vlg_vec_tst
+!i10b 1
+!s100 V?TO:HYGb3;N_]dn>cPhi3
+I;bOf4Pd`0UVoPC?KDK]gb0
+V3<@4WhRT=QznWKW4QB1BR1
+R3
+R13
+R14
+R15
+L0 152
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8

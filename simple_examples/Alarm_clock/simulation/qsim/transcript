@@ -1,0 +1,23 @@
+# do alarm_clock_entity.do 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module_vlg_sample_tst
+# -- Compiling module clock_module_vlg_check_tst
+# -- Compiling module clock_module_vlg_vec_tst
+# 
+# Top level modules:
+# 	clock_module_vlg_vec_tst
+# vsim -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.clock_module_vlg_vec_tst 
+# Loading work.clock_module_vlg_vec_tst
+# Loading work.clock_module
+# Loading altera_ver.dffeas
+# Loading work.clock_module_vlg_sample_tst
+# Loading work.clock_module_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# Simulation passed !
+# ** Note: $finish    : clock_module_vvf_sim.vwf.vt(148)
+#    Time: 1 us  Iteration: 0  Instance: /clock_module_vlg_vec_tst/tb_out

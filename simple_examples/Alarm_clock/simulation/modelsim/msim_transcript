@@ -1,0 +1,1410 @@
+# Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do alarm_clock_entity_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# 
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# do alarm_clock_entity_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# 
+add wave sim:/tb_clock_module/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run -continue
+run -continue
+run
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# do alarm_clock_entity_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# 
+add wave sim:/tb_clock_module/*
+run
+run
+run
+run
+run
+run
+run
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# do alarm_clock_entity_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# 
+add wave sim:/tb_clock_module/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# do alarm_clock_entity_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# 
+add wave sim:/tb_clock_module/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# ** Error: (vsim-3053) C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v(8): Illegal output or inout port connection for "port 'clk_out'".
+# 
+#         Region: /tb_clock_module/tested_clock_module
+# Error loading design
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# do alarm_clock_entity_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# 
+add wave sim:/tb_clock_module/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# do alarm_clock_entity_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# 
+add wave sim:/tb_clock_module/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# do alarm_clock_entity_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock {C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_module
+# 
+# Top level modules:
+# 	clock_module
+# 
+add wave sim:/tb_clock_module/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vlog -reportprogress 300 -work work C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_clock_module
+# 
+# Top level modules:
+# 	tb_clock_module
+vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module
+# vsim +altera -do alarm_clock_entity_run_msim_rtl_verilog.do -l msim_transcript -gui work.tb_clock_module 
+# Loading work.tb_clock_module
+# Loading work.clock_module
+# ** Error: (vsim-3389) C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v(14): Port 'counter_reg' not found in the connected module (3rd connection).
+# 
+#         Region: /tb_clock_module/tested_clock_module
+# ** Fatal: (vsim-3365) C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/tb_clock_module.v(14): Too many port connections. Expected 2, found 3.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_clock_module/tested_clock_module File: C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/simple_examples/Alarm_clock/clock_module.v
+# FATAL ERROR while loading design
+# Error loading design
