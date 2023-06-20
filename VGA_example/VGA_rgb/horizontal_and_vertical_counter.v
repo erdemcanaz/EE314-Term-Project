@@ -23,13 +23,13 @@
 //Whole frame	525			16.683217477656
 //=================================================
 
-module horizontal_and_vertical_counter(clk_25,h_count, h_sync, v_count, v_sync);
+module horizontal_and_vertical_counter(clk_25,h_count,h_sync, v_count, v_sync);
 input clk_25; //25 MHZ clock input
 
-output reg h_sync;
-output reg v_sync;
 output reg [10:0] v_count; //y coordinate of the current pixel
 output reg [10:0] h_count; //x coordinate of the current pixel
+
+output h_sync, v_sync;
 
 parameter H_VISIBLE_AREA = 640;//640
 parameter H_FRONT_PORCH = 16;//16
@@ -44,19 +44,23 @@ parameter V_SYNC_WIDTH = 2; //2
 parameter V_BACK_PORCH = 33; //3
 parameter V_COLUMN_LENGTH = V_VISIBLE_AREA+ V_FRONT_PORCH+ V_SYNC_WIDTH + V_BACK_PORCH;
 
+//============================================HORIZONTAL=================================================
+//||  visible area (0,639) | front porch (640,655) | horizontal sync. (656,751) | back porch (752,799) ||
+//=======================================================================================================
+assign h_sync = (656<=h_count && h_count <=751) ? 1'b0 : 1'b1;
+//============================================VERTICAL===================================================
+//||  visible area (0,479) | front porch (480,489) | vertical sync. (490,491) | back porch (492,524)   ||
+//=======================================================================================================
+assign v_sync = (490<=v_count && v_count <=491) ? 1'b0 : 1'b1;
 
 initial 
 	begin
 		h_count <=0;
 		v_count<= 0;
-		
-		h_sync <= 1;
-		v_sync <= 1;
 	end
 	
 always @(posedge(clk_25)) 
-	begin
-	
+	begin	
 		//Increment h_count and v_count----------------------------------
 		if(h_count < (H_ROW_LENGTH-1)) 
 			begin
@@ -71,43 +75,10 @@ always @(posedge(clk_25))
 					end
 				else
 					begin
-						v_count <= v_count + 1; // start from first row
+						v_count <= 0; // start from first row
 					end
 			end
-			
-			
-		//set h_sync and v_sync----------------------------------------		
-		
-		//============================================HORIZONTAL=================================================
-		//||  visible area (0,639) | front porch (640,655) | horizontal sync. (656,751) | back porch (752,799) ||
-		//=======================================================================================================
-		if (h_count >= (H_VISIBLE_AREA+H_FRONT_PORCH+H_SYNC_WIDTH -1) )
-			begin
-				h_sync <= 1;
-			end
-		else if (h_count >= (H_VISIBLE_AREA+H_FRONT_PORCH -1) ) 
-			begin
-				h_sync <= 0;
-			end
-		else 
-			begin
-				h_sync <= 1;
-			end
-		//============================================VERTICAL===================================================
-		//||  visible area (0,479) | front porch (480,489) | vertical sync. (490,491) | back porch (492,524)   ||
-		//=======================================================================================================
-		if (v_count >= (V_VISIBLE_AREA+V_FRONT_PORCH+V_SYNC_WIDTH -1) )
-			begin
-				v_sync <= 1;
-			end
-		else if (v_count >= (V_VISIBLE_AREA+V_FRONT_PORCH -1) ) 
-			begin
-				v_sync <= 0;
-			end
-		else 
-			begin
-				v_sync <= 1;
-			end
+
 	end
 
 endmodule

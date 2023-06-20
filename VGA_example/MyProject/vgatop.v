@@ -33,17 +33,23 @@ module vgatop (clock, Hsynq, Vsynq,clk_25,red, green, blue);
 	assign green = (greenB | greenT) ? 8'hFF: 8'h00;
 	assign blue = (blueB | blueT) ? 8'hFF: 8'h00;
 	
-	assign BOX_1 =(h_count<143+81 && h_count>143+58 && v_count<34+320 && v_count>34+296);
+	//assign BOX_1 =(h_count<143+81 && h_count>143+58 && v_count<34+320 && v_count>34+296);
 	
 	always @(h_count, v_count)	begin
-	  if((h_count<784 && h_count>143 && v_count<515 && v_count>34)) begin
-	    templatey = v_count-35;
-	    redT =  templatex[(h_count-144)];
-	    greenT = templatex[(h_count-144)];
-	    blueT = templatex[(h_count-144)];
+	  if((h_count<784 && h_count>143 && v_count<515 && v_count>34)) 
+			begin
+				 templatey = v_count-35;
+				 redT =  templatex[(h_count-144)];
+				 greenT = templatex[(h_count-144)];
+				 blueT = templatex[(h_count-144)];
 	  
-	  end else begin redT=0; greenT=0; blueT=0; 
-	 end
+			end
+	  else 
+			begin 
+			redT<=0; 
+			greenT<=0; 
+			blueT<=0; 
+			end
 	 
 	end
 	

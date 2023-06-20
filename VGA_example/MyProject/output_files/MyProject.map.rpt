@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MyProject
-Tue Jun 20 23:41:28 2023
+Wed Jun 21 00:07:58 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -20,6 +20,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  12. Port Connectivity Checks: "clockdivider:u1"
  13. Elapsed Time Per Partition
  14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,7 +46,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jun 20 23:41:28 2023      ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 21 00:07:58 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; MyProject                                  ;
 ; Top-level Entity Name           ; vgatop                                     ;
@@ -293,7 +294,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:25     ;
+; Top            ; 00:00:27     ;
 +----------------+--------------+
 
 
@@ -303,7 +304,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 20 23:41:01 2023
+    Info: Processing started: Wed Jun 21 00:07:29 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MyProject -c MyProject
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file fulltemplate.v
@@ -318,25 +319,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file vgatop.
     Info (12023): Found entity 1: vgatop
 Warning (10236): Verilog HDL Implicit Net warning at vgatop.v(20): created implicit net for "clk3"
 Warning (10236): Verilog HDL Implicit Net warning at vgatop.v(20): created implicit net for "clk_bounce"
-Warning (10236): Verilog HDL Implicit Net warning at vgatop.v(36): created implicit net for "BOX_1"
 Info (12127): Elaborating entity "vgatop" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at vgatop.v(36): object "BOX_1" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at vgatop.v(40): truncated value with size 32 to match size of target (11)
-Warning (10235): Verilog HDL Always Construct warning at vgatop.v(41): variable "templatex" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at vgatop.v(41): truncated value with size 32 to match size of target (11)
 Warning (10235): Verilog HDL Always Construct warning at vgatop.v(42): variable "templatex" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at vgatop.v(43): variable "templatex" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at vgatop.v(44): variable "templatex" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10240): Verilog HDL Always Construct warning at vgatop.v(38): inferring latch(es) for variable "templatey", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "templatey[0]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[1]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[2]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[3]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[4]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[5]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[6]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[7]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[8]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[9]" at vgatop.v(45)
-Info (10041): Inferred latch for "templatey[10]" at vgatop.v(45)
+Info (10041): Inferred latch for "templatey[0]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[1]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[2]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[3]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[4]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[5]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[6]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[7]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[8]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[9]" at vgatop.v(49)
+Info (10041): Inferred latch for "templatey[10]" at vgatop.v(49)
 Info (12128): Elaborating entity "clockdivider" for hierarchy "clockdivider:u1"
 Info (12128): Elaborating entity "horizontal_counter" for hierarchy "horizontal_counter:u2"
 Warning (10230): Verilog HDL assignment warning at horizontal_counter.v(9): truncated value with size 32 to match size of target (16)
@@ -346,16 +345,23 @@ Info (12128): Elaborating entity "fulltemplate" for hierarchy "fulltemplate:u4"
 Warning (13012): Latch templatey[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal vertical_counter:u3|v_count[0]
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/MyProject/output_files/MyProject.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 2344 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 27 output pins
     Info (21061): Implemented 2316 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 4692 megabytes
-    Info: Processing ended: Tue Jun 20 23:41:28 2023
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:27
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4680 megabytes
+    Info: Processing ended: Wed Jun 21 00:07:58 2023
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:28
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/MyProject/output_files/MyProject.map.smsg.
 
 

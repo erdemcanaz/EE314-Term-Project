@@ -1,5 +1,5 @@
 Fitter report for MyProject
-Tue Jun 20 23:42:15 2023
+Wed Jun 21 00:08:46 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -61,7 +61,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Tue Jun 20 23:42:15 2023      ;
+; Fitter Status                   ; Successful - Wed Jun 21 00:08:46 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; MyProject                                  ;
 ; Top-level Entity Name           ; vgatop                                     ;
@@ -2760,7 +2760,7 @@ Info (170195): Router estimated average interconnect usage is 1% of the availabl
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:09
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.77 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.73 seconds.
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
 Info (334004): Delay annotation completed successfully
@@ -2770,9 +2770,9 @@ Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:10
 Info (144001): Generated suppressed messages file C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/MyProject/output_files/MyProject.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 5649 megabytes
-    Info: Processing ended: Tue Jun 20 23:42:15 2023
-    Info: Elapsed time: 00:00:46
+    Info: Peak virtual memory: 5652 megabytes
+    Info: Processing ended: Wed Jun 21 00:08:46 2023
+    Info: Elapsed time: 00:00:47
     Info: Total CPU time (on all processors): 00:00:47
 
 
