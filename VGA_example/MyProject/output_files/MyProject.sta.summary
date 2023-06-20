@@ -3,147 +3,147 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'horizontal_counter:u2|h_count[10]'
-Slack : -3.340
-TNS   : -28.756
+Slack : -4.002
+TNS   : -30.330
 
 Type  : Slow 1100mV 85C Model Setup 'clockdivider:u1|clk_25'
-Slack : -2.716
-TNS   : -82.138
+Slack : -2.697
+TNS   : -74.233
 
 Type  : Slow 1100mV 85C Model Setup 'clock'
-Slack : -0.101
-TNS   : -0.101
+Slack : -0.251
+TNS   : -0.251
 
 Type  : Slow 1100mV 85C Model Hold 'horizontal_counter:u2|h_count[10]'
-Slack : -1.437
-TNS   : -4.135
+Slack : -1.749
+TNS   : -5.851
 
 Type  : Slow 1100mV 85C Model Hold 'clock'
-Slack : -1.437
-TNS   : -1.437
+Slack : -1.168
+TNS   : -1.168
 
 Type  : Slow 1100mV 85C Model Hold 'clockdivider:u1|clk_25'
-Slack : -0.190
-TNS   : -0.389
+Slack : -0.115
+TNS   : -0.119
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
-Slack : -0.505
-TNS   : -0.899
+Slack : -0.564
+TNS   : -0.958
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clockdivider:u1|clk_25'
 Slack : -0.394
-TNS   : -17.646
+TNS   : -19.204
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'horizontal_counter:u2|h_count[10]'
-Slack : 0.250
+Slack : 0.077
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'horizontal_counter:u2|h_count[10]'
-Slack : -3.382
-TNS   : -28.959
+Slack : -4.111
+TNS   : -30.804
 
 Type  : Slow 1100mV 0C Model Setup 'clockdivider:u1|clk_25'
-Slack : -2.644
-TNS   : -79.143
+Slack : -2.655
+TNS   : -73.270
 
 Type  : Slow 1100mV 0C Model Setup 'clock'
-Slack : -0.270
-TNS   : -0.270
+Slack : -0.345
+TNS   : -0.345
 
 Type  : Slow 1100mV 0C Model Hold 'horizontal_counter:u2|h_count[10]'
-Slack : -1.512
-TNS   : -4.626
+Slack : -1.827
+TNS   : -6.269
 
 Type  : Slow 1100mV 0C Model Hold 'clock'
-Slack : -1.198
-TNS   : -1.198
+Slack : -1.058
+TNS   : -1.058
 
 Type  : Slow 1100mV 0C Model Hold 'clockdivider:u1|clk_25'
-Slack : -0.090
-TNS   : -0.090
+Slack : -0.086
+TNS   : -0.086
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
-Slack : -0.526
-TNS   : -0.920
+Slack : -0.553
+TNS   : -0.947
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clockdivider:u1|clk_25'
 Slack : -0.394
-TNS   : -17.664
+TNS   : -19.536
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'horizontal_counter:u2|h_count[10]'
-Slack : 0.252
+Slack : 0.082
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'horizontal_counter:u2|h_count[10]'
-Slack : -1.636
-TNS   : -13.502
+Slack : -2.573
+TNS   : -16.255
 
 Type  : Fast 1100mV 85C Model Setup 'clockdivider:u1|clk_25'
-Slack : -1.236
-TNS   : -36.742
+Slack : -1.248
+TNS   : -31.947
 
 Type  : Fast 1100mV 85C Model Setup 'clock'
-Slack : -0.448
-TNS   : -0.448
+Slack : -0.424
+TNS   : -0.424
 
 Type  : Fast 1100mV 85C Model Hold 'horizontal_counter:u2|h_count[10]'
-Slack : -1.016
-TNS   : -4.736
+Slack : -1.170
+TNS   : -4.477
 
 Type  : Fast 1100mV 85C Model Hold 'clock'
-Slack : -0.544
-TNS   : -0.544
+Slack : -0.478
+TNS   : -0.478
 
 Type  : Fast 1100mV 85C Model Hold 'clockdivider:u1|clk_25'
-Slack : -0.192
-TNS   : -0.695
+Slack : -0.169
+TNS   : -0.367
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
-Slack : -0.487
-TNS   : -0.622
+Slack : -0.518
+TNS   : -0.685
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clockdivider:u1|clk_25'
-Slack : 0.053
-TNS   : 0.000
+Slack : -0.029
+TNS   : -0.238
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'horizontal_counter:u2|h_count[10]'
-Slack : 0.258
+Slack : 0.152
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'horizontal_counter:u2|h_count[10]'
-Slack : -1.477
-TNS   : -11.976
+Slack : -2.404
+TNS   : -14.878
 
 Type  : Fast 1100mV 0C Model Setup 'clockdivider:u1|clk_25'
-Slack : -1.087
-TNS   : -32.155
+Slack : -1.109
+TNS   : -28.422
 
 Type  : Fast 1100mV 0C Model Setup 'clock'
-Slack : -0.425
-TNS   : -0.425
+Slack : -0.358
+TNS   : -0.358
 
 Type  : Fast 1100mV 0C Model Hold 'horizontal_counter:u2|h_count[10]'
-Slack : -0.981
-TNS   : -4.647
+Slack : -1.118
+TNS   : -4.219
 
 Type  : Fast 1100mV 0C Model Hold 'clock'
-Slack : -0.485
-TNS   : -0.485
+Slack : -0.512
+TNS   : -0.512
 
 Type  : Fast 1100mV 0C Model Hold 'clockdivider:u1|clk_25'
-Slack : -0.176
-TNS   : -0.598
+Slack : -0.171
+TNS   : -0.316
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
-Slack : -0.487
-TNS   : -0.632
+Slack : -0.494
+TNS   : -0.647
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clockdivider:u1|clk_25'
-Slack : 0.068
-TNS   : 0.000
+Slack : -0.014
+TNS   : -0.068
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'horizontal_counter:u2|h_count[10]'
-Slack : 0.277
+Slack : 0.191
 TNS   : 0.000
 
 ------------------------------------------------------------

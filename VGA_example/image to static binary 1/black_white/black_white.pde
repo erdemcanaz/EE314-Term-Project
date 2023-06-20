@@ -1,9 +1,12 @@
 PImage img;
+PrintWriter output_writer_txt;
+
 String[] rowArray = new String[480];   //Declarartion by specifying the size  
 
 
 
 void setup() {
+  frameRate(1);
   size(640,480);
   img = loadImage("image_1.png");
   
@@ -11,11 +14,9 @@ void setup() {
     rowArray[row_index] = "";
   }
   
-}
-
-
-void draw() {
   image(img, 0, 0);
+  
+  //generate row array
   for (int y = 0; y<480; y++){
     for (int x = 0; x < 480; x++) {
       float red = red(get(x,y));
@@ -25,8 +26,27 @@ void draw() {
       float average = (red+green+blue)/3;
       
       
+      String bit_value = "1";
+      if (average <125){
+         bit_value = "0";
+      }
+      rowArray[y] = rowArray[y]+bit_value;      
     }
-    print("\n");
   }
   
+  //save row array as .txt
+  output_writer_txt = createWriter("binary_static_image.txt"); 
+  for( int y = 0; y<480; y++){
+     output_writer_txt.println(String.valueOf(y)+":templatex=640'b"+rowArray[y]+";");    
+  }
+  output_writer_txt.flush(); // Writes the remaining data to the file
+  output_writer_txt.close(); // Finishes the file
+  exit(); // Stops the program
+
+}
+
+
+void draw() {
+  
+    
 }
