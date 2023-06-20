@@ -8,7 +8,7 @@ String[] rowArray = new String[480];   //Declarartion by specifying the size
 void setup() {
   frameRate(1);
   size(640,480);
-  img = loadImage("image_1.png");
+  img = loadImage("image_2.png");
   
   for ( int row_index = 0; row_index<480;row_index++){
     rowArray[row_index] = "";

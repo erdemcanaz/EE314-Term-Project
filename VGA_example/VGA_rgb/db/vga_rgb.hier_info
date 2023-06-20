@@ -1,0 +1,88 @@
+|main_vga_module
+clock_builtin_50MHZ => clock_builtin_50MHZ.IN1
+clock_out_25MHZ <= clock_out_25MHZ.DB_MAX_OUTPUT_PORT_TYPE
+h_sync <= horizontal_and_vertical_counter:instance_2.h_sync
+v_sync <= horizontal_and_vertical_counter:instance_2.v_sync
+v_sync_led <= v_sync_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+red_8bit[0] <= always1.DB_MAX_OUTPUT_PORT_TYPE
+red_8bit[1] <= always1.DB_MAX_OUTPUT_PORT_TYPE
+red_8bit[2] <= always1.DB_MAX_OUTPUT_PORT_TYPE
+red_8bit[3] <= always1.DB_MAX_OUTPUT_PORT_TYPE
+red_8bit[4] <= always1.DB_MAX_OUTPUT_PORT_TYPE
+red_8bit[5] <= always1.DB_MAX_OUTPUT_PORT_TYPE
+red_8bit[6] <= always1.DB_MAX_OUTPUT_PORT_TYPE
+red_8bit[7] <= always1.DB_MAX_OUTPUT_PORT_TYPE
+green_8bit[0] <= <VCC>
+green_8bit[1] <= <VCC>
+green_8bit[2] <= <VCC>
+green_8bit[3] <= <VCC>
+green_8bit[4] <= <VCC>
+green_8bit[5] <= <VCC>
+green_8bit[6] <= <VCC>
+green_8bit[7] <= <VCC>
+blue_8bit[0] <= <VCC>
+blue_8bit[1] <= <VCC>
+blue_8bit[2] <= <VCC>
+blue_8bit[3] <= <VCC>
+blue_8bit[4] <= <VCC>
+blue_8bit[5] <= <VCC>
+blue_8bit[6] <= <VCC>
+blue_8bit[7] <= <VCC>
+
+
+|main_vga_module|clock_divider:instance_1
+clk => clk_25~reg0.CLK
+clk_25 <= clk_25~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga_module|horizontal_and_vertical_counter:instance_2
+clk_25 => v_sync~reg0.CLK
+clk_25 => h_sync~reg0.CLK
+clk_25 => v_count[0]~reg0.CLK
+clk_25 => v_count[1]~reg0.CLK
+clk_25 => v_count[2]~reg0.CLK
+clk_25 => v_count[3]~reg0.CLK
+clk_25 => v_count[4]~reg0.CLK
+clk_25 => v_count[5]~reg0.CLK
+clk_25 => v_count[6]~reg0.CLK
+clk_25 => v_count[7]~reg0.CLK
+clk_25 => v_count[8]~reg0.CLK
+clk_25 => v_count[9]~reg0.CLK
+clk_25 => v_count[10]~reg0.CLK
+clk_25 => h_count[0]~reg0.CLK
+clk_25 => h_count[1]~reg0.CLK
+clk_25 => h_count[2]~reg0.CLK
+clk_25 => h_count[3]~reg0.CLK
+clk_25 => h_count[4]~reg0.CLK
+clk_25 => h_count[5]~reg0.CLK
+clk_25 => h_count[6]~reg0.CLK
+clk_25 => h_count[7]~reg0.CLK
+clk_25 => h_count[8]~reg0.CLK
+clk_25 => h_count[9]~reg0.CLK
+clk_25 => h_count[10]~reg0.CLK
+h_count[0] <= h_count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[1] <= h_count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[2] <= h_count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[3] <= h_count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[4] <= h_count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[5] <= h_count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[6] <= h_count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[7] <= h_count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[8] <= h_count[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[9] <= h_count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_count[10] <= h_count[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+h_sync <= h_sync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[0] <= v_count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[1] <= v_count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[2] <= v_count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[3] <= v_count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[4] <= v_count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[5] <= v_count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[6] <= v_count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[7] <= v_count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[8] <= v_count[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[9] <= v_count[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_count[10] <= v_count[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_sync <= v_sync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

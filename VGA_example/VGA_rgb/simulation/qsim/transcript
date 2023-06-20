@@ -1,0 +1,103 @@
+# do vga_rgb.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module main_vga_module
+# 
+# Top level modules:
+# 	main_vga_module
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module main_vga_module_vlg_sample_tst
+# -- Compiling module main_vga_module_vlg_check_tst
+# -- Compiling module main_vga_module_vlg_vec_tst
+# 
+# Top level modules:
+# 	main_vga_module_vlg_vec_tst
+# vsim -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -voptargs=\"+acc\" -t 1ps -novopt work.main_vga_module_vlg_vec_tst 
+# Loading work.main_vga_module_vlg_vec_tst
+# Loading work.main_vga_module
+# Loading altera_ver.dffeas
+# Loading work.main_vga_module_vlg_sample_tst
+# Loading work.main_vga_module_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ERROR! Vector Mismatch for output port blue_8bit[0] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port blue_8bit[1] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port blue_8bit[2] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port blue_8bit[3] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port blue_8bit[4] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port blue_8bit[5] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port blue_8bit[6] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port blue_8bit[7] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port green_8bit[0] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port green_8bit[1] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port green_8bit[2] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port green_8bit[3] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port green_8bit[4] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port green_8bit[5] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port green_8bit[6] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port green_8bit[7] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port h_sync :: @time = 999500.000 ps
+#      Expected value = 0
+#      Real value = 1
+# ERROR! Vector Mismatch for output port red_8bit[0] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port red_8bit[1] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port red_8bit[2] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port red_8bit[3] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port red_8bit[4] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port red_8bit[5] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port red_8bit[6] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port red_8bit[7] :: @time = 999500.000 ps
+#      Expected value = 00000000
+#      Real value = 11111111
+# ERROR! Vector Mismatch for output port v_sync :: @time = 999500.000 ps
+#      Expected value = 0
+#      Real value = 1
+#          26 mismatched vectors : Simulation failed !
+# ** Note: $finish    : vga_test_sim.vwf.vt(662)
+#    Time: 20 us  Iteration: 0  Instance: /main_vga_module_vlg_vec_tst/tb_out
