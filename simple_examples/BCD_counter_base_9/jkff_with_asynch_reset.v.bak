@@ -1,3 +1,0 @@
-
-
-module jkff_with_asynch_reset(J,K,CLK,R)

@@ -1,8 +1,0 @@
-
-
-module d_flip_flop_with_asynch_reset(D,R,CLK,Q,QN);
-
-
-
-
-endmodule

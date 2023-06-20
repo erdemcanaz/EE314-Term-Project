@@ -1,0 +1,7 @@
+module vgatop (clock, Hsynq, Vsyng);
+ input clock;
+ output Hsynq, Vsynq, clk_25;
+ fulltemplate u4(templatey, templatex);
+ assign Hsynq = (h_count<96) ? 1'b1 : 1'b0;
+ assign Vsynq = (v_count<2) ? 1'b1 : 1'b0;
+endmodule 
