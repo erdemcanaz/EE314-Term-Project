@@ -8,7 +8,11 @@ output reg [7:0] green_8bit;
 output reg [7:0] blue_8bit;
 
 output reg v_sync_led;
-reg [31:0] led_counter;
+
+//https://www.intel.com/content/www/us/en/docs/programmable/683283/18-1/initial-constructs-and-memory-system-tasks.html
+reg [2:0] rom_r [50399:0];
+reg [2:0] rom_g [50399:0];
+reg [2:0] rom_b [50399:0];
 
 output clock_out_25MHZ;
 wire [10:0] h_count, v_count;
@@ -19,7 +23,16 @@ horizontal_and_vertical_counter instance_2(.clk_25(clock_out_25MHZ),.h_count(h_c
 parameter H_VISIBLE_AREA = 640;
 parameter V_VISIBLE_AREA = 480;
 
+initial
+	begin
+		// import image pixels from .mem files
+		$readmemb("rom_data_r.txt",rom_r);
+		$readmemb("rom_data_g.txt",rom_g);
+		$readmemb("rom_data_b.txt",rom_b);
 
+	end
+	
+	
 always @(h_count, v_count)
 	begin
 		if(h_count<H_VISIBLE_AREA && v_count<V_VISIBLE_AREA) 
@@ -27,9 +40,19 @@ always @(h_count, v_count)
 				//TODO: this values should be decided considering the relative pixel
 				//BE AWARE: due to <= operator, the values are assigned at the next cycle.
 				
-				red_8bit <= 8'hFF;
-				green_8bit <=  8'hFF;
-				blue_8bit <=  8'hFF;	  
+				if(h_count<280 && v_count <180)
+					begin
+						red_8bit <= 32*rom_r[h_count + 280*v_count];
+						green_8bit <=  32*rom_g[h_count + 280*v_count];
+						blue_8bit <=  32*rom_b[h_count + 280*v_count];
+					end
+				else
+					begin							
+						red_8bit <= 8'h00;
+						green_8bit <=  8'h00;
+						blue_8bit <=  8'h00;	 
+					end
+				 
 			end 
 		else
 			begin 

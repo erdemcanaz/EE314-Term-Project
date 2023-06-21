@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_rgb
-Wed Jun 21 01:49:34 2023
+Wed Jun 21 04:48:01 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,11 +13,13 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |main_vga_module
- 10. Parameter Settings for User Entity Instance: horizontal_and_vertical_counter:instance_2
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |main_vga_module
+ 12. Parameter Settings for User Entity Instance: horizontal_and_vertical_counter:instance_2
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,7 +45,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 21 01:49:34 2023      ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 21 04:48:01 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; vga_rgb                                    ;
 ; Top-level Entity Name           ; main_vga_module                            ;
@@ -53,7 +55,7 @@ applicable agreement for further details.
 ; Total pins                      ; 29                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
-; Total DSP Blocks                ; 0                                          ;
+; Total DSP Blocks                ; 1                                          ;
 ; Total HSSI RX PCSs              ; 0                                          ;
 ; Total HSSI PMA RX Deserializers ; 0                                          ;
 ; Total HSSI TX PCSs              ; 0                                          ;
@@ -169,32 +171,35 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; clock_divider.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/clock_divider.v                   ;         ;
 ; horizontal_and_vertical_counter.v ; yes             ; User Verilog HDL File  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/horizontal_and_vertical_counter.v ;         ;
 ; main_vga_module.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/main_vga_module.v                 ;         ;
+; rom_data_r.txt                    ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/rom_data_r.txt                    ;         ;
+; rom_data_g.txt                    ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/rom_data_g.txt                    ;         ;
+; rom_data_b.txt                    ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/rom_data_b.txt                    ;         ;
 +-----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                   ;
-+---------------------------------------------+---------------------------------+
-; Resource                                    ; Usage                           ;
-+---------------------------------------------+---------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 19                              ;
-;                                             ;                                 ;
-; Combinational ALUT usage for logic          ; 34                              ;
-;     -- 7 input functions                    ; 0                               ;
-;     -- 6 input functions                    ; 3                               ;
-;     -- 5 input functions                    ; 2                               ;
-;     -- 4 input functions                    ; 5                               ;
-;     -- <=3 input functions                  ; 24                              ;
-;                                             ;                                 ;
-; Dedicated logic registers                   ; 23                              ;
-;                                             ;                                 ;
-; I/O pins                                    ; 29                              ;
-; Total DSP Blocks                            ; 0                               ;
-; Maximum fan-out node                        ; clock_divider:instance_1|clk_25 ;
-; Maximum fan-out                             ; 24                              ;
-; Total fan-out                               ; 229                             ;
-; Average fan-out                             ; 1.99                            ;
-+---------------------------------------------+---------------------------------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimate of Logic utilization (ALMs needed) ; 6498   ;
+;                                             ;        ;
+; Combinational ALUT usage for logic          ; 7453   ;
+;     -- 7 input functions                    ; 1112   ;
+;     -- 6 input functions                    ; 4430   ;
+;     -- 5 input functions                    ; 814    ;
+;     -- 4 input functions                    ; 716    ;
+;     -- <=3 input functions                  ; 381    ;
+;                                             ;        ;
+; Dedicated logic registers                   ; 23     ;
+;                                             ;        ;
+; I/O pins                                    ; 29     ;
+; Total DSP Blocks                            ; 1      ;
+; Maximum fan-out node                        ; Add0~1 ;
+; Maximum fan-out                             ; 4323   ;
+; Total fan-out                               ; 42472  ;
+; Average fan-out                             ; 5.64   ;
++---------------------------------------------+--------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -202,11 +207,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
-; |main_vga_module                                ; 34 (2)            ; 23 (0)       ; 0                 ; 0          ; 29   ; 0            ; |main_vga_module                                            ; work         ;
+; |main_vga_module                                ; 7453 (7421)       ; 23 (0)       ; 0                 ; 1          ; 29   ; 0            ; |main_vga_module                                            ; work         ;
 ;    |clock_divider:instance_1|                   ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|clock_divider:instance_1                   ; work         ;
 ;    |horizontal_and_vertical_counter:instance_2| ; 31 (31)           ; 22 (22)      ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2 ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary                                ;
++---------------------+-------------+---------------------+-------------------+
+; Statistic           ; Number Used ; Available per Block ; Maximum Available ;
++---------------------+-------------+---------------------+-------------------+
+; Independent 18x18   ; 1           ; 2.00                ; --                ;
+; DSP Block           ; 1           ; --                  ; --                ;
+; DSP 18-bit Element  ; 1           ; 2.00                ; --                ;
+; Unsigned Multiplier ; 1           ; --                  ; --                ;
++---------------------+-------------+---------------------+-------------------+
 
 
 +------------------------------------------------------+
@@ -222,6 +239,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 11    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |main_vga_module|red_8bit  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -259,7 +285,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:03:03     ;
 +----------------+--------------+
 
 
@@ -269,7 +295,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Jun 21 01:49:33 2023
+    Info: Processing started: Wed Jun 21 04:44:28 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_rgb -c vga_rgb
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
@@ -279,24 +305,59 @@ Info (12021): Found 1 design units, including 1 entities, in source file horizon
 Info (12021): Found 1 design units, including 1 entities, in source file main_vga_module.v
     Info (12023): Found entity 1: main_vga_module
 Info (12127): Elaborating entity "main_vga_module" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(45): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(46): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(47): truncated value with size 32 to match size of target (8)
+Warning (10030): Net "rom_r.data_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom_r.waddr_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom_g.data_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom_g.waddr_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom_b.data_a" at main_vga_module.v(15) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom_b.waddr_a" at main_vga_module.v(15) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom_r.we_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom_g.we_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "rom_b.we_a" at main_vga_module.v(15) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "v_sync_led" at main_vga_module.v(10) has no driver
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:instance_1"
 Info (12128): Elaborating entity "horizontal_and_vertical_counter" for hierarchy "horizontal_and_vertical_counter:instance_2"
 Warning (10230): Verilog HDL assignment warning at horizontal_and_vertical_counter.v(67): truncated value with size 32 to match size of target (11)
 Warning (10230): Verilog HDL assignment warning at horizontal_and_vertical_counter.v(74): truncated value with size 32 to match size of target (11)
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276007): RAM logic "rom_r" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "rom_g" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "rom_b" is uninferred due to asynchronous read logic
+Critical Warning (127005): Memory depth (65536) in the design file differs from memory depth (50400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/db/vga_rgb.ram0_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (65536) in the design file differs from memory depth (50400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/db/vga_rgb.ram1_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (65536) in the design file differs from memory depth (50400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/db/vga_rgb.ram2_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "v_sync_led" is stuck at GND
+    Warning (13410): Pin "red_8bit[0]" is stuck at GND
+    Warning (13410): Pin "red_8bit[1]" is stuck at GND
+    Warning (13410): Pin "red_8bit[2]" is stuck at GND
+    Warning (13410): Pin "red_8bit[3]" is stuck at GND
+    Warning (13410): Pin "red_8bit[4]" is stuck at GND
+    Warning (13410): Pin "green_8bit[0]" is stuck at GND
+    Warning (13410): Pin "green_8bit[1]" is stuck at GND
+    Warning (13410): Pin "green_8bit[2]" is stuck at GND
+    Warning (13410): Pin "green_8bit[3]" is stuck at GND
+    Warning (13410): Pin "green_8bit[4]" is stuck at GND
+    Warning (13410): Pin "blue_8bit[0]" is stuck at GND
+    Warning (13410): Pin "blue_8bit[1]" is stuck at GND
+    Warning (13410): Pin "blue_8bit[2]" is stuck at GND
+    Warning (13410): Pin "blue_8bit[3]" is stuck at GND
+    Warning (13410): Pin "blue_8bit[4]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7483 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 34 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4679 megabytes
-    Info: Processing ended: Wed Jun 21 01:49:34 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info (21061): Implemented 7453 logic cells
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 4789 megabytes
+    Info: Processing ended: Wed Jun 21 04:48:01 2023
+    Info: Elapsed time: 00:03:33
+    Info: Total CPU time (on all processors): 00:03:32
 
 
