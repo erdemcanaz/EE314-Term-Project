@@ -10,9 +10,9 @@ output reg [7:0] blue_8bit;
 output reg v_sync_led;
 
 //https://www.intel.com/content/www/us/en/docs/programmable/683283/18-1/initial-constructs-and-memory-system-tasks.html
-reg [2:0] rom_r [50399:0];
-reg [2:0] rom_g [50399:0];
-reg [2:0] rom_b [50399:0];
+reg [2:0] rom_r [307199:0];
+reg [2:0] rom_g [307199:0];
+reg [2:0] rom_b [307199:0];
 
 output clock_out_25MHZ;
 wire [10:0] h_count, v_count;
@@ -29,9 +29,7 @@ initial
 		$readmemb("rom_data_r.txt",rom_r);
 		$readmemb("rom_data_g.txt",rom_g);
 		$readmemb("rom_data_b.txt",rom_b);
-
-	end
-	
+	end	
 	
 always @(h_count, v_count)
 	begin
@@ -40,11 +38,11 @@ always @(h_count, v_count)
 				//TODO: this values should be decided considering the relative pixel
 				//BE AWARE: due to <= operator, the values are assigned at the next cycle.
 				
-				if(h_count<280 && v_count <180)
+				if(h_count<640 && v_count <480)
 					begin
-						red_8bit <= 32*rom_r[h_count + 280*v_count];
-						green_8bit <=  32*rom_g[h_count + 280*v_count];
-						blue_8bit <=  32*rom_b[h_count + 280*v_count];
+						red_8bit <= 32*rom_r[h_count + 640*v_count];
+						green_8bit <=  32*rom_g[h_count + 640*v_count];
+						blue_8bit <=  32*rom_b[h_count + 640*v_count];
 					end
 				else
 					begin							
