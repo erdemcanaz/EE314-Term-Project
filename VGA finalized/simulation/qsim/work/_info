@@ -1,0 +1,233 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Levovo20x\Documents\GitHub\EE314-Term-Project\VGA_example\VGA_rgb\simulation\qsim
+vclock_divider
+Z1 I0jCYj9iG:Eh:Xi6?^XkOj0
+Z2 VYbdn_9NknHCjdT2l4Mh7;2
+Z3 dC:\Users\Levovo20x\Documents\GitHub\EE314-Term-Project\VGA_example\VGA_rgb\simulation\qsim
+Z4 w1687280468
+Z5 8vga_rgb.vo
+Z6 Fvga_rgb.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 !s100 R0Z7Xnn@nK:X63=BSVjWD0
+Z10 !s108 1687280469.820000
+Z11 !s107 vga_rgb.vo|
+Z12 !s90 -work|work|vga_rgb.vo|
+!i10b 1
+!s85 0
+!s101 -O0
+vclock_divider_vlg_check_tst
+Z13 I_?df[j0[770;4nBlk7QG82
+Z14 VfikN@fXBi[X=UE;hQkKSg0
+R3
+Z15 w1687280467
+Z16 8clock_divider_sim.vwf.vt
+Z17 Fclock_divider_sim.vwf.vt
+L0 57
+R7
+r1
+31
+Z18 !s108 1687280469.890000
+Z19 !s107 clock_divider_sim.vwf.vt|
+Z20 !s90 -work|work|clock_divider_sim.vwf.vt|
+R8
+Z21 !s100 nT[1Wa3=dAHNe8kk_GgBZ0
+!i10b 1
+!s85 0
+!s101 -O0
+vclock_divider_vlg_sample_tst
+Z22 Ij@GDbj<T=?n@PK]J1YaXn0
+Z23 VjX0nU79VP]f`^lEZ6DldX0
+R3
+R15
+R16
+R17
+L0 29
+R7
+r1
+31
+R18
+R19
+R20
+R8
+Z24 !s100 R1f4^BAEk?D6@>IaHP92P2
+!i10b 1
+!s85 0
+!s101 -O0
+vclock_divider_vlg_vec_tst
+Z25 Ii736kDlB>zLjBAIS4_Ba33
+Z26 Vad=CL6[N77GJ9ToT7on382
+R3
+R15
+R16
+R17
+Z27 L0 152
+R7
+r1
+31
+R18
+R19
+R20
+R8
+Z28 !s100 V>mA_Q]XW7@dlh0J@a6Eb0
+!i10b 1
+!s85 0
+!s101 -O0
+vhorizontal_and_vertical_counter
+Z29 I9VVQI68GI_km:YNZ63D6V1
+Z30 VC:kfG]GI:GQ5OUYk_4`T20
+R3
+Z31 w1687285760
+R5
+R6
+L0 31
+R7
+r1
+31
+R12
+R8
+Z32 !s100 h4[XF[5bcn:<HmcZ59@zg0
+Z33 !s108 1687285761.031000
+R11
+!i10b 1
+!s85 0
+!s101 -O0
+vhorizontal_and_vertical_counter_vlg_check_tst
+Z34 INW?`4bXTLGYS_]AaWNF083
+Z35 VSlD=benz9=`RZ2>d0<Xf:2
+R3
+Z36 w1687285759
+Z37 8hv_counter_v_counter_test_sim.vwf.vt
+Z38 Fhv_counter_v_counter_test_sim.vwf.vt
+L0 57
+R7
+r1
+31
+Z39 !s108 1687285761.099000
+Z40 !s107 hv_counter_v_counter_test_sim.vwf.vt|
+Z41 !s90 -work|work|hv_counter_v_counter_test_sim.vwf.vt|
+R8
+Z42 !s100 Mc0abDG_ghM=BJjE_:PSm2
+!i10b 1
+!s85 0
+!s101 -O0
+vhorizontal_and_vertical_counter_vlg_sample_tst
+Z43 IXj^PH8nLKAeLhfz@1b=Kk3
+Z44 VWPS<S;Q;2b9b1KHRgXB5>3
+R3
+R36
+R37
+R38
+L0 29
+R7
+r1
+31
+R39
+R40
+R41
+R8
+Z45 !s100 deTdCB6XLzS>7O0DlWmVb3
+!i10b 1
+!s85 0
+!s101 -O0
+vhorizontal_and_vertical_counter_vlg_vec_tst
+Z46 IC_41``jY]eDUS?l5@iWbD1
+Z47 V@8a>ZT;iOQEZB5lbj31>e0
+R3
+R36
+R37
+R38
+Z48 L0 380
+R7
+r1
+31
+R39
+R40
+R41
+R8
+Z49 !s100 8[>MUEU;Sab@MbS44dL>k2
+!i10b 1
+!s85 0
+!s101 -O0
+vmain_vga_module
+Z50 IcbY[WGc]D?ieUbZz0PnH=1
+Z51 VY1ffm1k6P]zZhJE7_YZCe3
+R3
+Z52 w1687291342
+R5
+R6
+L0 31
+R7
+r1
+31
+R12
+R8
+!i10b 1
+Z53 !s100 EUBaWDCi6_7KIO;:H;`Rh1
+!s85 0
+Z54 !s108 1687291344.091000
+R11
+!s101 -O0
+vmain_vga_module_vlg_check_tst
+!i10b 1
+!s100 [BHHLj_3JD6@]8Y9Z043a1
+IV4iKjb_`?VgNi5<?ZKal42
+V9]lnOTzn;a@aQVSEbO<en1
+R3
+Z55 w1687291341
+Z56 8vga_test_sim.vwf.vt
+Z57 Fvga_test_sim.vwf.vt
+L0 57
+R7
+r1
+!s85 0
+31
+Z58 !s108 1687291344.184000
+Z59 !s107 vga_test_sim.vwf.vt|
+Z60 !s90 -work|work|vga_test_sim.vwf.vt|
+!s101 -O0
+R8
+vmain_vga_module_vlg_sample_tst
+!i10b 1
+!s100 9XdJ@AlcoVR?Og9TO1Q112
+IgF3SJo2iMk@PW1TFWJCYV1
+VSR>nmUFC2RXj?<N]OXz8@1
+R3
+R55
+R56
+R57
+L0 29
+R7
+r1
+!s85 0
+31
+R58
+R59
+R60
+!s101 -O0
+R8
+vmain_vga_module_vlg_vec_tst
+!i10b 1
+!s100 ^@LCTCA<Di63HFFj_UG7h2
+IfoW;KV[aUVb@Q:M4FeQPg0
+VRmA6O6B_UPZ[6G<a[KoZF0
+R3
+R55
+R56
+R57
+L0 666
+R7
+r1
+!s85 0
+31
+R58
+R59
+R60
+!s101 -O0
+R8

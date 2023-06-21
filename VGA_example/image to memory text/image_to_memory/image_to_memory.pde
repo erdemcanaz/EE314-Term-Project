@@ -5,10 +5,10 @@ void setup() {
   frameRate(1);
   size(640, 480);
 
-  int image_width = 640;
-  int image_height = 480;
-  String file_name = "rom_data";
-  img = loadImage("windows_wp_640_480.png");
+  int image_width = 35;
+  int image_height = 35;
+  String file_name = "triangle_dummy";
+  img = loadImage("triangle_dummy_35_35.png");
   image(img, 0, 0);
 
   //generate row array
