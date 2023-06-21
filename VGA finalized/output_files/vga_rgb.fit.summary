@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Jun 21 04:49:33 2023
+Fitter Status : Successful - Wed Jun 21 17:24:30 2023
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : vga_rgb
 Top-level Entity Name : main_vga_module
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Preliminary
-Logic utilization (in ALMs) : 6,494 / 32,070 ( 20 % )
-Total registers : 25
+Logic utilization (in ALMs) : 328 / 32,070 ( 1 % )
+Total registers : 27
 Total pins : 29 / 457 ( 6 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
-Total DSP Blocks : 1 / 87 ( 1 % )
+Total DSP Blocks : 3 / 87 ( 3 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

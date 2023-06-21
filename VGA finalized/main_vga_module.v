@@ -33,8 +33,8 @@ initial
 		
 	
 	
-parameter grid_start_x = 0; // pixel is included
-parameter grid_start_y = 0; // pixel is included
+parameter grid_start_x = 145; // pixel is included
+parameter grid_start_y = 30; // pixel is included
 parameter cell_width = 35;
 parameter cell_height = 35;
 parameter grid_end_x = grid_start_x+(cell_width*10) -1; //pixel is included
@@ -45,26 +45,15 @@ always @(h_count, v_count)
 		if(h_count<H_VISIBLE_AREA && v_count<V_VISIBLE_AREA) 
 			begin
 						//grid related checks
-						if( ( grid_start_x<= h_count && h_count <= grid_end_x) && ( grid_start_y<= v_count && v_count <= grid_end_y) )
+						if( ( grid_start_x<= h_count && h_count <= grid_end_x) && ( grid_start_y<= v_count && v_count <= grid_end_y) ) // the related pixel is inside the grid.
 							begin
-								for(i =0; i<10; i = i+1)
-									begin
-										for(j = 0; j<10;j= j+1)
-											begin		
-												//cell_x_start = grid_start_x+ (i*cell_width);
-												//cell_x_end = grid_start_x+ (i+1)*cell_width;
-												//cell_y_start = grid_start_y+ (j*cell_height);
-												//cell_y_end = grid_start_y+ (j+1)*cell_height;
-												if((grid_start_x+ (i*cell_width))<=h_count && h_count< (grid_start_x+ (i+1)*cell_width) && (grid_start_y+ (j*cell_height))<v_count &&  v_count <(grid_start_y+ (j+1)*cell_height) )
-													begin
-														//relative horizontal count -> h_count-(grid_start_x+ (i*cell_width)) 
-														//relative vertical count   -> v_count-(grid_start_y+ (j*cell_height))
-														red_8bit <= 32*triangle_r[ h_count-(grid_start_x+ (i*cell_width)) + cell_height*(v_count-(grid_start_y+ (j*cell_height))) ];
-														green_8bit <=  32*triangle_g[h_count-(grid_start_x+ (i*cell_width)) + cell_height*(v_count-(grid_start_y+ (j*cell_height)))];
-														blue_8bit <=  32*triangle_b[h_count-(grid_start_x+ (i*cell_width)) + cell_height*(v_count-(grid_start_y+ (j*cell_height)))];
-													end										
-											end								
-									end
+								//relative horizontal count -> (		(h_count-grid_start_x) % cell_width		)
+								//relative vertical count   -> (		(v_count-grid_start_y) % cell_height	)
+								red_8bit <= 32*triangle_r[(		(h_count-grid_start_x) % cell_width		) + cell_height*(		(v_count-grid_start_y) % cell_height	) ];
+								green_8bit <=  32*triangle_g[(		(h_count-grid_start_x) % cell_width		) + cell_height*(		(v_count-grid_start_y) % cell_height	)];
+								blue_8bit <=  32*triangle_b[(		(h_count-grid_start_x) % cell_width		) + cell_height*(		(v_count-grid_start_y) % cell_height	)];
+											
+												
 							end
 						else //default case -> set pixel to white
 							begin

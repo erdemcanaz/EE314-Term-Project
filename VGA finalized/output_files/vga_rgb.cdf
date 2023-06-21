@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/output_files/") File("vga_rgb.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/output_files/") File("vga_rgb.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
