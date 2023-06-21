@@ -1,3 +1,9 @@
+//plot image
+//export image
+//initiliaze registers
+//import data
+//define start,end points and width height
+//edit if condition
 
 module main_vga_module(clock_builtin_50MHZ,clock_out_25MHZ, h_sync, v_sync,v_sync_led, red_8bit, green_8bit, blue_8bit);
 input clock_builtin_50MHZ;
@@ -19,6 +25,10 @@ reg [2:0] grid_letters_r [7999:0];//320x25
 reg [2:0] grid_letters_g [7999:0];//320x25
 reg [2:0] grid_letters_b [7999:0];//320x25
 
+reg [2:0] grid_numbers_r [7999:0];//25x320
+reg [2:0] grid_numbers_g [7999:0];//25x320
+reg [2:0] grid_numbers_b [7999:0];//25x320
+
 //triangle turn related images
 reg [2:0] triangle_turn_active_r [12599:0];//90x140
 reg [2:0] triangle_turn_active_g [12599:0];//90x140
@@ -37,6 +47,11 @@ reg [2:0] circle_turn_pasive_r [12599:0];//90x140
 reg [2:0] circle_turn_pasive_g [12599:0];//90x140
 reg [2:0] circle_turn_pasive_b [12599:0];//90x140
 
+reg [2:0] informative_symbols_r [6999:0];//50x140
+reg [2:0] informative_symbols_g [6999:0];//50x140
+reg [2:0] informative_symbols_b [6999:0];//50x140
+//informative symbols
+
 output clock_out_25MHZ;
 wire [10:0] h_count, v_count;
 
@@ -47,7 +62,7 @@ parameter H_VISIBLE_AREA = 640;
 parameter V_VISIBLE_AREA = 480;
 
 //parameters used in testing 
-parameter whose_turn = 2;
+parameter whose_turn = 1;
 
 initial
 	begin
@@ -75,6 +90,14 @@ initial
 		$readmemb("memb_files/grid_letters_r.txt",grid_letters_r);
 		$readmemb("memb_files/grid_letters_g.txt",grid_letters_g);
 		$readmemb("memb_files/grid_letters_b.txt",grid_letters_b);
+		
+		$readmemb("memb_files/grid_numbers_r.txt",grid_numbers_r);
+		$readmemb("memb_files/grid_numbers_g.txt",grid_numbers_g);
+		$readmemb("memb_files/grid_numbers_b.txt",grid_numbers_b);
+		
+		$readmemb("memb_files/informative_symbols_r.txt",informative_symbols_r);
+		$readmemb("memb_files/informative_symbols_g.txt",informative_symbols_g);
+		$readmemb("memb_files/informative_symbols_b.txt",informative_symbols_b);
 	end	
 
 //grid parameters
@@ -91,6 +114,14 @@ parameter grid_letters_width = 320;
 parameter grid_letters_height = 25;
 parameter grid_letters_end_x =  grid_letters_start_x + grid_letters_width-1;
 parameter grid_letters_end_y =  grid_letters_start_y + grid_letters_height-1;
+
+parameter grid_numbers_start_x = 125;//pixel is included
+parameter grid_numbers_start_y = 60;//pixel is included
+parameter grid_numbers_width = 25;
+parameter grid_numbers_height = 320;
+parameter grid_numbers_end_x =  grid_numbers_start_x + grid_numbers_width-1;
+parameter grid_numbers_end_y =  grid_numbers_start_y + grid_numbers_height-1;
+
 //triangle turn parameters
 parameter triangle_turn_start_x = 10;//pixel is included
 parameter triangle_turn_start_y = 130;//pixel is included
@@ -107,13 +138,47 @@ parameter circle_turn_height = 140;
 parameter circle_turn_end_x = circle_turn_start_x + circle_turn_width -1;//pixel is included
 parameter circle_turn_end_y = circle_turn_start_y+circle_turn_height - 1;//pixel is included
 
+//informative symbols
+parameter informative_symbols_1_start_x = 10;//pixel is included
+parameter informative_symbols_1_start_y = 330;//pixel is included
+parameter informative_symbols_1_end_x = informative_symbols_1_start_x + informative_symbols_width -1;//pixel is included
+parameter informative_symbols_1_end_y = informative_symbols_1_start_y+ informative_symbols_height - 1;//pixel is included
+
+parameter informative_symbols_2_start_x = 515;//pixel is included
+parameter informative_symbols_2_start_y = 330;//pixel is included
+parameter informative_symbols_2_end_x = informative_symbols_2_start_x + informative_symbols_width -1;//pixel is included
+parameter informative_symbols_2_end_y = informative_symbols_2_start_y+ informative_symbols_height - 1;//pixel is included
+
+parameter informative_symbols_width = 50;
+parameter informative_symbols_height = 140;
+
 
 always @(h_count, v_count)
 	begin
 		if(h_count<H_VISIBLE_AREA && v_count<V_VISIBLE_AREA) 
 			begin
+					//informative symbol checks
+					//informative symbols for triangle (1)
+					if( ( informative_symbols_1_start_x<= h_count && h_count <= informative_symbols_1_end_x) && ( informative_symbols_1_start_y<= v_count && v_count <= informative_symbols_1_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-informative_symbols_1_start_x)	)
+							//relative vertical count   -> (		(v_count-informative_symbols_1_end_y)	)							
+							red_8bit = 32*informative_symbols_r[(h_count-informative_symbols_1_start_x) + informative_symbols_width*(v_count-informative_symbols_1_start_y)]+31;
+							green_8bit =  32*informative_symbols_r[(h_count-informative_symbols_1_start_x) + informative_symbols_width*(v_count-informative_symbols_1_start_y)]+31;
+							blue_8bit =  32*informative_symbols_r[(h_count-informative_symbols_1_start_x) + informative_symbols_width*(v_count-informative_symbols_1_start_y)]+31;		
+						end
+					//informative symbols for circle (2)
+					else if( ( informative_symbols_2_start_x<= h_count && h_count <= informative_symbols_2_end_x) && ( informative_symbols_2_start_y<= v_count && v_count <= informative_symbols_2_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-informative_symbols_2_start_x)	)
+							//relative vertical count   -> (		(v_count-informative_symbols_2_end_y)	)							
+							red_8bit = 32*informative_symbols_r[(h_count-informative_symbols_2_start_x) + informative_symbols_width*(v_count-informative_symbols_2_start_y)]+31;
+							green_8bit =  32*informative_symbols_r[(h_count-informative_symbols_2_start_x) + informative_symbols_width*(v_count-informative_symbols_2_start_y)]+31;
+							blue_8bit =  32*informative_symbols_r[(h_count-informative_symbols_2_start_x) + informative_symbols_width*(v_count-informative_symbols_2_start_y)]+31;		
+						end
+						
 					//triangle turn checks
-					if( ( triangle_turn_start_x<= h_count && h_count <= triangle_turn_end_x) && ( triangle_turn_start_y<= v_count && v_count <= triangle_turn_start_y+triangle_turn_height-1) )
+					else if( ( triangle_turn_start_x<= h_count && h_count <= triangle_turn_end_x) && ( triangle_turn_start_y<= v_count && v_count <= triangle_turn_end_y) )
 						begin
 							//relative horizontal count -> (		(h_count-triangle_turn_start_x)	)
 							//relative vertical count   -> (		(v_count-triangle_turn_start_y)	)
@@ -125,9 +190,9 @@ always @(h_count, v_count)
 								end
 							else// not triangle's turn
 								begin
-									red_8bit = 32*triangle_turn_pasive_r[(h_count-triangle_turn_start_x) + triangle_turn_width*(v_count-triangle_turn_start_y)+31];
-									green_8bit =  32*triangle_turn_pasive_r[(h_count-triangle_turn_start_x) + triangle_turn_width*(v_count-triangle_turn_start_y)+31];
-									blue_8bit =  32*triangle_turn_pasive_r[(h_count-triangle_turn_start_x) + triangle_turn_width*(v_count-triangle_turn_start_y)+31];
+									red_8bit = 32*triangle_turn_pasive_r[(h_count-triangle_turn_start_x) + triangle_turn_width*(v_count-triangle_turn_start_y)]+31;
+									green_8bit =  32*triangle_turn_pasive_g[(h_count-triangle_turn_start_x) + triangle_turn_width*(v_count-triangle_turn_start_y)]+31;
+									blue_8bit =  32*triangle_turn_pasive_b[(h_count-triangle_turn_start_x) + triangle_turn_width*(v_count-triangle_turn_start_y)]+31;
 								end
 						end
 						
@@ -159,7 +224,15 @@ always @(h_count, v_count)
 							green_8bit =  32*grid_letters_g[(h_count-grid_letters_start_x)+ grid_letters_width*(v_count-grid_letters_start_y)]+31;
 							blue_8bit =  32*grid_letters_b[(h_count-grid_letters_start_x)+ grid_letters_width*(v_count-grid_letters_start_y)]+31;	
 						end
-						
+					// grid numbers related checks
+					else if( ( grid_numbers_start_x<= h_count && h_count <= grid_numbers_end_x) && ( grid_numbers_start_y<= v_count && v_count <= grid_numbers_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-grid_numbers_start_x) 		)
+							//relative vertical count   -> (		(v_count-grid_numbers_start_y)		)
+							red_8bit = 32*grid_numbers_r[(h_count-grid_numbers_start_x)+ grid_numbers_width*(v_count-grid_numbers_start_y) ]+31;
+							green_8bit =  32*grid_numbers_g[(h_count-grid_numbers_start_x)+ grid_numbers_width*(v_count-grid_numbers_start_y)]+31;
+							blue_8bit =  32*grid_numbers_b[(h_count-grid_numbers_start_x)+ grid_numbers_width*(v_count-grid_numbers_start_y)]+31;	
+						end	
 					//grid related checks
 					else if( ( grid_start_x<= h_count && h_count <= grid_end_x) && ( grid_start_y<= v_count && v_count <= grid_end_y) ) // the related pixel is inside the grid.
 						begin

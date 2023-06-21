@@ -7,10 +7,10 @@ void setup() {
   frameRate(1);
   size(640, 480);
 
-  int image_width = 320;
-  int image_height = 25;
-  String file_name = "grid_letters";
-  img = loadImage("grid_letters_320_25.png");
+  int image_width = 50;
+  int image_height = 140;
+  String file_name = "informative_symbols";
+  img = loadImage("informative_symbols_50_140.png");
   image(img, 0, 0);
 
   //generate row array
