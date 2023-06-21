@@ -82,14 +82,3 @@ always @(posedge(clk_25))
 	end
 
 endmodule
-
-//https://electronics.stackexchange.com/questions/295130/vga-timing-sync-porch-positions-fpga
-
-
-
-
-
-
-
-
-

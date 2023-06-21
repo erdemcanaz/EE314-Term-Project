@@ -1,3 +1,5 @@
+
+
 PImage img;
 PrintWriter output_writer_txt_red, output_writer_txt_green, output_writer_txt_blue;
 
@@ -5,10 +7,10 @@ void setup() {
   frameRate(1);
   size(640, 480);
 
-  int image_width = 35;
-  int image_height = 35;
-  String file_name = "triangle_dummy";
-  img = loadImage("triangle_dummy_35_35.png");
+  int image_width = 90;
+  int image_height = 140;
+  String file_name = "triangle_turn_active";
+  img = loadImage("triangle_turn_pasive_90_140.png");
   image(img, 0, 0);
 
   //generate row array

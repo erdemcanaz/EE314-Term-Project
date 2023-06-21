@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_rgb
-Wed Jun 21 17:23:53 2023
+Wed Jun 21 21:49:16 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,15 +13,12 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis DSP Block Usage Summary
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |main_vga_module
- 12. Parameter Settings for User Entity Instance: horizontal_and_vertical_counter:instance_2
- 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |main_vga_module
+ 11. Parameter Settings for User Entity Instance: horizontal_and_vertical_counter:instance_2
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -47,7 +44,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 21 17:23:52 2023      ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 21 21:49:16 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; vga_rgb                                    ;
 ; Top-level Entity Name           ; main_vga_module                            ;
@@ -57,7 +54,7 @@ applicable agreement for further details.
 ; Total pins                      ; 29                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
-; Total DSP Blocks                ; 3                                          ;
+; Total DSP Blocks                ; 0                                          ;
 ; Total HSSI RX PCSs              ; 0                                          ;
 ; Total HSSI PMA RX Deserializers ; 0                                          ;
 ; Total HSSI TX PCSs              ; 0                                          ;
@@ -165,82 +162,58 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
-+-----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path  ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                           ; Library ;
-+-----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
-; clock_divider.v                   ; yes             ; User Verilog HDL File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/clock_divider.v                   ;         ;
-; horizontal_and_vertical_counter.v ; yes             ; User Verilog HDL File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/horizontal_and_vertical_counter.v ;         ;
-; main_vga_module.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/main_vga_module.v                 ;         ;
-; triangle_dummy_b.txt              ; yes             ; Auto-Found File              ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/triangle_dummy_b.txt              ;         ;
-; triangle_dummy_g.txt              ; yes             ; Auto-Found File              ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/triangle_dummy_g.txt              ;         ;
-; triangle_dummy_r.txt              ; yes             ; Auto-Found File              ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/triangle_dummy_r.txt              ;         ;
-; lpm_divide.tdf                    ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                                          ;         ;
-; abs_divider.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                                         ;         ;
-; sign_div_unsign.inc               ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                     ;         ;
-; aglobal131.inc                    ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                          ;         ;
-; db/lpm_divide_n3m.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/lpm_divide_n3m.tdf             ;         ;
-; db/sign_div_unsign_qlh.tdf        ; yes             ; Auto-Generated Megafunction  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/sign_div_unsign_qlh.tdf        ;         ;
-; db/alt_u_div_qve.tdf              ; yes             ; Auto-Generated Megafunction  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/alt_u_div_qve.tdf              ;         ;
-+-----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
++---------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                               ; Library ;
++---------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; clock_divider.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/clock_divider.v                       ;         ;
+; horizontal_and_vertical_counter.v     ; yes             ; User Verilog HDL File  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/horizontal_and_vertical_counter.v     ;         ;
+; main_vga_module.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/main_vga_module.v                     ;         ;
+; memb_files/triangle_turn_active_r.txt ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_turn_active_r.txt ;         ;
+; memb_files/triangle_dummy_b.txt       ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_dummy_b.txt       ;         ;
+; memb_files/triangle_dummy_r.txt       ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_dummy_r.txt       ;         ;
+; memb_files/triangle_turn_active_b.txt ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_turn_active_b.txt ;         ;
+; memb_files/triangle_dummy_g.txt       ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_dummy_g.txt       ;         ;
+; memb_files/triangle_turn_active_g.txt ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_turn_active_g.txt ;         ;
++---------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                         ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Estimate of Logic utilization (ALMs needed) ; 328                   ;
-;                                             ;                       ;
-; Combinational ALUT usage for logic          ; 544                   ;
-;     -- 7 input functions                    ; 16                    ;
-;     -- 6 input functions                    ; 95                    ;
-;     -- 5 input functions                    ; 66                    ;
-;     -- 4 input functions                    ; 107                   ;
-;     -- <=3 input functions                  ; 260                   ;
-;                                             ;                       ;
-; Dedicated logic registers                   ; 23                    ;
-;                                             ;                       ;
-; I/O pins                                    ; 29                    ;
-; Total DSP Blocks                            ; 3                     ;
-; Maximum fan-out node                        ; triangle_g.raddr_a[0] ;
-; Maximum fan-out                             ; 65                    ;
-; Total fan-out                               ; 1687                  ;
-; Average fan-out                             ; 2.69                  ;
-+---------------------------------------------+-----------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                   ;
++---------------------------------------------+---------------------------------+
+; Resource                                    ; Usage                           ;
++---------------------------------------------+---------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 44                              ;
+;                                             ;                                 ;
+; Combinational ALUT usage for logic          ; 66                              ;
+;     -- 7 input functions                    ; 2                               ;
+;     -- 6 input functions                    ; 19                              ;
+;     -- 5 input functions                    ; 9                               ;
+;     -- 4 input functions                    ; 10                              ;
+;     -- <=3 input functions                  ; 26                              ;
+;                                             ;                                 ;
+; Dedicated logic registers                   ; 23                              ;
+;                                             ;                                 ;
+; I/O pins                                    ; 29                              ;
+; Total DSP Blocks                            ; 0                               ;
+; Maximum fan-out node                        ; clock_divider:instance_1|clk_25 ;
+; Maximum fan-out                             ; 24                              ;
+; Total fan-out                               ; 400                             ;
+; Average fan-out                             ; 2.72                            ;
++---------------------------------------------+---------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                         ;
-+-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
-+-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
-; |main_vga_module                                ; 544 (188)         ; 23 (0)       ; 0                 ; 3          ; 29   ; 0            ; |main_vga_module                                                                                                 ; work         ;
-;    |clock_divider:instance_1|                   ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|clock_divider:instance_1                                                                        ; work         ;
-;    |horizontal_and_vertical_counter:instance_2| ; 31 (31)           ; 22 (22)      ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2                                                      ; work         ;
-;    |lpm_divide:Mod0|                            ; 162 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|lpm_divide:Mod0                                                                                 ; work         ;
-;       |lpm_divide_n3m:auto_generated|           ; 162 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|lpm_divide:Mod0|lpm_divide_n3m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_qlh:divider|          ; 162 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|lpm_divide:Mod0|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider                       ; work         ;
-;             |alt_u_div_qve:divider|             ; 162 (162)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|lpm_divide:Mod0|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_qve:divider ; work         ;
-;    |lpm_divide:Mod1|                            ; 162 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|lpm_divide:Mod1                                                                                 ; work         ;
-;       |lpm_divide_n3m:auto_generated|           ; 162 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|lpm_divide:Mod1|lpm_divide_n3m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_qlh:divider|          ; 162 (0)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|lpm_divide:Mod1|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider                       ; work         ;
-;             |alt_u_div_qve:divider|             ; 162 (162)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|lpm_divide:Mod1|lpm_divide_n3m:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_qve:divider ; work         ;
-+-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
++-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
+; |main_vga_module                                ; 66 (35)           ; 23 (0)       ; 0                 ; 0          ; 29   ; 0            ; |main_vga_module                                            ; work         ;
+;    |clock_divider:instance_1|                   ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|clock_divider:instance_1                   ; work         ;
+;    |horizontal_and_vertical_counter:instance_2| ; 30 (30)           ; 22 (22)      ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2 ; work         ;
++-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary                                      ;
-+---------------------------+-------------+---------------------+-------------------+
-; Statistic                 ; Number Used ; Available per Block ; Maximum Available ;
-+---------------------------+-------------+---------------------+-------------------+
-; Independent 18x18 plus 36 ; 3           ; 1.00                ; --                ;
-; DSP Block                 ; 3           ; --                  ; --                ;
-; DSP 18-bit Element        ; 6           ; 2.00                ; --                ;
-; Unsigned Multiplier       ; 3           ; --                  ; --                ;
-+---------------------------+-------------+---------------------+-------------------+
 
 
 +------------------------------------------------------+
@@ -263,24 +236,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main_vga_module|red_8bit  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|red_8bit  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |main_vga_module ;
-+----------------+-------+--------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                   ;
-+----------------+-------+--------------------------------------------------------+
-; H_VISIBLE_AREA ; 640   ; Signed Integer                                         ;
-; V_VISIBLE_AREA ; 480   ; Signed Integer                                         ;
-; grid_start_x   ; 100   ; Signed Integer                                         ;
-; grid_start_y   ; 50    ; Signed Integer                                         ;
-; cell_width     ; 35    ; Signed Integer                                         ;
-; cell_height    ; 35    ; Signed Integer                                         ;
-; grid_end_x     ; 449   ; Signed Integer                                         ;
-; grid_end_y     ; 399   ; Signed Integer                                         ;
-+----------------+-------+--------------------------------------------------------+
++-----------------------+-------+-------------------------------------------------+
+; Parameter Name        ; Value ; Type                                            ;
++-----------------------+-------+-------------------------------------------------+
+; H_VISIBLE_AREA        ; 640   ; Signed Integer                                  ;
+; V_VISIBLE_AREA        ; 480   ; Signed Integer                                  ;
+; whose_turn            ; 2     ; Signed Integer                                  ;
+; grid_start_x          ; 160   ; Signed Integer                                  ;
+; grid_start_y          ; 30    ; Signed Integer                                  ;
+; cell_width            ; 32    ; Signed Integer                                  ;
+; cell_height           ; 32    ; Signed Integer                                  ;
+; grid_end_x            ; 479   ; Signed Integer                                  ;
+; grid_end_y            ; 349   ; Signed Integer                                  ;
+; triangle_turn_start_x ; 10    ; Signed Integer                                  ;
+; triangle_turn_start_y ; 130   ; Signed Integer                                  ;
+; triangle_turn_width   ; 90    ; Signed Integer                                  ;
+; triangle_turn_height  ; 140   ; Signed Integer                                  ;
++-----------------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -303,58 +281,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                ;
-; LPM_WIDTHD             ; 6              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_n3m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                ;
-; LPM_WIDTHD             ; 6              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_n3m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -364,7 +296,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed Jun 21 17:23:50 2023
+    Info: Processing started: Wed Jun 21 21:49:14 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_rgb -c vga_rgb
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
@@ -374,19 +306,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file horizon
 Info (12021): Found 1 design units, including 1 entities, in source file main_vga_module.v
     Info (12023): Found entity 1: main_vga_module
 Info (12127): Elaborating entity "main_vga_module" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main_vga_module.v(52): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main_vga_module.v(53): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at main_vga_module.v(54): truncated value with size 32 to match size of target (8)
-Warning (10030): Net "triangle_r.data_a" at main_vga_module.v(12) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "triangle_r.waddr_a" at main_vga_module.v(12) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "triangle_g.data_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "triangle_g.waddr_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "triangle_b.data_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "triangle_b.waddr_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "triangle_r.we_a" at main_vga_module.v(12) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "triangle_g.we_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "triangle_b.we_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
-Warning (10034): Output port "v_sync_led" at main_vga_module.v(10) has no driver
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(77): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(78): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(79): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(90): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(91): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(92): truncated value with size 32 to match size of target (8)
+Warning (10030): Net "triangle_r.data_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "triangle_r.waddr_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "triangle_g.data_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "triangle_g.waddr_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "triangle_b.data_a" at main_vga_module.v(15) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "triangle_b.waddr_a" at main_vga_module.v(15) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "triangle_r.we_a" at main_vga_module.v(13) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "triangle_g.we_a" at main_vga_module.v(14) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "triangle_b.we_a" at main_vga_module.v(15) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "v_sync_led" at main_vga_module.v(11) has no driver
 Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:instance_1"
 Info (12128): Elaborating entity "horizontal_and_vertical_counter" for hierarchy "horizontal_and_vertical_counter:instance_2"
 Warning (10230): Verilog HDL assignment warning at horizontal_and_vertical_counter.v(67): truncated value with size 32 to match size of target (11)
@@ -395,38 +330,19 @@ Info (276014): Found 3 instances of uninferred RAM logic
     Info (276007): RAM logic "triangle_r" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "triangle_g" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "triangle_b" is uninferred due to asynchronous read logic
-Critical Warning (127005): Memory depth (2048) in the design file differs from memory depth (1225) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram0_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (2048) in the design file differs from memory depth (1225) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram1_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (2048) in the design file differs from memory depth (1225) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram2_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1"
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHN" = "32"
-    Info (12134): Parameter "LPM_WIDTHD" = "6"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_n3m.tdf
-    Info (12023): Found entity 1: lpm_divide_n3m
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_qlh
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qve.tdf
-    Info (12023): Found entity 1: alt_u_div_qve
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "v_sync_led" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 576 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 95 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 544 logic cells
-    Info (21062): Implemented 3 DSP elements
+    Info (21061): Implemented 66 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4687 megabytes
-    Info: Processing ended: Wed Jun 21 17:23:53 2023
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4679 megabytes
+    Info: Processing ended: Wed Jun 21 21:49:16 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

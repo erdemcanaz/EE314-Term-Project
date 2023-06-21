@@ -18,7 +18,7 @@ void setup() {
   
   //generate row array
   for (int y = 0; y<480; y++){
-    for (int x = 0; x < 480; x++) {
+    for (int x = 0; x < 640; x++) {
       float red = red(get(x,y));
       float green = green(get(x,y));
       float blue = blue(get(x,y));
