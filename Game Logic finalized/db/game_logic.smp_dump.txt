@@ -1,0 +1,19 @@
+
+State Machine - |main_game_logic_module|state_to_be_returned
+Name state_to_be_returned.triangle_input_is_correct_state state_to_be_returned.triangle_input_formatting_state state_to_be_returned.triangle_inputting_state state_to_be_returned.00000000 
+state_to_be_returned.00000000 0 0 0 0 
+state_to_be_returned.triangle_inputting_state 0 0 1 1 
+state_to_be_returned.triangle_input_formatting_state 0 1 0 1 
+state_to_be_returned.triangle_input_is_correct_state 1 0 0 1 
+
+State Machine - |main_game_logic_module|state_now
+Name state_now.delay_state_300ms state_now.delay_error_state_with_blinking_1000ms state_now.test_state state_now.triangle_input_range_validation_state state_now.triangle_input_is_wrong_state state_now.triangle_input_is_correct_state state_now.triangle_input_formatting_state state_now.triangle_inputting_state state_now.00000000 
+state_now.00000000 0 0 0 0 0 0 0 0 0 
+state_now.triangle_inputting_state 0 0 0 0 0 0 0 1 1 
+state_now.triangle_input_formatting_state 0 0 0 0 0 0 1 0 1 
+state_now.triangle_input_is_correct_state 0 0 0 0 0 1 0 0 1 
+state_now.triangle_input_is_wrong_state 0 0 0 0 1 0 0 0 1 
+state_now.triangle_input_range_validation_state 0 0 0 1 0 0 0 0 1 
+state_now.test_state 0 0 1 0 0 0 0 0 1 
+state_now.delay_error_state_with_blinking_1000ms 0 1 0 0 0 0 0 0 1 
+state_now.delay_state_300ms 1 0 0 0 0 0 0 0 1 
