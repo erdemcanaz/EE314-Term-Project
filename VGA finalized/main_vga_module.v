@@ -17,9 +17,49 @@ output reg [7:0] blue_8bit;
 output reg v_sync_led;
 
 //grid related images
+reg [2:0] deadzone_r [1023:0];//32^2
+reg [2:0] deadzone_g [1023:0];//32^2
+reg [2:0] deadzone_b [1023:0];//32^2
+
 reg [2:0] triangle_r [1023:0];//32^2
 reg [2:0] triangle_g [1023:0];//32^2
 reg [2:0] triangle_b [1023:0];//32^2
+
+reg [2:0] right_diagonal_triangle_r [1023:0];//32^2
+reg [2:0] right_diagonal_triangle_g [1023:0];//32^2
+reg [2:0] right_diagonal_triangle_b [1023:0];//32^2
+
+reg [2:0] left_diagonal_triangle_r [1023:0];//32^2
+reg [2:0] left_diagonal_triangle_g [1023:0];//32^2
+reg [2:0] left_diagonal_triangle_b [1023:0];//32^2
+
+reg [2:0] vertical_triangle_r [1023:0];//32^2
+reg [2:0] vertical_triangle_g [1023:0];//32^2
+reg [2:0] vertical_triangle_b [1023:0];//32^2
+
+reg [2:0] horizontal_triangle_r [1023:0];//32^2
+reg [2:0] horizontal_triangle_g [1023:0];//32^2
+reg [2:0] horizontal_triangle_b [1023:0];//32^2
+
+reg [2:0] circle_r [1023:0];//32^2
+reg [2:0] circle_g [1023:0];//32^2
+reg [2:0] circle_b [1023:0];//32^2
+
+reg [2:0] right_diagonal_circle_r [1023:0];//32^2
+reg [2:0] right_diagonal_circle_g [1023:0];//32^2
+reg [2:0] right_diagonal_circle_b [1023:0];//32^2
+
+reg [2:0] left_diagonal_circle_r [1023:0];//32^2
+reg [2:0] left_diagonal_circle_g [1023:0];//32^2
+reg [2:0] left_diagonal_circle_b [1023:0];//32^2
+
+reg [2:0] vertical_circle_r [1023:0];//32^2
+reg [2:0] vertical_circle_g [1023:0];//32^2
+reg [2:0] vertical_circle_b [1023:0];//32^2
+
+reg [2:0] horizontal_circle_r [1023:0];//32^2
+reg [2:0] horizontal_circle_g [1023:0];//32^2
+reg [2:0] horizontal_circle_b [1023:0];//32^2
 
 reg [2:0] grid_letters_r [7999:0];//320x25
 reg [2:0] grid_letters_g [7999:0];//320x25
@@ -102,10 +142,50 @@ parameter circle_last_cell_lst = 1; //y
 initial
 	begin
 		// import image pixels from .mem files
-		$readmemb("memb_files/triangle_dummy_r.txt",triangle_r);
-		$readmemb("memb_files/triangle_dummy_g.txt",triangle_g);
-		$readmemb("memb_files/triangle_dummy_b.txt",triangle_b);
+		$readmemb("memb_files/deadzone_r.txt",deadzone_r);
+		$readmemb("memb_files/deadzone_g.txt",deadzone_g);
+		$readmemb("memb_files/deadzone_b.txt",deadzone_b);
+
+		$readmemb("memb_files/circle_r.txt",circle_r);
+		$readmemb("memb_files/circle_g.txt",circle_g);
+		$readmemb("memb_files/circle_b.txt",circle_b);
+
+		$readmemb("memb_files/right_diagonal_circle_r.txt",right_diagonal_circle_r);
+		$readmemb("memb_files/right_diagonal_circle_g.txt",right_diagonal_circle_g);
+		$readmemb("memb_files/right_diagonal_circle_b.txt",right_diagonal_circle_b);
 		
+		$readmemb("memb_files/left_diagonal_circle_r.txt",left_diagonal_circle_r);
+		$readmemb("memb_files/left_diagonal_circle_g.txt",left_diagonal_circle_g);
+		$readmemb("memb_files/left_diagonal_circle_b.txt",left_diagonal_circle_b);
+
+		$readmemb("memb_files/vertical_circle_r.txt",vertical_circle_r);
+		$readmemb("memb_files/vertical_circle_g.txt",vertical_circle_g);
+		$readmemb("memb_files/vertical_circle_b.txt",vertical_circle_b);
+
+		$readmemb("memb_files/horizontal_circle_r.txt",horizontal_circle_r);
+		$readmemb("memb_files/horizontal_circle_g.txt",horizontal_circle_g);
+		$readmemb("memb_files/horizontal_circle_b.txt",horizontal_circle_b);
+		
+		$readmemb("memb_files/triangle_r.txt",triangle_r);
+		$readmemb("memb_files/triangle_g.txt",triangle_g);
+		$readmemb("memb_files/triangle_b.txt",triangle_b);
+
+		$readmemb("memb_files/right_diagonal_triangle_r.txt",right_diagonal_triangle_r);
+		$readmemb("memb_files/right_diagonal_triangle_g.txt",right_diagonal_triangle_g);
+		$readmemb("memb_files/right_diagonal_triangle_b.txt",right_diagonal_triangle_b);
+		
+		$readmemb("memb_files/left_diagonal_triangle_r.txt",left_diagonal_triangle_r);
+		$readmemb("memb_files/left_diagonal_triangle_g.txt",left_diagonal_triangle_g);
+		$readmemb("memb_files/left_diagonal_triangle_b.txt",left_diagonal_triangle_b);
+
+		$readmemb("memb_files/vertical_triangle_r.txt",vertical_triangle_r);
+		$readmemb("memb_files/vertical_triangle_g.txt",vertical_triangle_g);
+		$readmemb("memb_files/vertical_triangle_b.txt",vertical_triangle_b);
+
+		$readmemb("memb_files/horizontal_triangle_r.txt",horizontal_triangle_r);
+		$readmemb("memb_files/horizontal_triangle_g.txt",horizontal_triangle_g);
+		$readmemb("memb_files/horizontal_triangle_b.txt",horizontal_triangle_b);
+	
 		$readmemb("memb_files/triangle_turn_active_r.txt",triangle_turn_active_r);
 		$readmemb("memb_files/triangle_turn_active_g.txt",triangle_turn_active_g);
 		$readmemb("memb_files/triangle_turn_active_b.txt",triangle_turn_active_b);

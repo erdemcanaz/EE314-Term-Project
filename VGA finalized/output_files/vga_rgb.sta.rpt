@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for vga_rgb
-Thu Jun 22 04:55:34 2023
+Thu Jun 22 06:12:41 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -121,7 +121,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+---------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                      ; Note ;
 +------------+-----------------+---------------------------------+------+
-; 310.27 MHz ; 310.27 MHz      ; clock_divider:instance_1|clk_25 ;      ;
+; 318.07 MHz ; 318.07 MHz      ; clock_divider:instance_1|clk_25 ;      ;
 +------------+-----------------+---------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -137,8 +137,8 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_divider:instance_1|clk_25 ; -2.223 ; -58.876       ;
-; clock_builtin_50MHZ             ; -0.203 ; -0.203        ;
+; clock_divider:instance_1|clk_25 ; -2.144 ; -56.537       ;
+; clock_builtin_50MHZ             ; -0.069 ; -0.069        ;
 +---------------------------------+--------+---------------+
 
 
@@ -147,8 +147,8 @@ HTML report is unavailable in plain text report export.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_builtin_50MHZ             ; -0.970 ; -0.970        ;
-; clock_divider:instance_1|clk_25 ; 0.839  ; 0.000         ;
+; clock_builtin_50MHZ             ; -1.220 ; -1.220        ;
+; clock_divider:instance_1|clk_25 ; 0.811  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -169,8 +169,8 @@ No paths to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_divider:instance_1|clk_25 ; -0.394 ; -15.435       ;
-; clock_builtin_50MHZ             ; -0.394 ; -0.747        ;
+; clock_builtin_50MHZ             ; -0.440 ; -0.834        ;
+; clock_divider:instance_1|clk_25 ; -0.394 ; -15.535       ;
 +---------------------------------+--------+---------------+
 
 
@@ -179,37 +179,37 @@ No paths to report.
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 38.783 ; 41.145 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 14.188 ; 15.683 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 13.844 ; 15.338 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 14.075 ; 15.576 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 14.148 ; 15.680 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 13.711 ; 15.182 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 38.783 ; 41.145 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 37.102 ; 38.644 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 35.504 ; 36.972 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 6.840  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 38.044 ; 40.620 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 14.392 ; 15.897 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 14.400 ; 15.912 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 14.072 ; 15.566 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 14.380 ; 15.888 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 14.322 ; 15.776 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 38.044 ; 40.620 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 35.915 ; 37.942 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 36.994 ; 39.206 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 13.694 ; 16.728 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 37.573 ; 39.473 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 14.181 ; 15.699 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 14.111 ; 15.626 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 13.848 ; 15.333 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 14.197 ; 15.712 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 14.211 ; 15.722 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 35.756 ; 36.763 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 37.573 ; 39.473 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 35.769 ; 36.851 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 10.385 ; 11.124 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 7.573  ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 38.813 ; 40.821 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 14.718 ; 16.084 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 14.860 ; 16.190 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 14.820 ; 16.160 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 14.652 ; 16.022 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 14.859 ; 16.193 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 38.652 ; 40.419 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 38.813 ; 40.821 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 38.681 ; 40.342 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 6.755  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 38.940 ; 41.844 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 14.889 ; 16.250 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 14.899 ; 16.265 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 14.819 ; 16.150 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 14.879 ; 16.241 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 14.821 ; 16.129 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 37.869 ; 40.105 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 38.940 ; 41.844 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 37.724 ; 39.756 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 14.366 ; 16.877 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 40.427 ; 42.755 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 14.699 ; 16.061 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 14.627 ; 15.988 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 14.585 ; 15.911 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 14.830 ; 16.147 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 14.748 ; 16.134 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 38.001 ; 39.429 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 40.427 ; 42.755 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 40.345 ; 42.718 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 11.200 ; 11.759 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 7.466  ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 
 
@@ -218,37 +218,37 @@ No paths to report.
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 8.619  ; 9.099  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 9.862  ; 11.110 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 9.539  ; 10.785 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 9.742  ; 10.991 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 9.804  ; 11.081 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 9.416  ; 10.657 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 10.991 ; 12.668 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 8.619  ; 9.172  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 8.668  ; 9.099  ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 6.355  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 9.739  ; 10.981 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 10.029 ; 11.282 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 10.037 ; 11.297 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 9.739  ; 10.981 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 10.019 ; 11.274 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 9.976  ; 11.185 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 11.985 ; 13.840 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 10.626 ; 11.981 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 10.948 ; 12.381 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 11.116 ; 13.137 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 8.747  ; 9.227  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 9.844  ; 11.109 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 9.775  ; 11.036 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 9.543  ; 10.779 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 9.855  ; 11.102 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 9.882  ; 11.146 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 8.747  ; 9.227  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 10.623 ; 11.961 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 8.857  ; 9.349  ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 7.727  ; 8.161  ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 6.969  ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 10.165 ; 11.543 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 10.234 ; 11.609 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 10.355 ; 11.696 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 10.311 ; 11.658 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 10.165 ; 11.543 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 10.355 ; 11.700 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 11.346 ; 12.775 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 11.015 ; 12.371 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 11.457 ; 12.798 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 6.279  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 10.309 ; 11.640 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 10.372 ; 11.737 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 10.381 ; 11.752 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 10.309 ; 11.648 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 10.363 ; 11.729 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 10.320 ; 11.640 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 12.072 ; 13.499 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 12.972 ; 14.998 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 12.127 ; 13.543 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 12.047 ; 14.376 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 10.105 ; 10.835 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 10.214 ; 11.586 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 10.143 ; 11.513 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 10.105 ; 11.442 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 10.328 ; 11.656 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 10.261 ; 11.655 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 10.221 ; 10.835 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 11.682 ; 13.067 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 11.717 ; 13.099 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 7.862  ; 8.277  ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 6.889  ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 
 
@@ -263,7 +263,7 @@ No synchronizer chains to report.
 +------------+-----------------+---------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                      ; Note ;
 +------------+-----------------+---------------------------------+------+
-; 304.23 MHz ; 304.23 MHz      ; clock_divider:instance_1|clk_25 ;      ;
+; 310.17 MHz ; 310.17 MHz      ; clock_divider:instance_1|clk_25 ;      ;
 +------------+-----------------+---------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -273,8 +273,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_divider:instance_1|clk_25 ; -2.287 ; -59.117       ;
-; clock_builtin_50MHZ             ; -0.281 ; -0.281        ;
+; clock_divider:instance_1|clk_25 ; -2.224 ; -56.655       ;
+; clock_builtin_50MHZ             ; -0.137 ; -0.137        ;
 +---------------------------------+--------+---------------+
 
 
@@ -283,8 +283,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_builtin_50MHZ             ; -0.864 ; -0.864        ;
-; clock_divider:instance_1|clk_25 ; 0.827  ; 0.000         ;
+; clock_builtin_50MHZ             ; -1.130 ; -1.130        ;
+; clock_divider:instance_1|clk_25 ; 0.774  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -305,8 +305,8 @@ No paths to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_divider:instance_1|clk_25 ; -0.394 ; -15.436       ;
-; clock_builtin_50MHZ             ; -0.394 ; -0.745        ;
+; clock_builtin_50MHZ             ; -0.437 ; -0.831        ;
+; clock_divider:instance_1|clk_25 ; -0.394 ; -15.371       ;
 +---------------------------------+--------+---------------+
 
 
@@ -315,37 +315,37 @@ No paths to report.
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 39.363 ; 41.810 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 13.970 ; 15.543 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 13.668 ; 15.204 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 13.890 ; 15.437 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 13.963 ; 15.550 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 13.555 ; 15.057 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 39.363 ; 41.810 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 37.430 ; 39.000 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 35.723 ; 37.262 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 6.351  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 38.353 ; 41.010 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 14.182 ; 15.758 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 14.199 ; 15.774 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 13.878 ; 15.427 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 14.178 ; 15.750 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 14.101 ; 15.628 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 38.353 ; 41.010 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 36.144 ; 38.386 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 37.236 ; 39.567 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 13.687 ; 16.806 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 37.896 ; 39.859 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 13.964 ; 15.560 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 13.928 ; 15.488 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 13.671 ; 15.195 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 13.991 ; 15.566 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 13.999 ; 15.586 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 35.797 ; 36.917 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 37.896 ; 39.859 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 35.861 ; 37.011 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 9.891  ; 10.661 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 7.169  ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 39.290 ; 41.375 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 14.510 ; 16.015 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 14.657 ; 16.115 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 14.626 ; 16.086 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 14.477 ; 15.959 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 14.665 ; 16.116 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 39.193 ; 41.043 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 39.290 ; 41.375 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 39.268 ; 40.961 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 6.283  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 39.533 ; 42.512 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 14.694 ; 16.179 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 14.711 ; 16.194 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 14.615 ; 16.076 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 14.689 ; 16.170 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 14.612 ; 16.048 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 38.162 ; 40.535 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 39.533 ; 42.512 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 38.157 ; 40.292 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 14.356 ; 16.888 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 40.943 ; 43.379 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 14.488 ; 15.989 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 14.453 ; 15.916 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 14.400 ; 15.837 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 14.623 ; 16.068 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 14.551 ; 16.073 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 38.199 ; 39.714 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 40.943 ; 43.379 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 40.851 ; 43.330 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 10.680 ; 11.336 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 7.067  ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 
 
@@ -354,37 +354,37 @@ No paths to report.
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 8.131  ; 8.603  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 9.557  ; 10.892 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 9.275  ; 10.573 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 9.471  ; 10.775 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 9.534  ; 10.874 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 9.172  ; 10.447 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 10.824 ; 12.469 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 8.131  ; 8.675  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 8.175  ; 8.603  ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 5.893  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 9.459  ; 10.765 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 9.735  ; 11.066 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 9.751  ; 11.081 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 9.459  ; 10.765 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 9.732  ; 11.059 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 9.669  ; 10.959 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 11.786 ; 13.656 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 10.327 ; 11.725 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 10.655 ; 12.154 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 10.993 ; 12.992 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 8.249  ; 8.725  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 9.541  ; 10.892 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 9.505  ; 10.821 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 9.277  ; 10.563 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 9.561  ; 10.885 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 9.582  ; 10.931 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 8.249  ; 8.725  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 10.333 ; 11.707 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 8.367  ; 8.851  ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 7.281  ; 7.708  ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 6.547  ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 9.925  ; 11.334 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 9.961  ; 11.395 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 10.088 ; 11.476 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 10.055 ; 11.441 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 9.925  ; 11.334 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 10.097 ; 11.478 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 11.100 ; 12.571 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 10.751 ; 12.147 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 11.206 ; 12.596 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 5.833  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 10.042 ; 11.415 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 10.113 ; 11.522 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 10.130 ; 11.538 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 10.042 ; 11.431 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 10.110 ; 11.516 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 10.047 ; 11.415 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 11.787 ; 13.299 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 12.819 ; 14.892 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 11.840 ; 13.373 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 11.931 ; 14.237 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 9.702  ; 10.361 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 9.938  ; 11.368 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 9.904  ; 11.296 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 9.854  ; 11.224 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 10.057 ; 11.433 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 9.998  ; 11.448 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 9.702  ; 10.361 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 11.406 ; 12.869 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 11.449 ; 12.886 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 7.391  ; 7.776  ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 6.454  ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 
 
@@ -399,8 +399,8 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_divider:instance_1|clk_25 ; -0.973 ; -24.506       ;
-; clock_builtin_50MHZ             ; -0.363 ; -0.363        ;
+; clock_divider:instance_1|clk_25 ; -0.903 ; -23.911       ;
+; clock_builtin_50MHZ             ; -0.269 ; -0.269        ;
 +---------------------------------+--------+---------------+
 
 
@@ -409,8 +409,8 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_builtin_50MHZ             ; -0.374 ; -0.374        ;
-; clock_divider:instance_1|clk_25 ; 0.425  ; 0.000         ;
+; clock_builtin_50MHZ             ; -0.564 ; -0.564        ;
+; clock_divider:instance_1|clk_25 ; 0.391  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -431,8 +431,8 @@ No paths to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_builtin_50MHZ             ; -0.341 ; -0.341        ;
-; clock_divider:instance_1|clk_25 ; 0.151  ; 0.000         ;
+; clock_builtin_50MHZ             ; -0.419 ; -0.490        ;
+; clock_divider:instance_1|clk_25 ; 0.087  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -441,77 +441,77 @@ No paths to report.
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 25.076 ; 27.277 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 9.399  ; 10.648 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 9.232  ; 10.448 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 9.355  ; 10.619 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 9.417  ; 10.688 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 9.156  ; 10.372 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 25.076 ; 27.277 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 23.546 ; 24.947 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 22.642 ; 23.903 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 4.205  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 24.486 ; 26.963 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 9.557  ; 10.831 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 9.553  ; 10.851 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 9.365  ; 10.604 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 9.537  ; 10.832 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 9.501  ; 10.735 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 24.486 ; 26.963 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 23.097 ; 24.916 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 23.743 ; 25.837 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 9.267  ; 11.999 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 23.606 ; 25.689 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 9.415  ; 10.679 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 9.379  ; 10.654 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 9.235  ; 10.448 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 9.428  ; 10.689 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 9.412  ; 10.675 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 22.028 ; 22.984 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 23.606 ; 25.689 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 21.965 ; 23.047 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 6.439  ; 7.126  ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 4.902  ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 24.597 ; 26.765 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 9.429  ; 10.750 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 9.550  ; 10.856 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 9.509  ; 10.844 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 9.424  ; 10.740 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 9.538  ; 10.868 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 24.564 ; 26.353 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 24.597 ; 26.765 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 24.589 ; 26.249 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 4.149  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 24.609 ; 27.312 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 9.575  ; 10.904 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 9.570  ; 10.925 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 9.519  ; 10.828 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 9.555  ; 10.906 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 9.519  ; 10.808 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 23.825 ; 25.915 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 24.609 ; 27.312 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 23.802 ; 25.814 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 9.728  ; 12.053 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 26.183 ; 28.460 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 9.434  ; 10.749 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 9.397  ; 10.724 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 9.385  ; 10.665 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 9.525  ; 10.820 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 9.447  ; 10.785 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 24.195 ; 25.572 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 26.183 ; 28.428 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 26.180 ; 28.460 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 7.070  ; 7.504  ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 4.817  ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                                                                    ;
-+-----------------+---------------------------------+-------+-------+------------+---------------------------------+
-; Data Port       ; Clock Port                      ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
-+-----------------+---------------------------------+-------+-------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 5.261 ; 5.718 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 6.432 ; 7.600 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 6.277 ; 7.412 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 6.384 ; 7.563 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 6.439 ; 7.621 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 6.203 ; 7.350 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 7.233 ; 8.804 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 5.261 ; 5.783 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 5.275 ; 5.718 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 3.960 ;       ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 6.394 ; 7.547 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 6.569 ; 7.754 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 6.565 ; 7.775 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 6.394 ; 7.547 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 6.550 ; 7.757 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 6.525 ; 7.676 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 7.861 ; 9.635 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 6.828 ; 8.152 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 7.073 ; 8.451 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 7.410 ; 9.292 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 5.315 ; 5.792 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 6.441 ; 7.618 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 6.406 ; 7.593 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 6.279 ; 7.410 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 6.454 ; 7.619 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 6.444 ; 7.625 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 5.315 ; 5.792 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 6.848 ; 8.141 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 5.393 ; 5.906 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 4.717 ; 5.167 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;       ; 4.567 ; Fall       ; clock_divider:instance_1|clk_25 ;
-+-----------------+---------------------------------+-------+-------+------------+---------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                     ;
++-----------------+---------------------------------+-------+--------+------------+---------------------------------+
+; Data Port       ; Clock Port                      ; Rise  ; Fall   ; Clock Edge ; Clock Reference                 ;
++-----------------+---------------------------------+-------+--------+------------+---------------------------------+
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 6.718 ; 8.002  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 6.725 ; 8.014  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 6.834 ; 8.109  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 6.791 ; 8.090  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 6.718 ; 8.002  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 6.823 ; 8.121  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 7.286 ; 8.610  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 7.063 ; 8.296  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 7.370 ; 8.598  ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 3.910 ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 6.800 ; 8.064  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 6.850 ; 8.143  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 6.845 ; 8.163  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 6.800 ; 8.075  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 6.831 ; 8.145  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 6.806 ; 8.064  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 7.728 ; 9.084  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 8.466 ; 10.328 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 7.746 ; 9.090  ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 8.020 ; 10.161 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 6.282 ; 6.864  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 6.729 ; 8.013  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 6.693 ; 7.989  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 6.682 ; 7.933  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 6.811 ; 8.075  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 6.741 ; 8.047  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 6.282 ; 6.864  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 7.501 ; 8.812  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 7.558 ; 8.877  ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 4.886 ; 5.270  ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;       ; 4.499  ; Fall       ; clock_divider:instance_1|clk_25 ;
++-----------------+---------------------------------+-------+--------+------------+---------------------------------+
 
 
 ----------------------------------------------
@@ -525,8 +525,8 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_divider:instance_1|clk_25 ; -0.901 ; -22.223       ;
-; clock_builtin_50MHZ             ; -0.298 ; -0.298        ;
+; clock_divider:instance_1|clk_25 ; -0.827 ; -21.456       ;
+; clock_builtin_50MHZ             ; -0.190 ; -0.190        ;
 +---------------------------------+--------+---------------+
 
 
@@ -535,8 +535,8 @@ No synchronizer chains to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_builtin_50MHZ             ; -0.415 ; -0.415        ;
-; clock_divider:instance_1|clk_25 ; 0.391  ; 0.000         ;
+; clock_builtin_50MHZ             ; -0.604 ; -0.604        ;
+; clock_divider:instance_1|clk_25 ; 0.344  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -557,8 +557,8 @@ No paths to report.
 +---------------------------------+--------+---------------+
 ; Clock                           ; Slack  ; End Point TNS ;
 +---------------------------------+--------+---------------+
-; clock_builtin_50MHZ             ; -0.345 ; -0.349        ;
-; clock_divider:instance_1|clk_25 ; 0.148  ; 0.000         ;
+; clock_builtin_50MHZ             ; -0.412 ; -0.484        ;
+; clock_divider:instance_1|clk_25 ; 0.100  ; 0.000         ;
 +---------------------------------+--------+---------------+
 
 
@@ -567,37 +567,37 @@ No paths to report.
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 23.699 ; 25.583 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 8.879  ; 9.878  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 8.709  ; 9.687  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 8.807  ; 9.844  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 8.876  ; 9.912  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 8.641  ; 9.627  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 23.699 ; 25.583 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 22.014 ; 23.221 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 21.142 ; 22.235 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 3.760  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 23.066 ; 25.191 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 8.993  ; 10.041 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 8.985  ; 10.063 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 8.820  ; 9.828  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 8.970  ; 10.045 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 8.934  ; 9.947  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 23.066 ; 25.191 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 21.733 ; 23.269 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 22.354 ; 24.141 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 8.862  ; 11.222 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 22.316 ; 24.105 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 8.884  ; 9.899  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 8.832  ; 9.879  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 8.713  ; 9.687  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 8.875  ; 9.904  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 8.895  ; 9.905  ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 20.452 ; 21.325 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 22.316 ; 24.105 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 20.415 ; 21.397 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 5.813  ; 6.427  ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 4.371  ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 23.240 ; 25.084 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 8.925  ; 10.025 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 8.996  ; 10.114 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 8.955  ; 10.101 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 8.895  ; 10.010 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 8.983  ; 10.126 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 23.191 ; 24.745 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 23.207 ; 25.084 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 23.240 ; 24.631 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 3.711  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 23.283 ; 25.585 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 9.024  ; 10.162 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 9.017  ; 10.183 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 8.968  ; 10.085 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 9.002  ; 10.166 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 8.966  ; 10.067 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 22.421 ; 24.240 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 23.283 ; 25.585 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 22.455 ; 24.162 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 9.291  ; 11.224 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 24.742 ; 26.675 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 8.916  ; 10.014 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 8.863  ; 9.994  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 8.852  ; 9.936  ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 8.971  ; 10.078 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 8.946  ; 10.061 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 22.621 ; 23.828 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 24.742 ; 26.656 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 24.727 ; 26.675 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 6.381  ; 6.795  ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 4.294  ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 
 
@@ -606,37 +606,37 @@ No paths to report.
 +-----------------+---------------------------------+-------+-------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+-------+-------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 4.740 ; 5.116 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 6.044 ; 6.990 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 5.883 ; 6.811 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 5.968 ; 6.951 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 6.030 ; 7.008 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 5.817 ; 6.759 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 6.847 ; 8.136 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 4.740 ; 5.174 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 4.743 ; 5.116 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 3.542 ;       ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 5.981 ; 6.935 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 6.139 ; 7.129 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 6.131 ; 7.150 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 5.981 ; 6.935 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 6.117 ; 7.134 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 6.090 ; 7.050 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 7.424 ; 8.911 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 6.399 ; 7.496 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 6.636 ; 7.783 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 7.063 ; 8.580 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 4.778 ; 5.181 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 6.042 ; 7.001 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 5.990 ; 6.981 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 5.886 ; 6.809 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 6.032 ; 7.000 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 6.058 ; 7.015 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 4.778 ; 5.181 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 6.414 ; 7.492 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 4.848 ; 5.289 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 4.237 ; 4.605 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;       ; 4.048 ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 6.306 ; 7.366 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 6.337 ; 7.384 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 6.399 ; 7.462 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 6.356 ; 7.446 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 6.306 ; 7.366 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 6.386 ; 7.475 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 6.864 ; 7.970 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 6.660 ; 7.668 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 6.940 ; 7.962 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 3.498 ;       ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 6.369 ; 7.419 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 6.419 ; 7.498 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 6.412 ; 7.519 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 6.369 ; 7.429 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 6.398 ; 7.503 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 6.371 ; 7.419 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 7.264 ; 8.415 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 8.043 ; 9.606 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 7.305 ; 8.430 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 7.652 ; 9.399 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 5.717 ; 6.231 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 6.328 ; 7.373 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 6.276 ; 7.353 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 6.266 ; 7.299 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 6.376 ; 7.429 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 6.356 ; 7.416 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 5.717 ; 6.231 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 7.060 ; 8.168 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 7.118 ; 8.234 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 4.358 ; 4.689 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;       ; 3.976 ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+-------+-------+------------+---------------------------------+
 
 
@@ -651,12 +651,12 @@ No synchronizer chains to report.
 +----------------------------------+---------+--------+----------+---------+---------------------+
 ; Clock                            ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------+---------+--------+----------+---------+---------------------+
-; Worst-case Slack                 ; -2.287  ; -0.970 ; N/A      ; N/A     ; -0.394              ;
-;  clock_builtin_50MHZ             ; -0.363  ; -0.970 ; N/A      ; N/A     ; -0.394              ;
-;  clock_divider:instance_1|clk_25 ; -2.287  ; 0.391  ; N/A      ; N/A     ; -0.394              ;
-; Design-wide TNS                  ; -59.398 ; -0.97  ; 0.0      ; 0.0     ; -16.182             ;
-;  clock_builtin_50MHZ             ; -0.363  ; -0.970 ; N/A      ; N/A     ; -0.747              ;
-;  clock_divider:instance_1|clk_25 ; -59.117 ; 0.000  ; N/A      ; N/A     ; -15.436             ;
+; Worst-case Slack                 ; -2.224  ; -1.220 ; N/A      ; N/A     ; -0.440              ;
+;  clock_builtin_50MHZ             ; -0.269  ; -1.220 ; N/A      ; N/A     ; -0.440              ;
+;  clock_divider:instance_1|clk_25 ; -2.224  ; 0.344  ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS                  ; -56.792 ; -1.22  ; 0.0      ; 0.0     ; -16.369             ;
+;  clock_builtin_50MHZ             ; -0.269  ; -1.220 ; N/A      ; N/A     ; -0.834              ;
+;  clock_divider:instance_1|clk_25 ; -56.655 ; 0.000  ; N/A      ; N/A     ; -15.535             ;
 +----------------------------------+---------+--------+----------+---------+---------------------+
 
 
@@ -665,37 +665,37 @@ No synchronizer chains to report.
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 39.363 ; 41.810 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 14.188 ; 15.683 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 13.844 ; 15.338 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 14.075 ; 15.576 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 14.148 ; 15.680 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 13.711 ; 15.182 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 39.363 ; 41.810 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 37.430 ; 39.000 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 35.723 ; 37.262 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 6.840  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 38.353 ; 41.010 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 14.392 ; 15.897 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 14.400 ; 15.912 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 14.072 ; 15.566 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 14.380 ; 15.888 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 14.322 ; 15.776 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 38.353 ; 41.010 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 36.144 ; 38.386 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 37.236 ; 39.567 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 13.694 ; 16.806 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 37.896 ; 39.859 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 14.181 ; 15.699 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 14.111 ; 15.626 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 13.848 ; 15.333 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 14.197 ; 15.712 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 14.211 ; 15.722 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 35.797 ; 36.917 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 37.896 ; 39.859 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 35.861 ; 37.011 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 10.385 ; 11.124 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 7.573  ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 39.290 ; 41.375 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 14.718 ; 16.084 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 14.860 ; 16.190 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 14.820 ; 16.160 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 14.652 ; 16.022 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 14.859 ; 16.193 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 39.193 ; 41.043 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 39.290 ; 41.375 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 39.268 ; 40.961 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 6.755  ;        ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 39.533 ; 42.512 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 14.889 ; 16.250 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 14.899 ; 16.265 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 14.819 ; 16.150 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 14.879 ; 16.241 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 14.821 ; 16.129 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 38.162 ; 40.535 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 39.533 ; 42.512 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 38.157 ; 40.292 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 14.366 ; 16.888 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 40.943 ; 43.379 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 14.699 ; 16.061 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 14.627 ; 15.988 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 14.585 ; 15.911 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 14.830 ; 16.147 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 14.748 ; 16.134 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 38.199 ; 39.714 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 40.943 ; 43.379 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 40.851 ; 43.330 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 11.200 ; 11.759 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;        ; 7.466  ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+--------+--------+------------+---------------------------------+
 
 
@@ -704,37 +704,37 @@ No synchronizer chains to report.
 +-----------------+---------------------------------+-------+-------+------------+---------------------------------+
 ; Data Port       ; Clock Port                      ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
 +-----------------+---------------------------------+-------+-------+------------+---------------------------------+
-; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 4.740 ; 5.116 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 6.044 ; 6.990 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 5.883 ; 6.811 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 5.968 ; 6.951 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 6.030 ; 7.008 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 5.817 ; 6.759 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 6.847 ; 8.136 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 4.740 ; 5.174 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 4.743 ; 5.116 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 3.542 ;       ; Rise       ; clock_divider:instance_1|clk_25 ;
-; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 5.981 ; 6.935 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 6.139 ; 7.129 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 6.131 ; 7.150 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 5.981 ; 6.935 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 6.117 ; 7.134 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 6.090 ; 7.050 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 7.424 ; 8.911 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 6.399 ; 7.496 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 6.636 ; 7.783 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; h_sync          ; clock_divider:instance_1|clk_25 ; 7.063 ; 8.580 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 4.778 ; 5.181 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 6.042 ; 7.001 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 5.990 ; 6.981 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 5.886 ; 6.809 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 6.032 ; 7.000 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 6.058 ; 7.015 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 4.778 ; 5.181 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 6.414 ; 7.492 ; Rise       ; clock_divider:instance_1|clk_25 ;
-;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 4.848 ; 5.289 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; v_sync          ; clock_divider:instance_1|clk_25 ; 4.237 ; 4.605 ; Rise       ; clock_divider:instance_1|clk_25 ;
-; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;       ; 4.048 ; Fall       ; clock_divider:instance_1|clk_25 ;
+; blue_8bit[*]    ; clock_divider:instance_1|clk_25 ; 6.306 ; 7.366 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[0]   ; clock_divider:instance_1|clk_25 ; 6.337 ; 7.384 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[1]   ; clock_divider:instance_1|clk_25 ; 6.399 ; 7.462 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[2]   ; clock_divider:instance_1|clk_25 ; 6.356 ; 7.446 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[3]   ; clock_divider:instance_1|clk_25 ; 6.306 ; 7.366 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[4]   ; clock_divider:instance_1|clk_25 ; 6.386 ; 7.475 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[5]   ; clock_divider:instance_1|clk_25 ; 6.864 ; 7.970 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[6]   ; clock_divider:instance_1|clk_25 ; 6.660 ; 7.668 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  blue_8bit[7]   ; clock_divider:instance_1|clk_25 ; 6.940 ; 7.962 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ; 3.498 ;       ; Rise       ; clock_divider:instance_1|clk_25 ;
+; green_8bit[*]   ; clock_divider:instance_1|clk_25 ; 6.369 ; 7.419 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[0]  ; clock_divider:instance_1|clk_25 ; 6.419 ; 7.498 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[1]  ; clock_divider:instance_1|clk_25 ; 6.412 ; 7.519 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[2]  ; clock_divider:instance_1|clk_25 ; 6.369 ; 7.429 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[3]  ; clock_divider:instance_1|clk_25 ; 6.398 ; 7.503 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[4]  ; clock_divider:instance_1|clk_25 ; 6.371 ; 7.419 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[5]  ; clock_divider:instance_1|clk_25 ; 7.264 ; 8.415 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[6]  ; clock_divider:instance_1|clk_25 ; 8.043 ; 9.606 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  green_8bit[7]  ; clock_divider:instance_1|clk_25 ; 7.305 ; 8.430 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; h_sync          ; clock_divider:instance_1|clk_25 ; 7.652 ; 9.399 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; red_8bit[*]     ; clock_divider:instance_1|clk_25 ; 5.717 ; 6.231 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[0]    ; clock_divider:instance_1|clk_25 ; 6.328 ; 7.373 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[1]    ; clock_divider:instance_1|clk_25 ; 6.276 ; 7.353 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[2]    ; clock_divider:instance_1|clk_25 ; 6.266 ; 7.299 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[3]    ; clock_divider:instance_1|clk_25 ; 6.376 ; 7.429 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[4]    ; clock_divider:instance_1|clk_25 ; 6.356 ; 7.416 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[5]    ; clock_divider:instance_1|clk_25 ; 5.717 ; 6.231 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[6]    ; clock_divider:instance_1|clk_25 ; 7.060 ; 8.168 ; Rise       ; clock_divider:instance_1|clk_25 ;
+;  red_8bit[7]    ; clock_divider:instance_1|clk_25 ; 7.118 ; 8.234 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; v_sync          ; clock_divider:instance_1|clk_25 ; 4.358 ; 4.689 ; Rise       ; clock_divider:instance_1|clk_25 ;
+; clock_out_25MHZ ; clock_divider:instance_1|clk_25 ;       ; 3.976 ; Fall       ; clock_divider:instance_1|clk_25 ;
 +-----------------+---------------------------------+-------+-------+------------+---------------------------------+
 
 
@@ -933,7 +933,7 @@ No synchronizer chains to report.
 ; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
 ; clock_divider:instance_1|clk_25 ; clock_builtin_50MHZ             ; 1        ; 1        ; 0        ; 0        ;
-; clock_divider:instance_1|clk_25 ; clock_divider:instance_1|clk_25 ; 626      ; 0        ; 0        ; 0        ;
+; clock_divider:instance_1|clk_25 ; clock_divider:instance_1|clk_25 ; 595      ; 0        ; 0        ; 0        ;
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -944,7 +944,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
 ; clock_divider:instance_1|clk_25 ; clock_builtin_50MHZ             ; 1        ; 1        ; 0        ; 0        ;
-; clock_divider:instance_1|clk_25 ; clock_divider:instance_1|clk_25 ; 626      ; 0        ; 0        ; 0        ;
+; clock_divider:instance_1|clk_25 ; clock_divider:instance_1|clk_25 ; 595      ; 0        ; 0        ; 0        ;
 +---------------------------------+---------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -971,7 +971,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
 ; Unconstrained Output Ports      ; 27    ; 27   ;
-; Unconstrained Output Port Paths ; 408   ; 408  ;
+; Unconstrained Output Port Paths ; 416   ; 416  ;
 +---------------------------------+-------+------+
 
 
@@ -981,7 +981,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Jun 22 04:55:02 2023
+    Info: Processing started: Thu Jun 22 06:12:14 2023
 Info: Command: quartus_sta vga_rgb -c vga_rgb
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -998,23 +998,23 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.223
+Info (332146): Worst-case setup slack is -2.144
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.223             -58.876 clock_divider:instance_1|clk_25 
-    Info (332119):    -0.203              -0.203 clock_builtin_50MHZ 
-Info (332146): Worst-case hold slack is -0.970
+    Info (332119):    -2.144             -56.537 clock_divider:instance_1|clk_25 
+    Info (332119):    -0.069              -0.069 clock_builtin_50MHZ 
+Info (332146): Worst-case hold slack is -1.220
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.970              -0.970 clock_builtin_50MHZ 
-    Info (332119):     0.839               0.000 clock_divider:instance_1|clk_25 
+    Info (332119):    -1.220              -1.220 clock_builtin_50MHZ 
+    Info (332119):     0.811               0.000 clock_divider:instance_1|clk_25 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.394
+Info (332146): Worst-case minimum pulse width slack is -0.440
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -15.435 clock_divider:instance_1|clk_25 
-    Info (332119):    -0.394              -0.747 clock_builtin_50MHZ 
+    Info (332119):    -0.440              -0.834 clock_builtin_50MHZ 
+    Info (332119):    -0.394             -15.535 clock_divider:instance_1|clk_25 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
@@ -1022,23 +1022,23 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.287
+Info (332146): Worst-case setup slack is -2.224
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.287             -59.117 clock_divider:instance_1|clk_25 
-    Info (332119):    -0.281              -0.281 clock_builtin_50MHZ 
-Info (332146): Worst-case hold slack is -0.864
+    Info (332119):    -2.224             -56.655 clock_divider:instance_1|clk_25 
+    Info (332119):    -0.137              -0.137 clock_builtin_50MHZ 
+Info (332146): Worst-case hold slack is -1.130
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.864              -0.864 clock_builtin_50MHZ 
-    Info (332119):     0.827               0.000 clock_divider:instance_1|clk_25 
+    Info (332119):    -1.130              -1.130 clock_builtin_50MHZ 
+    Info (332119):     0.774               0.000 clock_divider:instance_1|clk_25 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.394
+Info (332146): Worst-case minimum pulse width slack is -0.437
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394             -15.436 clock_divider:instance_1|clk_25 
-    Info (332119):    -0.394              -0.745 clock_builtin_50MHZ 
+    Info (332119):    -0.437              -0.831 clock_builtin_50MHZ 
+    Info (332119):    -0.394             -15.371 clock_divider:instance_1|clk_25 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
@@ -1046,50 +1046,50 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.973
+Info (332146): Worst-case setup slack is -0.903
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.973             -24.506 clock_divider:instance_1|clk_25 
-    Info (332119):    -0.363              -0.363 clock_builtin_50MHZ 
-Info (332146): Worst-case hold slack is -0.374
+    Info (332119):    -0.903             -23.911 clock_divider:instance_1|clk_25 
+    Info (332119):    -0.269              -0.269 clock_builtin_50MHZ 
+Info (332146): Worst-case hold slack is -0.564
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.374              -0.374 clock_builtin_50MHZ 
-    Info (332119):     0.425               0.000 clock_divider:instance_1|clk_25 
+    Info (332119):    -0.564              -0.564 clock_builtin_50MHZ 
+    Info (332119):     0.391               0.000 clock_divider:instance_1|clk_25 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.341
+Info (332146): Worst-case minimum pulse width slack is -0.419
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.341              -0.341 clock_builtin_50MHZ 
-    Info (332119):     0.151               0.000 clock_divider:instance_1|clk_25 
+    Info (332119):    -0.419              -0.490 clock_builtin_50MHZ 
+    Info (332119):     0.087               0.000 clock_divider:instance_1|clk_25 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.901
+Info (332146): Worst-case setup slack is -0.827
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.901             -22.223 clock_divider:instance_1|clk_25 
-    Info (332119):    -0.298              -0.298 clock_builtin_50MHZ 
-Info (332146): Worst-case hold slack is -0.415
+    Info (332119):    -0.827             -21.456 clock_divider:instance_1|clk_25 
+    Info (332119):    -0.190              -0.190 clock_builtin_50MHZ 
+Info (332146): Worst-case hold slack is -0.604
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.415              -0.415 clock_builtin_50MHZ 
-    Info (332119):     0.391               0.000 clock_divider:instance_1|clk_25 
+    Info (332119):    -0.604              -0.604 clock_builtin_50MHZ 
+    Info (332119):     0.344               0.000 clock_divider:instance_1|clk_25 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.345
+Info (332146): Worst-case minimum pulse width slack is -0.412
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.345              -0.349 clock_builtin_50MHZ 
-    Info (332119):     0.148               0.000 clock_divider:instance_1|clk_25 
+    Info (332119):    -0.412              -0.484 clock_builtin_50MHZ 
+    Info (332119):     0.100               0.000 clock_divider:instance_1|clk_25 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 5105 megabytes
-    Info: Processing ended: Thu Jun 22 04:55:34 2023
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 5101 megabytes
+    Info: Processing ended: Thu Jun 22 06:12:41 2023
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:27
 
 

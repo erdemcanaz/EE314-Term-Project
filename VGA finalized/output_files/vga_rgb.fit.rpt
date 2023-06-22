@@ -1,5 +1,5 @@
 Fitter report for vga_rgb
-Thu Jun 22 04:54:45 2023
+Thu Jun 22 06:11:57 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -63,15 +63,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Fitter Summary                                                               ;
 +---------------------------------+--------------------------------------------+
-; Fitter Status                   ; Successful - Thu Jun 22 04:54:45 2023      ;
+; Fitter Status                   ; Successful - Thu Jun 22 06:11:56 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; vga_rgb                                    ;
 ; Top-level Entity Name           ; main_vga_module                            ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Preliminary                                ;
-; Logic utilization (in ALMs)     ; 10,413 / 32,070 ( 32 % )                   ;
-; Total registers                 ; 31                                         ;
+; Logic utilization (in ALMs)     ; 10,431 / 32,070 ( 33 % )                   ;
+; Total registers                 ; 30                                         ;
 ; Total pins                      ; 29 / 457 ( 6 % )                           ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                      ;
@@ -196,13 +196,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Node                                                  ; Action     ; Operation                                         ; Reason                   ; Node Port ; Node Port Name ; Destination Node                                                ; Destination Port ; Destination Port Name ;
 +-------------------------------------------------------+------------+---------------------------------------------------+--------------------------+-----------+----------------+-----------------------------------------------------------------+------------------+-----------------------+
 ; horizontal_and_vertical_counter:instance_2|h_count[0] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|h_count[0]~DUPLICATE ;                  ;                       ;
-; horizontal_and_vertical_counter:instance_2|h_count[1] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|h_count[1]~DUPLICATE ;                  ;                       ;
 ; horizontal_and_vertical_counter:instance_2|h_count[2] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|h_count[2]~DUPLICATE ;                  ;                       ;
-; horizontal_and_vertical_counter:instance_2|h_count[5] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|h_count[5]~DUPLICATE ;                  ;                       ;
+; horizontal_and_vertical_counter:instance_2|h_count[3] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|h_count[3]~DUPLICATE ;                  ;                       ;
+; horizontal_and_vertical_counter:instance_2|h_count[4] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|h_count[4]~DUPLICATE ;                  ;                       ;
 ; horizontal_and_vertical_counter:instance_2|h_count[7] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|h_count[7]~DUPLICATE ;                  ;                       ;
-; horizontal_and_vertical_counter:instance_2|v_count[2] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|v_count[2]~DUPLICATE ;                  ;                       ;
-; horizontal_and_vertical_counter:instance_2|v_count[6] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|v_count[6]~DUPLICATE ;                  ;                       ;
-; horizontal_and_vertical_counter:instance_2|v_count[7] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|v_count[7]~DUPLICATE ;                  ;                       ;
+; horizontal_and_vertical_counter:instance_2|h_count[8] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|h_count[8]~DUPLICATE ;                  ;                       ;
+; horizontal_and_vertical_counter:instance_2|v_count[5] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization ;           ;                ; horizontal_and_vertical_counter:instance_2|v_count[5]~DUPLICATE ;                  ;                       ;
 +-------------------------------------------------------+------------+---------------------------------------------------+--------------------------+-----------+----------------+-----------------------------------------------------------------+------------------+-----------------------+
 
 
@@ -252,24 +251,24 @@ The pin-out file can be found in C:/Users/Levovo20x/Documents/GitHub/EE314-Term-
 +-------------------------------------------------------------+-----------------+-------+
 ; Resource                                                    ; Usage           ; %     ;
 +-------------------------------------------------------------+-----------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 10,413 / 32,070 ; 32 %  ;
-; ALMs needed [=A-B+C]                                        ; 10,413          ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 10,396 / 32,070 ; 32 %  ;
-;         [a] ALMs used for LUT logic and registers           ; 4               ;       ;
-;         [b] ALMs used for LUT logic                         ; 10,384          ;       ;
-;         [c] ALMs used for registers                         ; 8               ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 10,431 / 32,070 ; 33 %  ;
+; ALMs needed [=A-B+C]                                        ; 10,431          ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 10,405 / 32,070 ; 32 %  ;
+;         [a] ALMs used for LUT logic and registers           ; 7               ;       ;
+;         [b] ALMs used for LUT logic                         ; 10,393          ;       ;
+;         [c] ALMs used for registers                         ; 5               ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0               ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 80 / 32,070     ; < 1 % ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 97 / 32,070     ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 85 / 32,070     ; < 1 % ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 111 / 32,070    ; < 1 % ;
 ;         [a] Due to location constrained logic               ; 20              ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0               ;       ;
-;         [c] Due to LAB input limits                         ; 77              ;       ;
+;         [c] Due to LAB input limits                         ; 91              ;       ;
 ;         [d] Due to virtual I/Os                             ; 0               ;       ;
 ;                                                             ;                 ;       ;
 ; Difficulty packing design                                   ; Low             ;       ;
 ;                                                             ;                 ;       ;
-; Total LABs:  partially or completely used                   ; 1,133 / 3,207   ; 35 %  ;
-;     -- Logic LABs                                           ; 1,133           ;       ;
+; Total LABs:  partially or completely used                   ; 1,139 / 3,207   ; 36 %  ;
+;     -- Logic LABs                                           ; 1,139           ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0               ;       ;
 ;                                                             ;                 ;       ;
 ; Combinational ALUT usage for logic                          ; 12,466          ;       ;
@@ -279,13 +278,13 @@ The pin-out file can be found in C:/Users/Levovo20x/Documents/GitHub/EE314-Term-
 ;     -- 4 input functions                                    ; 1,118           ;       ;
 ;     -- <=3 input functions                                  ; 1,987           ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0               ;       ;
-; Dedicated logic registers                                   ; 31              ;       ;
+; Dedicated logic registers                                   ; 30              ;       ;
 ;     -- By type:                                             ;                 ;       ;
 ;         -- Primary logic registers                          ; 23 / 64,140     ; < 1 % ;
-;         -- Secondary logic registers                        ; 8 / 64,140      ; < 1 % ;
+;         -- Secondary logic registers                        ; 7 / 64,140      ; < 1 % ;
 ;     -- By function:                                         ;                 ;       ;
 ;         -- Design implementation registers                  ; 23              ;       ;
-;         -- Routing optimization registers                   ; 8               ;       ;
+;         -- Routing optimization registers                   ; 7               ;       ;
 ;                                                             ;                 ;       ;
 ; Virtual pins                                                ; 0               ;       ;
 ; I/O pins                                                    ; 29 / 457        ; 6 %   ;
@@ -338,10 +337,10 @@ The pin-out file can be found in C:/Users/Levovo20x/Documents/GitHub/EE314-Term-
 ; Impedance control blocks                                    ; 0 / 4           ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2           ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 3% / 3% / 3%    ;       ;
-; Peak interconnect usage (total/H/V)                         ; 13% / 13% / 14% ;       ;
-; Maximum fan-out                                             ; 999             ;       ;
-; Highest non-global fan-out                                  ; 999             ;       ;
-; Total fan-out                                               ; 66862           ;       ;
+; Peak interconnect usage (total/H/V)                         ; 14% / 14% / 12% ;       ;
+; Maximum fan-out                                             ; 995             ;       ;
+; Highest non-global fan-out                                  ; 995             ;       ;
+; Total fan-out                                               ; 66857           ;       ;
 ; Average fan-out                                             ; 5.30            ;       ;
 +-------------------------------------------------------------+-----------------+-------+
 
@@ -351,24 +350,24 @@ The pin-out file can be found in C:/Users/Levovo20x/Documents/GitHub/EE314-Term-
 +-------------------------------------------------------------+------------------------+--------------------------------+
 ; Statistic                                                   ; Top                    ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+------------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 10413 / 32070 ( 32 % ) ; 0 / 32070 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 10413                  ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 10396 / 32070 ( 32 % ) ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 4                      ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 10384                  ; 0                              ;
-;         [c] ALMs used for registers                         ; 8                      ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 10431 / 32070 ( 33 % ) ; 0 / 32070 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 10431                  ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 10405 / 32070 ( 32 % ) ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 7                      ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 10393                  ; 0                              ;
+;         [c] ALMs used for registers                         ; 5                      ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                      ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 80 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 97 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 85 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 111 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 20                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                      ; 0                              ;
-;         [c] Due to LAB input limits                         ; 77                     ; 0                              ;
+;         [c] Due to LAB input limits                         ; 91                     ; 0                              ;
 ;         [d] Due to virtual I/Os                             ; 0                      ; 0                              ;
 ;                                                             ;                        ;                                ;
 ; Difficulty packing design                                   ; Low                    ; Low                            ;
 ;                                                             ;                        ;                                ;
-; Total LABs:  partially or completely used                   ; 1133 / 3207 ( 35 % )   ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 1133                   ; 0                              ;
+; Total LABs:  partially or completely used                   ; 1139 / 3207 ( 36 % )   ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 1139                   ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                      ; 0                              ;
 ;                                                             ;                        ;                                ;
 ; Combinational ALUT usage for logic                          ; 12466                  ; 0                              ;
@@ -385,10 +384,10 @@ The pin-out file can be found in C:/Users/Levovo20x/Documents/GitHub/EE314-Term-
 ; Dedicated logic registers                                   ; 0                      ; 0                              ;
 ;     -- By type:                                             ;                        ;                                ;
 ;         -- Primary logic registers                          ; 23 / 64140 ( < 1 % )   ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 8 / 64140 ( < 1 % )    ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 7 / 64140 ( < 1 % )    ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                        ;                                ;
 ;         -- Design implementation registers                  ; 23                     ; 0                              ;
-;         -- Routing optimization registers                   ; 8                      ; 0                              ;
+;         -- Routing optimization registers                   ; 7                      ; 0                              ;
 ;                                                             ;                        ;                                ;
 ;                                                             ;                        ;                                ;
 ; Virtual pins                                                ; 0                      ; 0                              ;
@@ -405,8 +404,8 @@ The pin-out file can be found in C:/Users/Levovo20x/Documents/GitHub/EE314-Term-
 ;     -- Registered Output Connections                        ; 0                      ; 0                              ;
 ;                                                             ;                        ;                                ;
 ; Internal Connections                                        ;                        ;                                ;
-;     -- Total Connections                                    ; 67168                  ; 0                              ;
-;     -- Registered Connections                               ; 4082                   ; 0                              ;
+;     -- Total Connections                                    ; 67163                  ; 0                              ;
+;     -- Registered Connections                               ; 4081                   ; 0                              ;
 ;                                                             ;                        ;                                ;
 ; External Connections                                        ;                        ;                                ;
 ;     -- Top                                                  ; 0                      ; 0                              ;
@@ -1410,9 +1409,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Library Name ;
 +-------------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------+--------------+
-; |main_vga_module                                ; 10413.0 (10389.8)    ; 10395.0 (10371.0)                ; 79.0 (77.2)                                       ; 97.0 (96.0)                      ; 0.0 (0.0)            ; 12466 (12435)       ; 31 (0)                    ; 0 (0)         ; 0                 ; 0     ; 51         ; 29   ; 0            ; |main_vga_module                                            ; work         ;
-;    |clock_divider:instance_1|                   ; 0.6 (0.6)            ; 0.7 (0.7)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main_vga_module|clock_divider:instance_1                   ; work         ;
-;    |horizontal_and_vertical_counter:instance_2| ; 22.7 (22.7)          ; 23.4 (23.4)                      ; 1.7 (1.7)                                         ; 1.0 (1.0)                        ; 0.0 (0.0)            ; 30 (30)             ; 30 (30)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2 ; work         ;
+; |main_vga_module                                ; 10430.5 (10406.8)    ; 10404.5 (10380.7)                ; 84.5 (83.5)                                       ; 110.5 (109.5)                    ; 0.0 (0.0)            ; 12466 (12435)       ; 30 (0)                    ; 0 (0)         ; 0                 ; 0     ; 51         ; 29   ; 0            ; |main_vga_module                                            ; work         ;
+;    |clock_divider:instance_1|                   ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main_vga_module|clock_divider:instance_1                   ; work         ;
+;    |horizontal_and_vertical_counter:instance_2| ; 23.2 (23.2)          ; 23.4 (23.4)                      ; 1.3 (1.3)                                         ; 1.0 (1.0)                        ; 0.0 (0.0)            ; 30 (30)             ; 29 (29)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2 ; work         ;
 +-------------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1464,16 +1463,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                  ;
-+--------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; Name                                                   ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+--------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; clock_builtin_50MHZ                                    ; PIN_AF14           ; 1       ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; clock_divider:instance_1|clk_25                        ; FF_X29_Y1_N41      ; 32      ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; horizontal_and_vertical_counter:instance_2|LessThan4~0 ; MLABCELL_X28_Y1_N9 ; 30      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; horizontal_and_vertical_counter:instance_2|LessThan5~1 ; LABCELL_X29_Y1_N30 ; 14      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-+--------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                 ;
++--------------------------------------------------------+-------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                   ; Location          ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------------------------------------+-------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; clock_builtin_50MHZ                                    ; PIN_AF14          ; 1       ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; clock_divider:instance_1|clk_25                        ; FF_X35_Y1_N23     ; 31      ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; horizontal_and_vertical_counter:instance_2|LessThan4~0 ; LABCELL_X36_Y1_N0 ; 29      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; horizontal_and_vertical_counter:instance_2|LessThan5~1 ; LABCELL_X35_Y1_N6 ; 12      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
++--------------------------------------------------------+-------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -1481,12 +1480,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------+---------+
 ; Name                                                            ; Fan-Out ;
 +-----------------------------------------------------------------+---------+
-; horizontal_and_vertical_counter:instance_2|h_count[0]           ; 999     ;
-; horizontal_and_vertical_counter:instance_2|h_count[1]           ; 805     ;
-; horizontal_and_vertical_counter:instance_2|h_count[2]           ; 539     ;
-; horizontal_and_vertical_counter:instance_2|h_count[5]~DUPLICATE ; 494     ;
-; horizontal_and_vertical_counter:instance_2|h_count[4]           ; 436     ;
-; horizontal_and_vertical_counter:instance_2|h_count[3]           ; 371     ;
+; horizontal_and_vertical_counter:instance_2|h_count[0]           ; 995     ;
+; horizontal_and_vertical_counter:instance_2|h_count[1]           ; 811     ;
+; horizontal_and_vertical_counter:instance_2|h_count[2]~DUPLICATE ; 543     ;
+; horizontal_and_vertical_counter:instance_2|h_count[5]           ; 499     ;
+; horizontal_and_vertical_counter:instance_2|h_count[4]~DUPLICATE ; 431     ;
+; horizontal_and_vertical_counter:instance_2|h_count[3]~DUPLICATE ; 368     ;
 ; Add61~13                                                        ; 347     ;
 ; Add59~25                                                        ; 347     ;
 ; Add59~13                                                        ; 347     ;
@@ -1748,16 +1747,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add115~49                                                       ; 35      ;
 ; Add115~17                                                       ; 35      ;
 ; Add127~9                                                        ; 33      ;
-; clock_divider:instance_1|clk_25                                 ; 32      ;
-; horizontal_and_vertical_counter:instance_2|LessThan4~0          ; 30      ;
-; horizontal_and_vertical_counter:instance_2|h_count[7]~DUPLICATE ; 27      ;
+; clock_divider:instance_1|clk_25                                 ; 31      ;
+; horizontal_and_vertical_counter:instance_2|LessThan4~0          ; 29      ;
 ; LessThan35~0                                                    ; 27      ;
+; horizontal_and_vertical_counter:instance_2|h_count[7]~DUPLICATE ; 25      ;
 ; number_digits_generic_r.raddr_a[9]~32                           ; 25      ;
 ; horizontal_and_vertical_counter:instance_2|h_count[6]           ; 25      ;
 ; Add131~25                                                       ; 24      ;
 ; triangle_winner_g~2                                             ; 23      ;
 ; Add139~37                                                       ; 23      ;
-; horizontal_and_vertical_counter:instance_2|h_count[8]           ; 23      ;
+; horizontal_and_vertical_counter:instance_2|v_count[6]           ; 23      ;
 ; horizontal_and_vertical_counter:instance_2|v_count[3]           ; 22      ;
 ; horizontal_and_vertical_counter:instance_2|h_count[9]           ; 22      ;
 ; Add140~37                                                       ; 21      ;
@@ -1765,10 +1764,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add122~45                                                       ; 21      ;
 ; Add119~45                                                       ; 21      ;
 ; Add45~5                                                         ; 21      ;
+; horizontal_and_vertical_counter:instance_2|v_count[2]           ; 21      ;
+; horizontal_and_vertical_counter:instance_2|v_count[7]           ; 21      ;
 ; horizontal_and_vertical_counter:instance_2|h_count[10]          ; 21      ;
-; horizontal_and_vertical_counter:instance_2|v_count[6]~DUPLICATE ; 20      ;
 ; horizontal_and_vertical_counter:instance_2|v_count[4]           ; 20      ;
-; horizontal_and_vertical_counter:instance_2|v_count[5]           ; 20      ;
+; horizontal_and_vertical_counter:instance_2|h_count[8]~DUPLICATE ; 19      ;
 ; Add45~41                                                        ; 19      ;
 ; Add45~37                                                        ; 19      ;
 ; Add45~33                                                        ; 19      ;
@@ -1806,24 +1806,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; always0~2                                                       ; 17      ;
 ; Add140~9                                                        ; 17      ;
 ; Add3~25                                                         ; 17      ;
+; horizontal_and_vertical_counter:instance_2|v_count[5]~DUPLICATE ; 16      ;
 ; triangle_turn_active_b~96                                       ; 16      ;
 ; triangle_turn_active_r~94                                       ; 16      ;
 ; triangle_turn_active_r~89                                       ; 16      ;
 ; horizontal_and_vertical_counter:instance_2|v_count[8]           ; 16      ;
-; horizontal_and_vertical_counter:instance_2|v_count[7]~DUPLICATE ; 15      ;
 ; triangle_turn_active_b~61                                       ; 15      ;
 ; triangle_turn_active_g~15                                       ; 15      ;
 ; Add112~41                                                       ; 15      ;
 ; Add14~37                                                        ; 15      ;
 ; Add13~37                                                        ; 15      ;
 ; Add12~37                                                        ; 15      ;
-; horizontal_and_vertical_counter:instance_2|v_count[2]~DUPLICATE ; 14      ;
-; horizontal_and_vertical_counter:instance_2|LessThan5~1          ; 14      ;
 ; triangle_turn_active_b~108                                      ; 14      ;
 ; triangle_turn_active_g~72                                       ; 14      ;
 ; triangle_turn_active_r~54                                       ; 14      ;
 ; always0~27                                                      ; 13      ;
 ; always0~16                                                      ; 13      ;
+; horizontal_and_vertical_counter:instance_2|LessThan5~1          ; 12      ;
 ; triangle_turn_active_b~113                                      ; 12      ;
 ; triangle_turn_active_b~20                                       ; 12      ;
 ; number_digits_generic_b.raddr_a[9]~29                           ; 12      ;
@@ -1853,6 +1852,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; circle_turn_pasive_g~14                                         ; 11      ;
 ; triangle_turn_active_r~65                                       ; 11      ;
 ; circle_turn_pasive_r~14                                         ; 11      ;
+; horizontal_and_vertical_counter:instance_2|h_count[0]~DUPLICATE ; 10      ;
 ; triangle_turn_active_b~64                                       ; 10      ;
 ; circle_turn_pasive_b~52                                         ; 10      ;
 ; triangle_turn_active_g~56                                       ; 10      ;
@@ -1865,18 +1865,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; triangle_turn_active_b~34                                       ; 9       ;
 ; triangle_turn_active_g~32                                       ; 9       ;
 ; grid_letters_r~219                                              ; 9       ;
+; red_8bit~379                                                    ; 9       ;
 ; red_8bit~378                                                    ; 9       ;
-; red_8bit~377                                                    ; 9       ;
 ; triangle_turn_active_r~66                                       ; 9       ;
+; red_8bit~12                                                     ; 9       ;
 ; red_8bit~11                                                     ; 9       ;
-; red_8bit~10                                                     ; 9       ;
 ; grid_letters_r~1                                                ; 9       ;
 ; grid_letters_r~0                                                ; 9       ;
 ; red_8bit~3                                                      ; 9       ;
 ; red_8bit~2                                                      ; 9       ;
 ; horizontal_and_vertical_counter:instance_2|v_count[10]          ; 9       ;
 ; horizontal_and_vertical_counter:instance_2|v_count[9]           ; 9       ;
-; horizontal_and_vertical_counter:instance_2|h_count[2]~DUPLICATE ; 8       ;
 ; grid_numbers_b~671                                              ; 8       ;
 ; grid_numbers_b~309                                              ; 8       ;
 ; grid_numbers_r~285                                              ; 8       ;
@@ -1888,7 +1887,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; circle_turn_pasive_g~7                                          ; 8       ;
 ; triangle_winner_r~68                                            ; 8       ;
 ; triangle_turn_active_r~42                                       ; 8       ;
-; red_8bit~7                                                      ; 8       ;
+; red_8bit~8                                                      ; 8       ;
 ; grid_letters_r~27                                               ; 8       ;
 ; circle_turn_pasive_r~16                                         ; 8       ;
 ; circle_turn_pasive_r~7                                          ; 8       ;
@@ -1924,9 +1923,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; circle_turn_pasive_r~41                                         ; 7       ;
 ; triangle_winner_r~6                                             ; 7       ;
 ; Add3~29                                                         ; 7       ;
-; horizontal_and_vertical_counter:instance_2|v_count[2]           ; 7       ;
-; horizontal_and_vertical_counter:instance_2|h_count[0]~DUPLICATE ; 6       ;
-; horizontal_and_vertical_counter:instance_2|h_count[1]~DUPLICATE ; 6       ;
 ; grid_numbers_r~652                                              ; 6       ;
 ; grid_numbers_g~620                                              ; 6       ;
 ; grid_numbers_r~526                                              ; 6       ;
@@ -1979,7 +1975,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add122~49                                                       ; 6       ;
 ; Add119~49                                                       ; 6       ;
 ; Add3~33                                                         ; 6       ;
-; horizontal_and_vertical_counter:instance_2|v_count[7]           ; 6       ;
 ; grid_numbers_r~660                                              ; 5       ;
 ; grid_numbers_r~659                                              ; 5       ;
 ; grid_numbers_g~671                                              ; 5       ;
@@ -2034,13 +2029,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; circle_turn_pasive_r~8                                          ; 5       ;
 ; grid_numbers_r~74                                               ; 5       ;
 ; always0~0                                                       ; 5       ;
-; green_8bit~1202                                                 ; 5       ;
+; red_8bit~1145                                                   ; 5       ;
 ; Add123~1                                                        ; 5       ;
 ; Add122~1                                                        ; 5       ;
 ; Add119~1                                                        ; 5       ;
 ; Add140~5                                                        ; 5       ;
 ; Add140~1                                                        ; 5       ;
-; horizontal_and_vertical_counter:instance_2|h_count[5]           ; 5       ;
+; horizontal_and_vertical_counter:instance_2|h_count[4]           ; 5       ;
 ; grid_numbers_r~650                                              ; 4       ;
 ; grid_numbers_g~665                                              ; 4       ;
 ; grid_numbers_b~653                                              ; 4       ;
@@ -2078,12 +2073,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; triangle_turn_active_g~53                                       ; 4       ;
 ; grid_letters_g~156                                              ; 4       ;
 ; grid_letters_r~253                                              ; 4       ;
-; green_8bit~36                                                   ; 4       ;
+; green_8bit~35                                                   ; 4       ;
 ; grid_letters_r~252                                              ; 4       ;
 ; informative_symbols_g~6                                         ; 4       ;
 ; informative_symbols_r~130                                       ; 4       ;
 ; always0~42                                                      ; 4       ;
-; red_8bit~47                                                     ; 4       ;
+; red_8bit~48                                                     ; 4       ;
 ; triangle_turn_active_r~36                                       ; 4       ;
 ; triangle_turn_active_r~6                                        ; 4       ;
 ; grid_letters_r~29                                               ; 4       ;
@@ -2091,16 +2086,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; grid_letters_r~4                                                ; 4       ;
 ; grid_numbers_r~72                                               ; 4       ;
 ; grid_numbers_r~6                                                ; 4       ;
-; red_8bit~5                                                      ; 4       ;
+; red_8bit~6                                                      ; 4       ;
 ; informative_symbols_r~5                                         ; 4       ;
 ; triangle_winner_g~1                                             ; 4       ;
 ; triangle_winner_g~0                                             ; 4       ;
 ; always0~11                                                      ; 4       ;
 ; Add0~33                                                         ; 4       ;
-; red_8bit~1215                                                   ; 3       ;
-; red_8bit~1177                                                   ; 3       ;
-; green_8bit~1200                                                 ; 3       ;
-; green_8bit~1162                                                 ; 3       ;
+; horizontal_and_vertical_counter:instance_2|h_count[2]           ; 4       ;
+; horizontal_and_vertical_counter:instance_2|v_count[5]           ; 4       ;
+; horizontal_and_vertical_counter:instance_2|h_count[8]           ; 4       ;
+; red_8bit~1220                                                   ; 3       ;
+; red_8bit~1182                                                   ; 3       ;
+; green_8bit~1199                                                 ; 3       ;
+; green_8bit~1161                                                 ; 3       ;
 ; grid_letters_g~335                                              ; 3       ;
 ; informative_symbols_b~579                                       ; 3       ;
 ; blue_8bit~1199                                                  ; 3       ;
@@ -2212,15 +2210,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; triangle_turn_active_g~65                                       ; 3       ;
 ; grid_letters_b~1                                                ; 3       ;
 ; informative_symbols_g~127                                       ; 3       ;
-; green_8bit~280                                                  ; 3       ;
-; green_8bit~212                                                  ; 3       ;
-; green_8bit~205                                                  ; 3       ;
-; green_8bit~187                                                  ; 3       ;
-; green_8bit~120                                                  ; 3       ;
-; green_8bit~100                                                  ; 3       ;
-; green_8bit~31                                                   ; 3       ;
-; green_8bit~24                                                   ; 3       ;
-; green_8bit~5                                                    ; 3       ;
+; green_8bit~279                                                  ; 3       ;
+; green_8bit~211                                                  ; 3       ;
+; green_8bit~204                                                  ; 3       ;
+; green_8bit~186                                                  ; 3       ;
+; green_8bit~119                                                  ; 3       ;
+; green_8bit~99                                                   ; 3       ;
+; green_8bit~30                                                   ; 3       ;
+; green_8bit~23                                                   ; 3       ;
+; green_8bit~4                                                    ; 3       ;
 ; grid_letters_g~76                                               ; 3       ;
 ; grid_letters_g~47                                               ; 3       ;
 ; grid_letters_g~45                                               ; 3       ;
@@ -2237,15 +2235,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; informative_symbols_g~68                                        ; 3       ;
 ; number_digits_generic_g.raddr_a[13]~41                          ; 3       ;
 ; number_digits_generic_g.raddr_a[10]~35                          ; 3       ;
-; red_8bit~291                                                    ; 3       ;
-; red_8bit~223                                                    ; 3       ;
-; red_8bit~216                                                    ; 3       ;
-; red_8bit~198                                                    ; 3       ;
-; red_8bit~131                                                    ; 3       ;
-; red_8bit~111                                                    ; 3       ;
-; red_8bit~42                                                     ; 3       ;
-; red_8bit~35                                                     ; 3       ;
-; red_8bit~16                                                     ; 3       ;
+; red_8bit~292                                                    ; 3       ;
+; red_8bit~224                                                    ; 3       ;
+; red_8bit~217                                                    ; 3       ;
+; red_8bit~199                                                    ; 3       ;
+; red_8bit~132                                                    ; 3       ;
+; red_8bit~112                                                    ; 3       ;
+; red_8bit~43                                                     ; 3       ;
+; red_8bit~36                                                     ; 3       ;
+; red_8bit~17                                                     ; 3       ;
 ; triangle_turn_active_r~55                                       ; 3       ;
 ; grid_letters_r~106                                              ; 3       ;
 ; grid_letters_r~93                                               ; 3       ;
@@ -2342,7 +2340,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add136~45                                                       ; 3       ;
 ; Add102~49                                                       ; 3       ;
 ; Add102~45                                                       ; 3       ;
-; horizontal_and_vertical_counter:instance_2|v_count[6]           ; 3       ;
+; horizontal_and_vertical_counter:instance_2|h_count[3]           ; 3       ;
+; horizontal_and_vertical_counter:instance_2|h_count[7]           ; 3       ;
 ; number_digits_generic_r~706                                     ; 2       ;
 ; triangle_winner_g~369                                           ; 2       ;
 ; informative_symbols_r~572                                       ; 2       ;
@@ -2350,14 +2349,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; grid_letters_r~485                                              ; 2       ;
 ; informative_symbols_r~565                                       ; 2       ;
 ; informative_symbols_r~564                                       ; 2       ;
-; red_8bit~1015                                                   ; 2       ;
-; red_8bit~978                                                    ; 2       ;
+; red_8bit~1016                                                   ; 2       ;
+; red_8bit~979                                                    ; 2       ;
 ; informative_symbols_g~588                                       ; 2       ;
 ; informative_symbols_g~580                                       ; 2       ;
 ; grid_numbers_g~676                                              ; 2       ;
 ; grid_letters_g~334                                              ; 2       ;
-; green_8bit~1000                                                 ; 2       ;
-; green_8bit~963                                                  ; 2       ;
+; green_8bit~999                                                  ; 2       ;
+; green_8bit~962                                                  ; 2       ;
 ; grid_numbers_b~683                                              ; 2       ;
 ; informative_symbols_b~568                                       ; 2       ;
 ; blue_8bit~999                                                   ; 2       ;
@@ -2501,14 +2500,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+---------------------------+
 ; Routing Resource Type                       ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Block interconnects                         ; 17,779 / 289,320 ( 6 % )  ;
-; C12 interconnects                           ; 199 / 13,420 ( 1 % )      ;
-; C2 interconnects                            ; 3,396 / 119,108 ( 3 % )   ;
-; C4 interconnects                            ; 2,391 / 56,300 ( 4 % )    ;
+; Block interconnects                         ; 17,952 / 289,320 ( 6 % )  ;
+; C12 interconnects                           ; 134 / 13,420 ( < 1 % )    ;
+; C2 interconnects                            ; 3,359 / 119,108 ( 3 % )   ;
+; C4 interconnects                            ; 2,410 / 56,300 ( 4 % )    ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )            ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )            ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )            ;
-; Direct links                                ; 1,377 / 289,320 ( < 1 % ) ;
+; Direct links                                ; 1,509 / 289,320 ( < 1 % ) ;
 ; Global clocks                               ; 0 / 16 ( 0 % )            ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )             ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )             ;
@@ -2564,12 +2563,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )             ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )            ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )            ;
-; Local interconnects                         ; 7,919 / 84,580 ( 9 % )    ;
+; Local interconnects                         ; 7,848 / 84,580 ( 9 % )    ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )            ;
-; R14 interconnects                           ; 246 / 12,676 ( 2 % )      ;
-; R14/C12 interconnect drivers                ; 351 / 20,720 ( 2 % )      ;
-; R3 interconnects                            ; 5,040 / 130,992 ( 4 % )   ;
-; R6 interconnects                            ; 7,674 / 266,960 ( 3 % )   ;
+; R14 interconnects                           ; 270 / 12,676 ( 2 % )      ;
+; R14/C12 interconnect drivers                ; 318 / 20,720 ( 2 % )      ;
+; R3 interconnects                            ; 5,100 / 130,992 ( 4 % )   ;
+; R6 interconnects                            ; 8,031 / 266,960 ( 3 % )   ;
 ; Spine clocks                                ; 0 / 360 ( 0 % )           ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )        ;
 +---------------------------------------------+---------------------------+
@@ -2710,7 +2709,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+----------------------+-------------------+
 ; Source Clock(s)     ; Destination Clock(s) ; Delay Added in ns ;
 +---------------------+----------------------+-------------------+
-; clock_builtin_50MHZ ; clock_builtin_50MHZ  ; 2.4               ;
+; clock_builtin_50MHZ ; clock_builtin_50MHZ  ; 2.0               ;
 +---------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
@@ -2721,7 +2720,7 @@ This will disable optimization of problematic paths and expose them for further 
 +---------------------------------+---------------------------------+-------------------+
 ; Source Register                 ; Destination Register            ; Delay Added in ns ;
 +---------------------------------+---------------------------------+-------------------+
-; clock_divider:instance_1|clk_25 ; clock_divider:instance_1|clk_25 ; 2.386             ;
+; clock_divider:instance_1|clk_25 ; clock_divider:instance_1|clk_25 ; 2.018             ;
 +---------------------------------+---------------------------------+-------------------+
 Note: This table only shows the top 1 path(s) that have the largest delay added for hold.
 
@@ -2749,32 +2748,32 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:07
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:08
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:10
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:05
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:16
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:11
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 3% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 13% of the available device resources in the region that extends from location X22_Y11 to location X32_Y22
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:14
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:12
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 2.36 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 2.08 seconds.
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:40
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:33
 Info (144001): Generated suppressed messages file C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/output_files/vga_rgb.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 5670 megabytes
-    Info: Processing ended: Thu Jun 22 04:54:48 2023
-    Info: Elapsed time: 00:02:12
-    Info: Total CPU time (on all processors): 00:02:11
+    Info: Peak virtual memory: 5771 megabytes
+    Info: Processing ended: Thu Jun 22 06:11:59 2023
+    Info: Elapsed time: 00:01:45
+    Info: Total CPU time (on all processors): 00:01:41
 
 
 +----------------------------+
