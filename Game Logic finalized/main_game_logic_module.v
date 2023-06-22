@@ -26,10 +26,14 @@ reg [7:0] state_to_be_returned; // null -> 0
 reg [399:0] grid_data;
 
 reg[4:0] game_status;// 32 game status is available
+reg[1:0] triangle_win_at_which_check;
 reg[3:0] triangle_x; // null -> 15
 reg[3:0] triangle_y; // null -> 15
+
+
 reg[3:0] circle_x; // null -> 15
 reg[3:0] circle_y; // null -> 15
+reg[1:0] circle_win_at_which_check;//
 reg[31:0] delay_300ms_counter; // 26 bits is neccesarry to count up to 50x10^6   
 reg[31:0] delay_error_blinking_1000ms_counter; // 26 bits is neccesarry to count up to 50x10^6 
 reg[31:0] delay_before_new_round_blinking_10s_counter; // 26 bits is neccesarry to count up to 50x10^6 
@@ -309,7 +313,6 @@ always @(posedge clock_builtin_50MHZ)
 					//4*(check_start_x + 10*check_start_y)+2 is the third to check
 					//4*(check_start_x + 10*check_start_y)+3 is the fourth to check (lsb bit)
 					//triangle grid cell -> 0010 (2)	
-					
 					if( 
 					grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
 					grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
@@ -344,6 +347,26 @@ always @(posedge clock_builtin_50MHZ)
 					else
 						begin
 						//triangle wins the game
+						//cell 1
+						grid_data[4*(check_start_x + 10*check_start_y)  ]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+1] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+2] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+3] <=1;
+						//cell 2
+						grid_data[4*(check_start_x + 10*check_start_y)+4]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+5] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+6] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+7] <=1;
+						//cell 3
+						grid_data[4*(check_start_x + 10*check_start_y)+8]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+9] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+10] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+11] <=1;
+						//cell 4
+						grid_data[4*(check_start_x + 10*check_start_y)+12]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+13] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+14] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+15] <=1;
 						state_now <= triangle_wins_state;
 						end
 				end
@@ -419,6 +442,26 @@ always @(posedge clock_builtin_50MHZ)
 					else
 						begin
 						//triangle wins the game
+						//cell 1
+						grid_data[4*(check_start_x + 10*check_start_y)  ]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+1] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+2] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+3] <=0;
+						//cell 2
+						grid_data[4*(check_start_x + 10*check_start_y)+40]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+41] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+42] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+43] <=0;
+						//cell 3
+						grid_data[4*(check_start_x + 10*check_start_y)+80]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+81] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+82] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+83] <=0;
+						//cell 4
+						grid_data[4*(check_start_x + 10*check_start_y)+120]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+121] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+122] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+123] <=0;
 						state_now <= triangle_wins_state;
 						end
 				end
@@ -493,6 +536,26 @@ always @(posedge clock_builtin_50MHZ)
 					else
 						begin
 						//triangle wins the game
+						//cell 1
+						grid_data[4*(check_start_x + 10*check_start_y)  ]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+1] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+2] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+3] <=1;
+						//cell 2
+						grid_data[4*(check_start_x + 10*check_start_y)+36]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+37] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+38] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+39] <=1;
+						//cell 3
+						grid_data[4*(check_start_x + 10*check_start_y)+72]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+73] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+74] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+75] <=1;
+						//cell 4
+						grid_data[4*(check_start_x + 10*check_start_y)+108]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+109] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+110] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+111] <=1;
 						state_now <= triangle_wins_state;
 						end
 				end
@@ -568,6 +631,26 @@ always @(posedge clock_builtin_50MHZ)
 					else
 						begin
 						//triangle wins the game
+						//cell 1
+						grid_data[4*(check_start_x + 10*check_start_y)  ]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+1] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+2] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+3] <=0;
+						//cell 2
+						grid_data[4*(check_start_x + 10*check_start_y)+44]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+45] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+46] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+47] <=0;
+						//cell 3
+						grid_data[4*(check_start_x + 10*check_start_y)+88]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+89] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+90] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+91] <=0;
+						//cell 4
+						grid_data[4*(check_start_x + 10*check_start_y)+132]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+133] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+134] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+135] <=0;
 						state_now <= triangle_wins_state;
 						end
 				end
@@ -683,9 +766,7 @@ always @(posedge clock_builtin_50MHZ)
 						state_to_be_returned <= triangle_inputting_state;
 						
 				end	
-				
-							
-			
+
 			//===============================================================================
 			//####################### CIRCLE RELATED TASKS ##################################
 			//===============================================================================			
@@ -824,6 +905,25 @@ always @(posedge clock_builtin_50MHZ)
 					else
 						begin
 						//circle wins the game
+						grid_data[4*(check_start_x + 10*check_start_y)  ]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+1] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+2] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+3] <=0;
+						//cell 2
+						grid_data[4*(check_start_x + 10*check_start_y)+4]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+5] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+6] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+7] <=0;
+						//cell 3
+						grid_data[4*(check_start_x + 10*check_start_y)+8]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+9] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+10] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+11] <=0;
+						//cell 4
+						grid_data[4*(check_start_x + 10*check_start_y)+12]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+13] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+14] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+15] <=0;
 						state_now <= circle_wins_state;
 						end
 				end
@@ -899,6 +999,25 @@ always @(posedge clock_builtin_50MHZ)
 					else
 						begin
 						//circle wins the game
+						grid_data[4*(check_start_x + 10*check_start_y)  ]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+1] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+2] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+3] <=1;
+						//cell 2
+						grid_data[4*(check_start_x + 10*check_start_y)+40]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+41] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+42] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+43] <=1;
+						//cell 3
+						grid_data[4*(check_start_x + 10*check_start_y)+80]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+81] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+82] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+83] <=1;
+						//cell 4
+						grid_data[4*(check_start_x + 10*check_start_y)+120]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+121] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+122] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+123] <=1;
 						state_now <= circle_wins_state;
 						end
 				end
@@ -973,6 +1092,25 @@ always @(posedge clock_builtin_50MHZ)
 					else
 						begin
 						//circle wins the game
+						grid_data[4*(check_start_x + 10*check_start_y)  ]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+1] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+2] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+3] <=1;
+						//cell 2
+						grid_data[4*(check_start_x + 10*check_start_y)+36]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+37] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+38] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+39] <=1;
+						//cell 3
+						grid_data[4*(check_start_x + 10*check_start_y)+72]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+73] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+74] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+75] <=1;
+						//cell 4
+						grid_data[4*(check_start_x + 10*check_start_y)+108]<=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+109] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+110] <=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+111] <=1;
 						state_now <= circle_wins_state;
 						end
 				end
@@ -1048,6 +1186,25 @@ always @(posedge clock_builtin_50MHZ)
 					else
 						begin
 						//circle wins the game
+						grid_data[4*(check_start_x + 10*check_start_y)  ]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+1] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+2] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+3] <=0;
+						//cell 2
+						grid_data[4*(check_start_x + 10*check_start_y)+44]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+45] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+46] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+47] <=0;
+						//cell 3
+						grid_data[4*(check_start_x + 10*check_start_y)+88]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+89] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+90] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+91] <=0;
+						//cell 4
+						grid_data[4*(check_start_x + 10*check_start_y)+132]<=1;
+						grid_data[4*(check_start_x + 10*check_start_y)+133] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+134] <=0;
+						grid_data[4*(check_start_x + 10*check_start_y)+135] <=0;
 						state_now <= circle_wins_state;
 						end
 				end
