@@ -28,6 +28,8 @@ reg [399:0] grid_data;
 reg[4:0] game_status;// 32 game status is available
 reg[3:0] triangle_x; // null -> 15
 reg[3:0] triangle_y; // null -> 15
+reg[3:0] circle_x; // null -> 15
+reg[3:0] circle_y; // null -> 15
 reg[31:0] delay_300ms_counter; // 26 bits is neccesarry to count up to 50x10^6   
 reg[31:0] delay_error_blinking_1000ms_counter; // 26 bits is neccesarry to count up to 50x10^6 
 reg[31:0] delay_before_new_round_blinking_10s_counter; // 26 bits is neccesarry to count up to 50x10^6 
@@ -54,12 +56,27 @@ parameter triangle_left_diagonal_increment_state = 15;
 parameter triangle_update_last_position_state = 16;
 parameter triangle_increment_move_count_state = 17;
 parameter triangle_wins_state = 18;
-parameter delay_before_new_round_blinking_10s = 19;
-parameter delay_error_state_with_blinking_1000ms = 20;
-parameter delay_state_300ms = 21;
-
-
-parameter test_state = 129;
+parameter circle_inputting_state = 19;
+parameter circle_input_formatting_state= 20;
+parameter circle_input_is_correct_state = 21;
+parameter circle_input_is_wrong_state = 22;
+parameter circle_input_range_validation_state = 23;
+parameter circle_grid_availability_validation_state = 24;
+parameter circle_put_circle_to_the_grid_state = 25;
+parameter circle_horizontal_win_check_state = 26;
+parameter circle_horizontal_increment_state = 27;
+parameter circle_vertical_win_check_state = 28;
+parameter circle_vertical_increment_state = 29;
+parameter circle_right_diagonal_win_check_state = 30;
+parameter circle_right_diagonal_increment_state = 31;
+parameter circle_left_diagonal_win_check_state = 32;
+parameter circle_left_diagonal_increment_state = 33;
+parameter circle_update_last_position_state = 34;
+parameter circle_increment_move_count_state = 35;
+parameter circle_wins_state = 36;
+parameter delay_before_new_round_blinking_10s = 37;
+parameter delay_error_state_with_blinking_1000ms = 38;
+parameter delay_state_300ms = 39;
 
 //game status assignments 
 parameter setup_status = 0;
@@ -156,7 +173,7 @@ always @(posedge clock_builtin_50MHZ)
 						end
 				end
 				
-				delay_before_new_round_blinking_10s:
+			delay_before_new_round_blinking_10s:
 				begin
 					if(delay_before_new_round_blinking_10s_counter < 125000000) // each clock cycle is 20ns
 						begin
@@ -186,6 +203,7 @@ always @(posedge clock_builtin_50MHZ)
 							state_now <=state_to_be_returned;
 						end
 				end
+			
 			
 			//===============================================================================
 			//####################### TRIANGLE RELATED TASKS ################################
@@ -636,7 +654,7 @@ always @(posedge clock_builtin_50MHZ)
 							t_move_count_lst <= 0;
 							t_move_count_sig <= t_move_count_sig +1;
 						end
-					state_now <= triangle_inputting_state;//TODOOOOOO- should go with circle
+					state_now <= circle_inputting_state;
 				end	
 			
 			//===============================================================================
@@ -666,19 +684,486 @@ always @(posedge clock_builtin_50MHZ)
 						
 				end	
 				
-				
-				//10 saniye delay
-			
+							
 			
 			//===============================================================================
 			//####################### CIRCLE RELATED TASKS ##################################
+			//===============================================================================			
+			circle_inputting_state :
+				begin
+					whose_turn<= 1;
+					game_status <= circle_inputting_state;
+					if(not_logic_0 == 0)
+						begin
+							state_now <= delay_state_300ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
+							state_to_be_returned <= circle_inputting_state ;
+							in_shift_reg <= {in_shift_reg[6:0], 1'b0};  // Shift "0" data in						
+						end
+					else if(not_logic_1 == 0)
+						begin
+							state_now <= delay_state_300ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
+							state_to_be_returned <= circle_inputting_state ;
+							in_shift_reg <= {in_shift_reg[6:0], 1'b1};  // Shift "1" data in			
+						end
+					else if(not_activity == 0)
+						begin
+							state_now <= delay_state_300ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
+							state_to_be_returned <= circle_input_formatting_state ;
+						end
+					else
+						begin
+							state_now <= circle_inputting_state ; //next state, circulate in this state
+						end
+						
+				end			
 			//===============================================================================
-		
-	
-				
-				
-		
+			circle_input_formatting_state:
+				begin
+							//in_shift_reg[7:0] , [0]-> nth input, [7]-> (n-7)th input;
+							// [3]-> x_1dec, [2]->x_2_dec [1]->x_4_dec [0]->x_8_dec
+							// [7]-> y_1dec, [6]->y_2dec, [5]->y_4dec, [4]->y_8dec,
+							circle_x[3] <= in_shift_reg[0] ; 
+							circle_x[2] <= in_shift_reg[1] ; 
+							circle_x[1] <= in_shift_reg[2] ; 
+							circle_x[0] <= in_shift_reg[3] ; 
+							
+							circle_y[3] <= in_shift_reg[4] ; 
+							circle_y[2] <= in_shift_reg[5] ; 
+							circle_y[1] <= in_shift_reg[6] ; 
+							circle_y[0] <= in_shift_reg[7] ; 
+							
+							state_now <= circle_input_range_validation_state;
+				end		
 			
+			//===============================================================================
+			circle_input_range_validation_state:
+				begin				
+							if(circle_x<=9 && circle_y <=9)
+								begin
+									state_now <= circle_grid_availability_validation_state; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
+								end
+							else
+								begin
+									state_now <= circle_input_is_wrong_state;
+									game_status <= 0;
+								end					
+				end		
+			//===============================================================================
+			circle_grid_availability_validation_state:
+				begin
+					//4*(x + 10*y) is the first to check (msb bit)
+					//4*(x + 10*y)+1 is the second to check
+					//4*(x + 10*y)+2 is the third to check
+					//4*(x + 10*y)+3 is the fourth to check (lsb bit)
+					//available (empty) grid cell -> 0000					
+					if( grid_data[4*(circle_x + 10*circle_y)]==0 && grid_data[4*(circle_x + 10*circle_y)+1] == 0 && grid_data[4*(circle_x + 10*circle_y)+2] == 0 && grid_data[4*(circle_x + 10*circle_y)+3] == 0)
+						begin
+							state_now <= circle_put_circle_to_the_grid_state;
+						end
+					else
+						begin
+							state_now <= circle_input_is_wrong_state;
+						end
+				end
+			//===============================================================================
+			circle_put_circle_to_the_grid_state:
+				begin
+					//4*(x + 10*y) is the first to check (msb bit)
+					//4*(x + 10*y)+1 is the second to check
+					//4*(x + 10*y)+2 is the third to check
+					//4*(x + 10*y)+3 is the fourth to check (lsb bit)
+					//circle grid cell -> 0010 (2)	
+					grid_data[4*(circle_x + 10*circle_y)] <=0;
+					grid_data[4*(circle_x + 10*circle_y)+1] <=0;
+					grid_data[4*(circle_x + 10*circle_y)+2] <=0;
+					grid_data[4*(circle_x + 10*circle_y)+3] <=1;					
+					
+					state_now <= circle_input_is_correct_state;
+				end
+				
+			//===============================================================================
+			circle_horizontal_win_check_state:
+				begin
+					//4*(check_start_x + 10*check_start_y) is the first to check (msb bit)
+					//4*(check_start_x + 10*check_start_y)+1 is the second to check
+					//4*(check_start_x + 10*check_start_y)+2 is the third to check
+					//4*(check_start_x + 10*check_start_y)+3 is the fourth to check (lsb bit)
+					//circle grid cell -> 0010 (2)	
+					
+					if( 
+					grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+2] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+3] != 1)
+						begin
+							state_now <= circle_horizontal_increment_state;
+						end
+					else if((
+					grid_data[4*(check_start_x + 10*check_start_y)+4]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+5] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+6] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+7] != 1))
+						begin
+							state_now <= circle_horizontal_increment_state;
+						end
+					else if((
+					grid_data[4*(check_start_x + 10*check_start_y)+8]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+9] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+10] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+11] != 1))
+						begin						
+							state_now <= circle_horizontal_increment_state;
+						end
+					else if(( grid_data[4*(check_start_x + 10*check_start_y)+12]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+13] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+14] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+15] != 1))
+						begin						
+							state_now <= circle_horizontal_increment_state;
+						end
+					else
+						begin
+						//circle wins the game
+						state_now <= circle_wins_state;
+						end
+				end
+			//===============================================================================
+			circle_horizontal_increment_state:
+				begin
+				//check_start_x € {0,1,2,3,4,5,6}
+				//check_start_y € {0,1,2,3,4,5,6,7,8,9}
+				if(check_start_x <6)//increment x
+					begin
+						check_start_x <= check_start_x+1;
+						state_now <= circle_horizontal_win_check_state;
+					end
+				else //increment y
+					begin						
+					check_start_x<=0;
+					if(check_start_y<9)
+						begin
+							check_start_y <= check_start_y +1;
+							state_now <= circle_horizontal_win_check_state;
+						end
+					else
+						begin
+							check_start_x<=0;//first x of the vertical check
+							check_start_y<=0;//first y of the vertical check
+							state_now<= circle_vertical_win_check_state;
+						end						
+					end
+					
+				end
+		
+			//===============================================================================
+			circle_vertical_win_check_state:
+				begin
+					//4*(check_start_x + 10*check_start_y) is the first to check (msb bit)
+					//4*(check_start_x + 10*check_start_y)+40 is the second to check
+					//4*(check_start_x + 10*check_start_y)+80 is the third to check
+					//4*(check_start_x + 10*check_start_y)+120 is the fourth to check (lsb bit)
+					//circle grid cell -> 0010 (2)	
+					
+					if( 
+					grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+2] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+3] != 1)
+						begin
+							state_now <= circle_vertical_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+40]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+41] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+42] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+43] != 1))
+						begin
+							state_now <= circle_vertical_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+80]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+81] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+82] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+83] != 1))
+						begin						
+							state_now <= circle_vertical_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+120]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+121] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+122] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+123] != 1))
+						begin						
+							state_now <= circle_vertical_increment_state;
+						end
+					else
+						begin
+						//circle wins the game
+						state_now <= circle_wins_state;
+						end
+				end
+			//===============================================================================
+			circle_vertical_increment_state:
+				begin
+				//check_start_x € {0,1,2,3,4,5,6,7,8,9}
+				//check_start_y € {0,1,2,3,4,5,6}
+				if(check_start_x <9)//increment x
+					begin
+						check_start_x <= check_start_x+1;
+						state_now <= circle_vertical_win_check_state;
+					end
+				else //increment y
+					begin						
+					check_start_x<=0;
+					if(check_start_y<6)
+						begin
+							check_start_y <= check_start_y +1;
+							state_now <= circle_vertical_win_check_state;
+						end
+					else
+						begin
+							check_start_x<=3;//first x of the right diagonal check
+							check_start_y<=0;//first y of the right diagonal check
+							state_now<= circle_right_diagonal_win_check_state;
+						end						
+					end
+					
+				end			
+			//===============================================================================
+			circle_right_diagonal_win_check_state:
+				begin
+					//4*(check_start_x + 10*check_start_y) is the first to check (msb bit)
+					//4*(check_start_x + 10*check_start_y)+36 is the second to check
+					//4*(check_start_x + 10*check_start_y)+72 is the third to check
+					//4*(check_start_x + 10*check_start_y)+108 is the fourth to check (lsb bit)
+					//circle grid cell -> 0010 (2)	
+					
+					if( 
+					grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+2] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+3] != 1)
+						begin
+							state_now <= circle_right_diagonal_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+36]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+37] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+38] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+39] != 1))
+						begin
+							state_now <= circle_right_diagonal_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+72]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+73] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+74] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+75] != 1))
+						begin						
+							state_now <= circle_right_diagonal_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+108]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+109] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+110] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+111] != 1))
+						begin						
+							state_now <= circle_right_diagonal_increment_state;
+						end
+					else
+						begin
+						//circle wins the game
+						state_now <= circle_wins_state;
+						end
+				end
+			//===============================================================================
+			circle_right_diagonal_increment_state:
+				begin
+				//check_start_x € {3,4,5,6,7,8,9}
+				//check_start_y € {0,1,2,3,4,5,6}
+				if(check_start_x <9)//increment x
+					begin
+						check_start_x <= check_start_x+1;
+						state_now <= circle_right_diagonal_win_check_state;
+					end
+				else //increment y
+					begin						
+					check_start_x<=3;
+					if(check_start_y<6)
+						begin
+							check_start_y <= check_start_y +1;
+							state_now <= circle_right_diagonal_win_check_state;
+						end
+					else
+						begin
+							check_start_x<=0;//first y of the left diagonal check
+							check_start_y<=0;//first y of the left diagonal check
+							state_now<= circle_left_diagonal_win_check_state;
+						end						
+					end
+					
+				end	
+			
+			//===============================================================================
+			circle_left_diagonal_win_check_state:
+				begin
+					//4*(check_start_x + 10*check_start_y) is the first to check (msb bit)
+					//4*(check_start_x + 10*check_start_y)+44 is the second to check
+					//4*(check_start_x + 10*check_start_y)+88 is the third to check
+					//4*(check_start_x + 10*check_start_y)+132 is the fourth to check (lsb bit)
+					//circle grid cell -> 0010 (2)	
+					
+					if( 
+					grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+2] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+3] != 1)
+						begin
+							state_now <= circle_left_diagonal_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+44]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+45] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+46] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+47] != 1))
+						begin
+							state_now <= circle_left_diagonal_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+88]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+89] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+90] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+91] != 1))
+						begin						
+							state_now <= circle_left_diagonal_increment_state;
+						end
+					else if(( 
+					grid_data[4*(check_start_x + 10*check_start_y)+132]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+133] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+134] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+135] != 1))
+						begin						
+							state_now <= circle_left_diagonal_increment_state;
+						end
+					else
+						begin
+						//circle wins the game
+						state_now <= circle_wins_state;
+						end
+				end
+			//===============================================================================
+			circle_left_diagonal_increment_state:
+				begin
+				//check_start_x € {0,1,2,3,4,5,6}
+				//check_start_y € {0,1,2,3,4,5,6}
+				if(check_start_x <6)//increment x
+					begin
+						check_start_x <= check_start_x+1;
+						state_now <= circle_left_diagonal_win_check_state;
+					end
+				else //increment y
+					begin						
+					check_start_x<=0;
+					if(check_start_y<6)
+						begin
+							check_start_y <= check_start_y +1;
+							state_now <= circle_left_diagonal_win_check_state;
+						end
+					else
+						begin
+							check_start_x<=0;//refresh before circle inputting
+							check_start_y<=0;//refresh before circle inputting								
+							state_now<= circle_update_last_position_state; //TODO
+						end						
+					end
+					
+				end	
+					
+			
+			//===============================================================================
+			circle_input_is_wrong_state:
+				begin			
+					in_shift_reg <= 0;
+					state_now <= delay_error_state_with_blinking_1000ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
+					state_to_be_returned <= circle_inputting_state ;
+							
+				end
+			
+			//===============================================================================
+			circle_input_is_correct_state:
+				begin
+							in_shift_reg[0] <=circle_x[0]; 
+							in_shift_reg[1] <=circle_x[1];
+							in_shift_reg[2] <=circle_x[2]; 
+							in_shift_reg[3] <=circle_x[3]; 
+							
+							in_shift_reg[4] <=circle_y[0];
+							in_shift_reg[5] <=circle_y[1]; 
+							in_shift_reg[6] <=circle_y[2]; 
+							in_shift_reg[7] <=circle_y[3]; 
+							
+							check_start_x<=0;//first x of the horizontal check
+							check_start_y<=0;//first y of the horizontal check
+							state_now<= circle_horizontal_win_check_state; //TODO
+							
+							game_status <= 0; //TODO
+				end
+			
+			
+			circle_update_last_position_state:
+				begin
+					//output reg [3:0] t_last_position_sig;
+					//output reg [3:0] t_last_position_lst;
+					c_last_position_sig <= circle_x;
+					c_last_position_lst <= circle_y;
+					state_now <= circle_increment_move_count_state;
+				end			
+			
+			//===============================================================================
+			circle_increment_move_count_state:				
+				begin
+					//BE AWARE THAT MOVE COUNT ASSUMED TO BE LESS THAN 99.
+					//output reg [3:0] t_move_count_sig;
+					//output reg [3:0] t_move_count_lst;
+					if(c_move_count_lst <9)
+						begin
+							c_move_count_lst <= c_move_count_lst +1;
+						end
+					else 
+						begin
+							c_move_count_lst <= 0;
+							c_move_count_sig <= c_move_count_sig +1;
+						end
+					state_now <= triangle_inputting_state;
+				end	
+			
+			//===============================================================================
+			circle_wins_state:				
+				begin
+					//BE AWARE THAT WIN COUNT ASSUMED TO BE LESS THAN 99.
+					//output reg [3:0] t_win_count_sig;
+					//output reg [3:0] t_win_count_lst;					
+					c_move_count_sig<= 0;
+					c_move_count_lst<= 10;
+					t_move_count_sig<= 0;
+					t_move_count_lst<= 10;
+					grid_data <= 0;
+					whose_turn <= 1; //circle's turn
+					if(c_win_count_lst <9)
+						begin
+							c_win_count_lst <= c_win_count_lst +1;
+						end
+					else
+						begin
+							c_win_count_lst <= 0;
+							c_win_count_sig <= c_win_count_sig+1;
+						end
+						
+						state_now = delay_before_new_round_blinking_10s;
+						state_to_be_returned <= circle_inputting_state;
+						
+				end							
+		
 		endcase	//case logic ends here
 	
 	end
