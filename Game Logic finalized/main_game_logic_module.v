@@ -29,15 +29,21 @@ reg[4:0] game_status;// 32 game status is available
 reg[3:0] triangle_x; // null -> 15
 reg[3:0] triangle_y; // null -> 15
 reg[31:0] delay_300ms_counter; // 26 bits is neccesarry to count up to 50x10^6   
-reg[31:0] delay_error_blinking_1000ms_counter; // 26 bits is neccesarry to count up to 50x10^6   
+reg[31:0] delay_error_blinking_1000ms_counter; // 26 bits is neccesarry to count up to 50x10^6 
+reg[3:0] check_start_x;
+reg[3:0] check_start_y;  
              
 //state assignments
 parameter setup_state = 0;
 parameter triangle_inputting_state = 1;
 parameter triangle_input_formatting_state= 2;
 parameter triangle_input_is_correct_state = 3;
-parameter triangle_input_is_wrong_state = 60;
-parameter triangle_input_range_validation_state = 61;
+parameter triangle_input_is_wrong_state = 4;
+parameter triangle_input_range_validation_state = 5;
+parameter triangle_grid_availability_validation_state = 6;
+parameter triangle_put_triangle_to_the_grid_state = 7;
+parameter triangle_horizontal_win_check_state = 8;
+parameter triangle_horizontal_increment_state = 9;
 
 
 parameter delay_error_state_with_blinking_1000ms = 254;
@@ -73,6 +79,9 @@ always @(posedge clock_builtin_50MHZ)
 					
 					triangle_x<= 15;
 					triangle_y <= 15;
+					
+					check_start_x<=0;
+					check_start_y<=0;
 					//outputs & inputs
 					in_shift_reg <=0 ;
 					grid_data <=0;
@@ -188,8 +197,7 @@ always @(posedge clock_builtin_50MHZ)
 				begin				
 							if(triangle_x<=9 && triangle_y <=9)
 								begin
-									state_now <= delay_state_300ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
-									state_to_be_returned <= triangle_input_is_correct_state;
+									state_now <= triangle_grid_availability_validation_state; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
 								end
 							else
 								begin
@@ -197,6 +205,110 @@ always @(posedge clock_builtin_50MHZ)
 									game_status <= triangle_input_is_wrong;
 								end					
 				end		
+			//===============================================================================
+			triangle_grid_availability_validation_state:
+				begin
+					//4*(x + 10*y) is the first to check (msb bit)
+					//4*(x + 10*y)+1 is the second to check
+					//4*(x + 10*y)+2 is the third to check
+					//4*(x + 10*y)+3 is the fourth to check (lsb bit)
+					//available (empty) grid cell -> 0000					
+					if( grid_data[4*(triangle_x + 10*triangle_y)]==0 && grid_data[4*(triangle_x + 10*triangle_y)+1] == 0 && grid_data[4*(triangle_x + 10*triangle_y)+2] == 0 && grid_data[4*(triangle_x + 10*triangle_y)+3] == 0)
+						begin
+							state_now <= triangle_put_triangle_to_the_grid_state;
+						end
+					else
+						begin
+							state_now <= triangle_input_is_wrong_state;
+						end
+				end
+			//===============================================================================
+			triangle_put_triangle_to_the_grid_state:
+				begin
+					//4*(x + 10*y) is the first to check (msb bit)
+					//4*(x + 10*y)+1 is the second to check
+					//4*(x + 10*y)+2 is the third to check
+					//4*(x + 10*y)+3 is the fourth to check (lsb bit)
+					//triangle grid cell -> 0010 (2)	
+					grid_data[4*(triangle_x + 10*triangle_y)] <=0;
+					grid_data[4*(triangle_x + 10*triangle_y)+1] <=0;
+					grid_data[4*(triangle_x + 10*triangle_y)+2] <=1;
+					grid_data[4*(triangle_x + 10*triangle_y)+3] <=0;
+					
+					check_start_x<=0;
+					check_start_x<=0;
+					state_now <= triangle_input_is_correct_state;
+				end
+				
+			//===============================================================================
+			triangle_horizontal_win_check_state:
+				begin
+					//4*(check_start_x + 10*check_start_y) is the first to check (msb bit)
+					//4*(check_start_x + 10*check_start_y)+1 is the second to check
+					//4*(check_start_x + 10*check_start_y)+2 is the third to check
+					//4*(check_start_x + 10*check_start_y)+3 is the fourth to check (lsb bit)
+					//triangle grid cell -> 0010 (2)	
+					
+					if( grid_data[4*(check_start_x + 10*check_start_y)]!=0 || grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 || grid_data[4*(check_start_x + 10*check_start_y)+2] != 1 || grid_data[4*(check_start_x + 10*check_start_y)+3] != 0)
+						begin
+							state_now <= triangle_horizontal_increment_state;
+						end
+					else if(( grid_data[4*(check_start_x + 10*check_start_y)+4]!=0 || grid_data[4*(check_start_x + 10*check_start_y)+5] != 0 || grid_data[4*(check_start_x + 10*check_start_y)+6] != 1 || grid_data[4*(check_start_x + 10*check_start_y)+7] != 0))
+						begin
+							state_now <= triangle_horizontal_increment_state;
+						end
+					else if(( grid_data[4*(check_start_x + 10*check_start_y)+8]!=0 || grid_data[4*(check_start_x + 10*check_start_y)+9] != 0 || grid_data[4*(check_start_x + 10*check_start_y)+10] != 1 || grid_data[4*(check_start_x + 10*check_start_y)+11] != 0))
+						begin						
+							state_now <= triangle_horizontal_increment_state;
+						end
+					else if(( grid_data[4*(check_start_x + 10*check_start_y)+12]!=0 || grid_data[4*(check_start_x + 10*check_start_y)+13] != 0 || grid_data[4*(check_start_x + 10*check_start_y)+14] != 1 || grid_data[4*(check_start_x + 10*check_start_y)+15] != 0))
+						begin						
+							state_now <= triangle_horizontal_increment_state;
+						end
+					else
+						begin
+						//triangle wins the game
+						state_now <= triangle_horizontal_win_check_state; // TODO BUG, 
+						end
+				end
+				//===============================================================================
+				triangle_horizontal_increment_state:
+					begin
+					//check_start_x € {0,1,2,3,4,5,6}
+					//check_start_y € {0,1,2,3,4,5,6,7,8,9}
+					if(check_start_x <6)//increment x
+						begin
+							check_start_x <= check_start_x+1;
+						end
+					else //increment y
+						begin
+						check_start_x<=0;
+						if(check_start_y<9)
+							begin
+								check_start_y <= check_start_y +1;
+							end
+						else
+							begin
+								check_start_y<=0;
+								state_now<= triangle_inputting_state; //TODO
+							end
+						
+						end
+						
+					end
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+			
+			
+			
 			//===============================================================================
 			triangle_input_is_wrong_state:
 				begin			
@@ -219,11 +331,18 @@ always @(posedge clock_builtin_50MHZ)
 							in_shift_reg[6] <=triangle_y[2]; 
 							in_shift_reg[7] <=triangle_y[3]; 
 							
-							state_now<= triangle_inputting_state; //TODO
+							check_start_x<=0;
+							check_start_y<=0;
+							state_now<= triangle_horizontal_win_check_state; //TODO
+							
 							game_status <= 0; //TODO
 				end
 			
+			//===============================================================================
 			
+			
+			
+
 			
 			//===============================================================================
 			//===============================================================================

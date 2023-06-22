@@ -1,5 +1,5 @@
 Flow report for main_game_logic_module
-Thu Jun 22 16:30:34 2023
+Thu Jun 22 18:35:07 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Thu Jun 22 16:30:34 2023      ;
+; Flow Status                     ; Successful - Thu Jun 22 18:35:07 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; main_game_logic_module                     ;
 ; Top-level Entity Name           ; main_game_logic_module                     ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Preliminary                                ;
-; Logic utilization (in ALMs)     ; 98 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 115                                        ;
+; Logic utilization (in ALMs)     ; 269 / 32,070 ( < 1 % )                     ;
+; Total registers                 ; 243                                        ;
 ; Total pins                      ; 62 / 457 ( 14 % )                          ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                      ;
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 06/22/2023 16:29:47    ;
+; Start date & time ; 06/22/2023 18:34:14    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; main_game_logic_module ;
 +-------------------+------------------------+
@@ -78,7 +78,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 150241222627911.168744058711424 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 150241222627911.168744805405340 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
@@ -95,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4668 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:29     ; 1.0                     ; 5659 MB             ; 00:00:29                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 4759 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 4924 MB             ; 00:00:05                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:43     ; --                      ; --                  ; 00:00:42                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4661 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:33     ; 1.0                     ; 5658 MB             ; 00:00:33                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 4756 MB             ; 00:00:07                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 4930 MB             ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4638 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:48     ; --                      ; --                  ; 00:00:48                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
