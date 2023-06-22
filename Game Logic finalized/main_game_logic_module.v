@@ -44,6 +44,12 @@ parameter triangle_grid_availability_validation_state = 6;
 parameter triangle_put_triangle_to_the_grid_state = 7;
 parameter triangle_horizontal_win_check_state = 8;
 parameter triangle_horizontal_increment_state = 9;
+parameter triangle_vertical_win_check_state = 10;
+parameter triangle_vertical_increment_state = 11;
+parameter triangle_right_diagonal_win_check_state = 12;
+parameter triangle_right_diagonal_increment_state = 13;
+parameter triangle_left_diagonal_win_check_state = 14;
+parameter triangle_left_diagonal_increment_state = 15;
 
 
 parameter delay_error_state_with_blinking_1000ms = 254;
@@ -63,12 +69,12 @@ initial
 		state_now <= 0;
 		state_to_be_returned <= 0;
 	end
-	
+
 always @(posedge clock_builtin_50MHZ)
 	begin
 		case (state_now)
 			
-			setup_state: //this state is only used when FPGA is powered up.
+			setup_state: //this state is only used when FPGA is powered up. Or reset button is pressed
 				begin
 					// variables
 					state_now <= triangle_inputting_state ; //next state 
@@ -233,10 +239,8 @@ always @(posedge clock_builtin_50MHZ)
 					grid_data[4*(triangle_x + 10*triangle_y)] <=0;
 					grid_data[4*(triangle_x + 10*triangle_y)+1] <=0;
 					grid_data[4*(triangle_x + 10*triangle_y)+2] <=1;
-					grid_data[4*(triangle_x + 10*triangle_y)+3] <=0;
+					grid_data[4*(triangle_x + 10*triangle_y)+3] <=0;					
 					
-					check_start_x<=0;
-					check_start_x<=0;
 					state_now <= triangle_input_is_correct_state;
 				end
 				
@@ -249,19 +253,34 @@ always @(posedge clock_builtin_50MHZ)
 					//4*(check_start_x + 10*check_start_y)+3 is the fourth to check (lsb bit)
 					//triangle grid cell -> 0010 (2)	
 					
-					if( grid_data[4*(check_start_x + 10*check_start_y)]!=0 || grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 || grid_data[4*(check_start_x + 10*check_start_y)+2] != 1 || grid_data[4*(check_start_x + 10*check_start_y)+3] != 0)
+					if( 
+					grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+2] != 1 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+3] != 0)
 						begin
 							state_now <= triangle_horizontal_increment_state;
 						end
-					else if(( grid_data[4*(check_start_x + 10*check_start_y)+4]!=0 || grid_data[4*(check_start_x + 10*check_start_y)+5] != 0 || grid_data[4*(check_start_x + 10*check_start_y)+6] != 1 || grid_data[4*(check_start_x + 10*check_start_y)+7] != 0))
+					else if((
+					grid_data[4*(check_start_x + 10*check_start_y)+4]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+5] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+6] != 1 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+7] != 0))
 						begin
 							state_now <= triangle_horizontal_increment_state;
 						end
-					else if(( grid_data[4*(check_start_x + 10*check_start_y)+8]!=0 || grid_data[4*(check_start_x + 10*check_start_y)+9] != 0 || grid_data[4*(check_start_x + 10*check_start_y)+10] != 1 || grid_data[4*(check_start_x + 10*check_start_y)+11] != 0))
+					else if((
+					grid_data[4*(check_start_x + 10*check_start_y)+8]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+9] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+10] != 1 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+11] != 0))
 						begin						
 							state_now <= triangle_horizontal_increment_state;
 						end
-					else if(( grid_data[4*(check_start_x + 10*check_start_y)+12]!=0 || grid_data[4*(check_start_x + 10*check_start_y)+13] != 0 || grid_data[4*(check_start_x + 10*check_start_y)+14] != 1 || grid_data[4*(check_start_x + 10*check_start_y)+15] != 0))
+					else if(( grid_data[4*(check_start_x + 10*check_start_y)+12]!=0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+13] != 0 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+14] != 1 ||
+					grid_data[4*(check_start_x + 10*check_start_y)+15] != 0))
 						begin						
 							state_now <= triangle_horizontal_increment_state;
 						end
@@ -279,36 +298,250 @@ always @(posedge clock_builtin_50MHZ)
 					if(check_start_x <6)//increment x
 						begin
 							check_start_x <= check_start_x+1;
+							state_now <= triangle_horizontal_win_check_state;
 						end
 					else //increment y
-						begin
+						begin						
 						check_start_x<=0;
 						if(check_start_y<9)
 							begin
 								check_start_y <= check_start_y +1;
+								state_now <= triangle_horizontal_win_check_state;
 							end
 						else
 							begin
-								check_start_y<=0;
-								state_now<= triangle_inputting_state; //TODO
-							end
-						
+								check_start_x<=0;//first x of the vertical check
+								check_start_y<=0;//first y of the vertical check
+								state_now<= triangle_vertical_win_check_state; //TODO
+							end						
 						end
 						
 					end
 			
+			//===============================================================================
+				triangle_vertical_win_check_state:
+					begin
+						//4*(check_start_x + 10*check_start_y) is the first to check (msb bit)
+						//4*(check_start_x + 10*check_start_y)+40 is the second to check
+						//4*(check_start_x + 10*check_start_y)+80 is the third to check
+						//4*(check_start_x + 10*check_start_y)+120 is the fourth to check (lsb bit)
+						//triangle grid cell -> 0010 (2)	
+						
+						if( 
+						grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+2] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+3] != 0)
+							begin
+								state_now <= triangle_vertical_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+40]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+41] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+42] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+43] != 0))
+							begin
+								state_now <= triangle_vertical_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+80]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+81] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+82] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+83] != 0))
+							begin						
+								state_now <= triangle_vertical_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+120]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+121] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+122] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+123] != 0))
+							begin						
+								state_now <= triangle_vertical_increment_state;
+							end
+						else
+							begin
+							//triangle wins the game
+							state_now <= triangle_vertical_win_check_state; // TODO BUG, 
+							end
+					end
+			//===============================================================================
+				triangle_vertical_increment_state:
+					begin
+					//check_start_x € {0,1,2,3,4,5,6,7,8,9}
+					//check_start_y € {0,1,2,3,4,5,6}
+					if(check_start_x <9)//increment x
+						begin
+							check_start_x <= check_start_x+1;
+							state_now <= triangle_vertical_win_check_state;
+						end
+					else //increment y
+						begin						
+						check_start_x<=0;
+						if(check_start_y<6)
+							begin
+								check_start_y <= check_start_y +1;
+								state_now <= triangle_vertical_win_check_state;
+							end
+						else
+							begin
+								check_start_x<=3;//first x of the right diagonal check
+								check_start_y<=0;//first y of the right diagonal check
+								state_now<= triangle_right_diagonal_win_check_state; //TODO
+							end						
+						end
+						
+					end			
+			//===============================================================================
+				triangle_right_diagonal_win_check_state:
+					begin
+						//4*(check_start_x + 10*check_start_y) is the first to check (msb bit)
+						//4*(check_start_x + 10*check_start_y)+36 is the second to check
+						//4*(check_start_x + 10*check_start_y)+72 is the third to check
+						//4*(check_start_x + 10*check_start_y)+108 is the fourth to check (lsb bit)
+						//triangle grid cell -> 0010 (2)	
+						
+						if( 
+						grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+2] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+3] != 0)
+							begin
+								state_now <= triangle_right_diagonal_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+36]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+37] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+38] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+39] != 0))
+							begin
+								state_now <= triangle_right_diagonal_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+72]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+73] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+74] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+75] != 0))
+							begin						
+								state_now <= triangle_right_diagonal_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+108]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+109] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+110] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+111] != 0))
+							begin						
+								state_now <= triangle_right_diagonal_increment_state;
+							end
+						else
+							begin
+							//triangle wins the game
+							state_now <= triangle_right_diagonal_win_check_state; // TODO BUG, 
+							end
+					end
+			//===============================================================================
+				triangle_right_diagonal_increment_state:
+					begin
+					//check_start_x € {3,4,5,6,7,8,9}
+					//check_start_y € {0,1,2,3,4,5,6}
+					if(check_start_x <9)//increment x
+						begin
+							check_start_x <= check_start_x+1;
+							state_now <= triangle_right_diagonal_win_check_state;
+						end
+					else //increment y
+						begin						
+						check_start_x<=3;
+						if(check_start_y<6)
+							begin
+								check_start_y <= check_start_y +1;
+								state_now <= triangle_right_diagonal_win_check_state;
+							end
+						else
+							begin
+								check_start_x<=0;//first y of the left diagonal check
+								check_start_y<=0;//first y of the left diagonal check
+								state_now<= triangle_left_diagonal_win_check_state; //TODO
+							end						
+						end
+						
+					end	
 			
-			
-			
-			
-			
-			
-			
-			
-
-			
-			
-			
+			//===============================================================================
+				triangle_left_diagonal_win_check_state:
+					begin
+						//4*(check_start_x + 10*check_start_y) is the first to check (msb bit)
+						//4*(check_start_x + 10*check_start_y)+44 is the second to check
+						//4*(check_start_x + 10*check_start_y)+88 is the third to check
+						//4*(check_start_x + 10*check_start_y)+132 is the fourth to check (lsb bit)
+						//triangle grid cell -> 0010 (2)	
+						
+						if( 
+						grid_data[4*(check_start_x + 10*check_start_y)]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+1] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+2] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+3] != 0)
+							begin
+								state_now <= triangle_left_diagonal_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+44]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+45] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+46] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+47] != 0))
+							begin
+								state_now <= triangle_left_diagonal_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+88]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+89] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+90] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+91] != 0))
+							begin						
+								state_now <= triangle_left_diagonal_increment_state;
+							end
+						else if(( 
+						grid_data[4*(check_start_x + 10*check_start_y)+132]!=0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+133] != 0 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+134] != 1 ||
+						grid_data[4*(check_start_x + 10*check_start_y)+135] != 0))
+							begin						
+								state_now <= triangle_left_diagonal_increment_state;
+							end
+						else
+							begin
+							//triangle wins the game
+							state_now <= triangle_left_diagonal_win_check_state; // TODO BUG, 
+							end
+					end
+			//===============================================================================
+				triangle_left_diagonal_increment_state:
+					begin
+					//check_start_x € {0,1,2,3,4,5,6}
+					//check_start_y € {0,1,2,3,4,5,6}
+					if(check_start_x <6)//increment x
+						begin
+							check_start_x <= check_start_x+1;
+							state_now <= triangle_left_diagonal_win_check_state;
+						end
+					else //increment y
+						begin						
+						check_start_x<=0;
+						if(check_start_y<6)
+							begin
+								check_start_y <= check_start_y +1;
+								state_now <= triangle_left_diagonal_win_check_state;
+							end
+						else
+							begin
+								check_start_x<=0;//refresh before circle inputting
+								check_start_y<=0;//refresh before circle inputting								
+								state_now<= triangle_inputting_state; //TODO
+							end						
+						end
+						
+					end	
+					
 			//===============================================================================
 			triangle_input_is_wrong_state:
 				begin			
@@ -331,20 +564,22 @@ always @(posedge clock_builtin_50MHZ)
 							in_shift_reg[6] <=triangle_y[2]; 
 							in_shift_reg[7] <=triangle_y[3]; 
 							
-							check_start_x<=0;
-							check_start_y<=0;
+							check_start_x<=0;//first x of the horizontal check
+							check_start_y<=0;//first y of the horizontal check
 							state_now<= triangle_horizontal_win_check_state; //TODO
 							
 							game_status <= 0; //TODO
 				end
 			
 			//===============================================================================
-			
-			
+			triangle_save_last_coordinate_state:
+				begin
+				
+				end
 			
 
 			
-			//===============================================================================
+		
 			//===============================================================================
 			test_state:
 				begin
