@@ -7,10 +7,10 @@ void setup() {
   frameRate(1);
   size(640, 480);
 
-  int image_width = 50;
-  int image_height = 140;
-  String file_name = "informative_symbols";
-  img = loadImage("informative_symbols_50_140.png");
+  int image_width = 80;
+  int image_height = 80;
+  String file_name = "triangle_winner";
+  img = loadImage("triangle_winner_80_80.png");
   image(img, 0, 0);
 
   //generate row array

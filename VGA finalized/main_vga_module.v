@@ -47,10 +47,30 @@ reg [2:0] circle_turn_pasive_r [12599:0];//90x140
 reg [2:0] circle_turn_pasive_g [12599:0];//90x140
 reg [2:0] circle_turn_pasive_b [12599:0];//90x140
 
+//informative symbols
 reg [2:0] informative_symbols_r [6999:0];//50x140
 reg [2:0] informative_symbols_g [6999:0];//50x140
 reg [2:0] informative_symbols_b [6999:0];//50x140
-//informative symbols
+
+//number digits generic
+reg [2:0] number_digits_generic_r [8249:0];//275x30
+reg [2:0] number_digits_generic_g [8249:0];//275x30
+reg [2:0] number_digits_generic_b [8249:0];//275x30
+
+//letter digits generic
+reg [2:0] letter_digits_generic_r [7499:0];//250x30
+reg [2:0] letter_digits_generic_g [7499:0];//250x30
+reg [2:0] letter_digits_generic_b [7499:0];//250x30
+
+//triangle winner
+reg [2:0] triangle_winner_r [6399:0];//80x80
+reg [2:0] triangle_winner_g [6399:0];//80x80
+reg [2:0] triangle_winner_b [6399:0];//80x80
+
+//circle winner
+reg [2:0] circle_winner_r [6399:0];//80x80
+reg [2:0] circle_winner_g [6399:0];//80x80
+reg [2:0] circle_winner_b [6399:0];//80x80
 
 output clock_out_25MHZ;
 wire [10:0] h_count, v_count;
@@ -62,7 +82,22 @@ parameter H_VISIBLE_AREA = 640;
 parameter V_VISIBLE_AREA = 480;
 
 //parameters used in testing 
-parameter whose_turn = 1;
+parameter game_status = 2;// 2-> triangle wins, 1-> circle wins
+parameter whose_turn = 2;
+
+parameter triangle_move_count_sig = 0;
+parameter triangle_move_count_lst = 1;
+parameter triangle_win_count_sig = 2;
+parameter triangle_win_count_lst = 3;
+parameter triangle_last_cell_sig =4; //x
+parameter triangle_last_cell_lst = 5; //y
+
+parameter circle_move_count_sig = 6;
+parameter circle_move_count_lst = 7;
+parameter circle_win_count_sig = 8;
+parameter circle_win_count_lst = 9;
+parameter circle_last_cell_sig =0; //x
+parameter circle_last_cell_lst = 1; //y
 
 initial
 	begin
@@ -98,6 +133,22 @@ initial
 		$readmemb("memb_files/informative_symbols_r.txt",informative_symbols_r);
 		$readmemb("memb_files/informative_symbols_g.txt",informative_symbols_g);
 		$readmemb("memb_files/informative_symbols_b.txt",informative_symbols_b);
+		
+		$readmemb("memb_files/number_digits_generic_r.txt",number_digits_generic_r);
+		$readmemb("memb_files/number_digits_generic_g.txt",number_digits_generic_g);
+		$readmemb("memb_files/number_digits_generic_b.txt",number_digits_generic_b);		
+		
+		$readmemb("memb_files/letter_digits_generic_r.txt",letter_digits_generic_r);
+		$readmemb("memb_files/letter_digits_generic_g.txt",letter_digits_generic_g);
+		$readmemb("memb_files/letter_digits_generic_b.txt",letter_digits_generic_b);
+		
+		$readmemb("memb_files/circle_winner_r.txt",circle_winner_r);
+		$readmemb("memb_files/circle_winner_g.txt",circle_winner_g);
+		$readmemb("memb_files/circle_winner_b.txt",circle_winner_b);
+		
+		$readmemb("memb_files/triangle_winner_r.txt",triangle_winner_r);
+		$readmemb("memb_files/triangle_winner_g.txt",triangle_winner_g);
+		$readmemb("memb_files/triangle_winner_b.txt",triangle_winner_b);
 	end	
 
 //grid parameters
@@ -152,20 +203,225 @@ parameter informative_symbols_2_end_y = informative_symbols_2_start_y+ informati
 parameter informative_symbols_width = 50;
 parameter informative_symbols_height = 140;
 
+//number digits generic
+parameter number_digits_generic_width = 25;
+parameter number_digits_whole_data_width = 275;
+parameter number_digits_generic_height = 30;
+//letter digits generic
+parameter letter_digits_generic_width = 25;
+parameter letter_digits_whole_data_width = 250;
+parameter letter_digits_generic_height = 30;
+
+
+//digit cells start and end cordinates (top left point)
+parameter triangle_move_count_start_x = 65;//pixel is included
+parameter triangle_move_count_start_y = 330;//pixel is included
+parameter triangle_move_count_end_x = triangle_move_count_start_x + (2*number_digits_generic_width) -1;//pixel is included
+parameter triangle_move_count_end_y = triangle_move_count_start_y + (number_digits_generic_height) -1;//pixel is included
+
+parameter triangle_win_count_start_x = 65;//pixel is included
+parameter triangle_win_count_start_y = 380;//pixel is included
+parameter triangle_win_count_end_x = triangle_win_count_start_x + (2*number_digits_generic_width) -1;//pixel is included
+parameter triangle_win_count_end_y = triangle_win_count_start_y + (number_digits_generic_height) -1;//pixel is included
+
+parameter triangle_last_cell_start_x =65; //pixel is included
+parameter triangle_last_cell_start_y = 430; //pixel is included
+parameter triangle_last_cell_end_x = triangle_last_cell_start_x + (2*number_digits_generic_width) -1;//pixel is included
+parameter triangle_last_cell_end_y = triangle_last_cell_start_y + (number_digits_generic_height) -1;//pixel is included
+
+parameter circle_move_count_start_x = 570;//pixel is included
+parameter circle_move_count_start_y = 330;//pixel is included
+parameter circle_move_count_end_x = circle_move_count_start_x + (2*number_digits_generic_width) -1;//pixel is included
+parameter circle_move_count_end_y = circle_move_count_start_y + (number_digits_generic_height) -1;//pixel is included
+
+parameter circle_win_count_start_x = 570;//pixel is included
+parameter circle_win_count_start_y = 380;//pixel is included
+parameter circle_win_count_end_x = circle_win_count_start_x + (2*number_digits_generic_width) -1;//pixel is included
+parameter circle_win_count_end_y = circle_win_count_start_y + (number_digits_generic_height) -1;//pixel is included
+
+parameter circle_last_cell_start_x =570; //pixel is included
+parameter circle_last_cell_start_y = 430; //pixel is included
+parameter circle_last_cell_end_x = circle_last_cell_start_x + (2*number_digits_generic_width) -1;//pixel is included
+parameter circle_last_cell_end_y = circle_last_cell_start_y + (number_digits_generic_height) -1;//pixel is included
+
+//game_status parameters
+parameter game_status_start_x = 280;//pixel is included
+parameter game_status_start_y = 390;//pixel is included
+parameter game_status_width = 80;
+parameter game_status_height = 80;
+parameter game_status_end_x = game_status_start_x + game_status_width -1;//pixel is included
+parameter game_status_end_y = game_status_start_y+game_status_height - 1;//pixel is included
+
 
 always @(h_count, v_count)
 	begin
 		if(h_count<H_VISIBLE_AREA && v_count<V_VISIBLE_AREA) 
 			begin
+					//game status checks 
+					if(( game_status_start_x<= h_count && h_count <= game_status_end_x) && ( game_status_start_y<= v_count && v_count <= game_status_end_y))
+						begin
+							if(game_status == 1)//circle wins
+								begin
+									//relative horizontal count -> (		(h_count-game_status_start_x)	)
+									//relative vertical count   -> (		(v_count-game_status_start_y)	)
+									red_8bit = 32*circle_winner_r[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+									green_8bit =  32*circle_winner_g[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+									blue_8bit =  32*circle_winner_b[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+								end
+							else if(game_status == 2)//triangle wins
+								begin
+									//relative horizontal count -> (		(h_count-game_status_start_x)	)
+									//relative vertical count   -> (		(v_count-game_status_start_y)	)
+									red_8bit = 32*triangle_winner_r[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+									green_8bit =  32*triangle_winner_g[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+									blue_8bit =  32*triangle_winner_b[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+								end
+							else
+								begin
+									red_8bit = 8'hFF;
+									green_8bit =  8'hFF;
+									blue_8bit =  8'hFF;
+								end
+								
+						end
+					//TODO
+					//circle last cell checks
+					else if( ( circle_last_cell_start_x<= h_count && h_count <= circle_last_cell_end_x) && ( circle_last_cell_start_y<= v_count && v_count <= circle_last_cell_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-circle_last_cell_start_x)	)
+							//relative vertical count   -> (		(v_count-circle_last_cell_start_y)	)
+							//relative horizontal count -> (		(h_count-circle_last_cell_start_x-number_digits_generic_width)	)
+							//relative vertical count   -> (		(v_count-circle_last_cell_start_y)	)			
+							if( (h_count-circle_last_cell_start_x)<number_digits_generic_width ) //significant digit (should be letter)						
+								begin
+									red_8bit = 32*letter_digits_generic_r[(h_count-circle_last_cell_start_x) +(v_count-circle_last_cell_start_y)*letter_digits_whole_data_width+(circle_last_cell_sig*letter_digits_generic_width)]+31;
+									green_8bit =  32*letter_digits_generic_r[(h_count-circle_last_cell_start_x) +(v_count-circle_last_cell_start_y)*letter_digits_whole_data_width+(circle_last_cell_sig*letter_digits_generic_width)]+31;
+									blue_8bit =  32*letter_digits_generic_r[(h_count-circle_last_cell_start_x) +(v_count-circle_last_cell_start_y)*letter_digits_whole_data_width+(circle_last_cell_sig*letter_digits_generic_width)]+31;	
+								end
+							else //least digit (should be number)	
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-circle_last_cell_start_x-number_digits_generic_width) +(v_count-circle_last_cell_start_y)*number_digits_whole_data_width+(circle_last_cell_lst*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-circle_last_cell_start_x-number_digits_generic_width) +(v_count-circle_last_cell_start_y)*number_digits_whole_data_width+(circle_last_cell_lst*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-circle_last_cell_start_x-number_digits_generic_width) +(v_count-circle_last_cell_start_y)*number_digits_whole_data_width+(circle_last_cell_lst*number_digits_generic_width)]+31;	
+								end
+								
+						end
+					//circle win count checks
+					else if( ( circle_win_count_start_x<= h_count && h_count <=circle_win_count_end_x) && ( circle_win_count_start_y<= v_count && v_count <= circle_win_count_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-circle_win_count_start_x)	)
+							//relative vertical count   -> (		(v_count-circle_win_count_start_y)	)
+							//relative horizontal count -> (		(h_count-circle_win_count_start_x-number_digits_generic_width)	)
+							//relative vertical count   -> (		(v_count-circle_win_count_start_y)	)			
+							if( (h_count-circle_win_count_start_x)<number_digits_generic_width ) //significant digit						
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-circle_win_count_start_x) +(v_count-circle_win_count_start_y)*number_digits_whole_data_width+(circle_win_count_sig*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-circle_win_count_start_x) +(v_count-circle_win_count_start_y)*number_digits_whole_data_width+(circle_win_count_sig*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-circle_win_count_start_x) +(v_count-circle_win_count_start_y)*number_digits_whole_data_width+(circle_win_count_sig*number_digits_generic_width)]+31;	
+								end
+							else //least digit
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-circle_win_count_start_x-number_digits_generic_width) +(v_count-circle_win_count_start_y)*number_digits_whole_data_width+(circle_win_count_lst*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-circle_win_count_start_x-number_digits_generic_width) +(v_count-circle_win_count_start_y)*number_digits_whole_data_width+(circle_win_count_lst*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-circle_win_count_start_x-number_digits_generic_width) +(v_count-circle_win_count_start_y)*number_digits_whole_data_width+(circle_win_count_lst*number_digits_generic_width)]+31;	
+								end
+								
+						end
+					//circle move count checks
+					else if( ( circle_move_count_start_x<= h_count && h_count <= circle_move_count_end_x) && ( circle_move_count_start_y<= v_count && v_count <= circle_move_count_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-triangle_move_count_start_x)	)
+							//relative vertical count   -> (		(v_count-triangle_move_count_start_y)	)
+							//relative horizontal count -> (		(h_count-triangle_move_count_start_x-number_digits_generic_width)	)
+							//relative vertical count   -> (		(v_count-triangle_move_count_start_y)	)			
+							if( (h_count-circle_move_count_start_x)<number_digits_generic_width ) //significant digit						
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-circle_move_count_start_x) +(v_count-circle_move_count_start_y)*number_digits_whole_data_width+(circle_move_count_sig*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-circle_move_count_start_x) +(v_count-circle_move_count_start_y)*number_digits_whole_data_width+(circle_move_count_sig*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-circle_move_count_start_x) +(v_count-circle_move_count_start_y)*number_digits_whole_data_width+(circle_move_count_sig*number_digits_generic_width)]+31;	
+								end
+							else //least digit
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-circle_move_count_start_x-number_digits_generic_width) +(v_count-circle_move_count_start_y)*number_digits_whole_data_width+(circle_move_count_lst*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-circle_move_count_start_x-number_digits_generic_width) +(v_count-circle_move_count_start_y)*number_digits_whole_data_width+(circle_move_count_lst*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-circle_move_count_start_x-number_digits_generic_width) +(v_count-circle_move_count_start_y)*number_digits_whole_data_width+(circle_move_count_lst*number_digits_generic_width)]+31;	
+								end
+								
+						end
+						
+					//triangle last cell checks
+					else if( ( triangle_last_cell_start_x<= h_count && h_count <= triangle_last_cell_end_x) && ( triangle_last_cell_start_y<= v_count && v_count <= triangle_last_cell_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-triangle_last_cell_start_x)	)
+							//relative vertical count   -> (		(v_count-triangle_last_cell_start_y)	)
+							//relative horizontal count -> (		(h_count-triangle_last_cell_start_x-number_digits_generic_width)	)
+							//relative vertical count   -> (		(v_count-triangle_last_cell_start_y)	)			
+							if( (h_count-triangle_last_cell_start_x)<number_digits_generic_width ) //significant digit (should be letter)						
+								begin
+									red_8bit = 32*letter_digits_generic_r[(h_count-triangle_last_cell_start_x) +(v_count-triangle_last_cell_start_y)*letter_digits_whole_data_width+(triangle_last_cell_sig*letter_digits_generic_width)]+31;
+									green_8bit =  32*letter_digits_generic_r[(h_count-triangle_last_cell_start_x) +(v_count-triangle_last_cell_start_y)*letter_digits_whole_data_width+(triangle_last_cell_sig*letter_digits_generic_width)]+31;
+									blue_8bit =  32*letter_digits_generic_r[(h_count-triangle_last_cell_start_x) +(v_count-triangle_last_cell_start_y)*letter_digits_whole_data_width+(triangle_last_cell_sig*letter_digits_generic_width)]+31;	
+								end
+							else //least digit (should be number)	
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-triangle_last_cell_start_x-number_digits_generic_width) +(v_count-triangle_last_cell_start_y)*number_digits_whole_data_width+(triangle_last_cell_lst*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-triangle_last_cell_start_x-number_digits_generic_width) +(v_count-triangle_last_cell_start_y)*number_digits_whole_data_width+(triangle_last_cell_lst*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-triangle_last_cell_start_x-number_digits_generic_width) +(v_count-triangle_last_cell_start_y)*number_digits_whole_data_width+(triangle_last_cell_lst*number_digits_generic_width)]+31;	
+								end
+								
+						end
+					//triangle win count checks
+					else if( ( triangle_win_count_start_x<= h_count && h_count <= triangle_win_count_end_x) && ( triangle_win_count_start_y<= v_count && v_count <= triangle_win_count_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-triangle_win_count_start_x)	)
+							//relative vertical count   -> (		(v_count-triangle_win_count_start_y)	)
+							//relative horizontal count -> (		(h_count-triangle_win_count_start_x-number_digits_generic_width)	)
+							//relative vertical count   -> (		(v_count-triangle_win_count_start_y)	)			
+							if( (h_count-triangle_win_count_start_x)<number_digits_generic_width ) //significant digit						
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-triangle_win_count_start_x) +(v_count-triangle_win_count_start_y)*number_digits_whole_data_width+(triangle_win_count_sig*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-triangle_win_count_start_x) +(v_count-triangle_win_count_start_y)*number_digits_whole_data_width+(triangle_win_count_sig*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-triangle_win_count_start_x) +(v_count-triangle_win_count_start_y)*number_digits_whole_data_width+(triangle_win_count_sig*number_digits_generic_width)]+31;	
+								end
+							else //least digit
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-triangle_win_count_start_x-number_digits_generic_width) +(v_count-triangle_win_count_start_y)*number_digits_whole_data_width+(triangle_win_count_lst*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-triangle_win_count_start_x-number_digits_generic_width) +(v_count-triangle_win_count_start_y)*number_digits_whole_data_width+(triangle_win_count_lst*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-triangle_win_count_start_x-number_digits_generic_width) +(v_count-triangle_win_count_start_y)*number_digits_whole_data_width+(triangle_win_count_lst*number_digits_generic_width)]+31;	
+								end
+								
+						end
+					//triangle move count checks
+					else if( ( triangle_move_count_start_x<= h_count && h_count <= triangle_move_count_end_x) && ( triangle_move_count_start_y<= v_count && v_count <= triangle_move_count_end_y) )
+						begin
+							//relative horizontal count -> (		(h_count-triangle_move_count_start_x)	)
+							//relative vertical count   -> (		(v_count-triangle_move_count_start_y)	)
+							//relative horizontal count -> (		(h_count-triangle_move_count_start_x-number_digits_generic_width)	)
+							//relative vertical count   -> (		(v_count-triangle_move_count_start_y)	)			
+							if( (h_count-triangle_move_count_start_x)<number_digits_generic_width ) //significant digit						
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-triangle_move_count_start_x) +(v_count-triangle_move_count_start_y)*number_digits_whole_data_width+(triangle_move_count_sig*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-triangle_move_count_start_x) +(v_count-triangle_move_count_start_y)*number_digits_whole_data_width+(triangle_move_count_sig*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-triangle_move_count_start_x) +(v_count-triangle_move_count_start_y)*number_digits_whole_data_width+(triangle_move_count_sig*number_digits_generic_width)]+31;	
+								end
+							else //least digit
+								begin
+									red_8bit = 32*number_digits_generic_r[(h_count-triangle_move_count_start_x-number_digits_generic_width) +(v_count-triangle_move_count_start_y)*number_digits_whole_data_width+(triangle_move_count_lst*number_digits_generic_width)]+31;
+									green_8bit =  32*number_digits_generic_g[(h_count-triangle_move_count_start_x-number_digits_generic_width) +(v_count-triangle_move_count_start_y)*number_digits_whole_data_width+(triangle_move_count_lst*number_digits_generic_width)]+31;
+									blue_8bit =  32*number_digits_generic_b[(h_count-triangle_move_count_start_x-number_digits_generic_width) +(v_count-triangle_move_count_start_y)*number_digits_whole_data_width+(triangle_move_count_lst*number_digits_generic_width)]+31;	
+								end
+								
+						end
+						
 					//informative symbol checks
 					//informative symbols for triangle (1)
-					if( ( informative_symbols_1_start_x<= h_count && h_count <= informative_symbols_1_end_x) && ( informative_symbols_1_start_y<= v_count && v_count <= informative_symbols_1_end_y) )
+					else if( ( informative_symbols_1_start_x<= h_count && h_count <= informative_symbols_1_end_x) && ( informative_symbols_1_start_y<= v_count && v_count <= informative_symbols_1_end_y) )
 						begin
 							//relative horizontal count -> (		(h_count-informative_symbols_1_start_x)	)
 							//relative vertical count   -> (		(v_count-informative_symbols_1_end_y)	)							
 							red_8bit = 32*informative_symbols_r[(h_count-informative_symbols_1_start_x) + informative_symbols_width*(v_count-informative_symbols_1_start_y)]+31;
-							green_8bit =  32*informative_symbols_r[(h_count-informative_symbols_1_start_x) + informative_symbols_width*(v_count-informative_symbols_1_start_y)]+31;
-							blue_8bit =  32*informative_symbols_r[(h_count-informative_symbols_1_start_x) + informative_symbols_width*(v_count-informative_symbols_1_start_y)]+31;		
+							green_8bit =  32*informative_symbols_g[(h_count-informative_symbols_1_start_x) + informative_symbols_width*(v_count-informative_symbols_1_start_y)]+31;
+							blue_8bit =  32*informative_symbols_b[(h_count-informative_symbols_1_start_x) + informative_symbols_width*(v_count-informative_symbols_1_start_y)]+31;		
 						end
 					//informative symbols for circle (2)
 					else if( ( informative_symbols_2_start_x<= h_count && h_count <= informative_symbols_2_end_x) && ( informative_symbols_2_start_y<= v_count && v_count <= informative_symbols_2_end_y) )
@@ -173,8 +429,8 @@ always @(h_count, v_count)
 							//relative horizontal count -> (		(h_count-informative_symbols_2_start_x)	)
 							//relative vertical count   -> (		(v_count-informative_symbols_2_end_y)	)							
 							red_8bit = 32*informative_symbols_r[(h_count-informative_symbols_2_start_x) + informative_symbols_width*(v_count-informative_symbols_2_start_y)]+31;
-							green_8bit =  32*informative_symbols_r[(h_count-informative_symbols_2_start_x) + informative_symbols_width*(v_count-informative_symbols_2_start_y)]+31;
-							blue_8bit =  32*informative_symbols_r[(h_count-informative_symbols_2_start_x) + informative_symbols_width*(v_count-informative_symbols_2_start_y)]+31;		
+							green_8bit =  32*informative_symbols_g[(h_count-informative_symbols_2_start_x) + informative_symbols_width*(v_count-informative_symbols_2_start_y)]+31;
+							blue_8bit =  32*informative_symbols_b[(h_count-informative_symbols_2_start_x) + informative_symbols_width*(v_count-informative_symbols_2_start_y)]+31;		
 						end
 						
 					//triangle turn checks
@@ -238,7 +494,7 @@ always @(h_count, v_count)
 						begin
 							//relative horizontal count -> (		(h_count-grid_start_x) % cell_width		)
 							//relative vertical count   -> (		(v_count-grid_start_y) % cell_height	)
-							//relative cell -> {(relative horizontal count)+cell_width*(relative vertical count)}/cell_width €[0,99]																
+							//relative cell -> {(relative horizontal count)+cell_width*(relative vertical count)}/cell_width €[0,99]							
 							red_8bit = 32*triangle_r[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	) ]+31;
 							green_8bit =  32*triangle_g[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
 							blue_8bit =  32*triangle_b[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;											
