@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main_game_logic_module
-Thu Jun 22 23:49:03 2023
+Fri Jun 23 04:58:31 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -21,7 +21,6 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  13. Parameter Settings for User Entity Instance: Top-level Entity: |main_game_logic_module
  14. Elapsed Time Per Partition
  15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,7 +46,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 22 23:49:03 2023      ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 23 04:58:31 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; main_game_logic_module                     ;
 ; Top-level Entity Name           ; main_game_logic_module                     ;
@@ -639,7 +638,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Jun 22 23:48:57 2023
+    Info: Processing started: Fri Jun 23 04:58:25 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off game_logic -c main_game_logic_module
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file main_game_logic_module.v
@@ -677,7 +676,6 @@ Warning (10230): Verilog HDL assignment warning at main_game_logic_module.v(1154
 Warning (10230): Verilog HDL assignment warning at main_game_logic_module.v(1159): truncated value with size 32 to match size of target (4)
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 15 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/Game Logic finalized/output_files/main_game_logic_module.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 1566 device resources after synthesis - the final resource count might be different
@@ -685,15 +683,9 @@ Info (21057): Implemented 1566 device resources after synthesis - the final reso
     Info (21059): Implemented 58 output pins
     Info (21061): Implemented 1504 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 4678 megabytes
-    Info: Processing ended: Thu Jun 22 23:49:03 2023
+    Info: Peak virtual memory: 4687 megabytes
+    Info: Processing ended: Fri Jun 23 04:58:31 2023
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/Game Logic finalized/output_files/main_game_logic_module.map.smsg.
 
 

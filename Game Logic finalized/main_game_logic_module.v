@@ -679,7 +679,7 @@ always @(posedge clock_builtin_50MHZ)
 							t_win_count_sig <= t_win_count_sig+1;
 						end
 						
-						state_now = delay_before_new_round_blinking_10s;
+						state_now <= delay_before_new_round_blinking_10s;
 						state_to_be_returned <= triangle_inputting_state;
 						
 				end	
@@ -1159,7 +1159,7 @@ always @(posedge clock_builtin_50MHZ)
 							c_win_count_sig <= c_win_count_sig+1;
 						end
 						
-						state_now = delay_before_new_round_blinking_10s;
+						state_now <= delay_before_new_round_blinking_10s;
 						state_to_be_returned <= circle_inputting_state;
 						
 				end							
