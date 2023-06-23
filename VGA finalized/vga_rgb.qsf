@@ -82,8 +82,18 @@ set_location_assignment PIN_F13 -to red_8bit[7]
 set_location_assignment PIN_D11 -to v_sync
 set_location_assignment PIN_B13 -to blue_8bit[0]
 set_location_assignment PIN_AF14 -to clock_builtin_50MHZ
-set_location_assignment PIN_V16 -to v_sync_led
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_W16 -to in_shift_reg[1]
+set_location_assignment PIN_V17 -to in_shift_reg[2]
+set_location_assignment PIN_V18 -to in_shift_reg[3]
+set_location_assignment PIN_W17 -to in_shift_reg[4]
+set_location_assignment PIN_W19 -to in_shift_reg[5]
+set_location_assignment PIN_Y19 -to in_shift_reg[6]
+set_location_assignment PIN_W20 -to in_shift_reg[7]
+set_location_assignment PIN_W15 -to not_activity
+set_location_assignment PIN_AA14 -to not_logic_0
+set_location_assignment PIN_AA15 -to not_logic_1
+set_location_assignment PIN_V16 -to in_shift_reg[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
