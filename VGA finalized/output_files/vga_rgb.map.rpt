@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_rgb
-Fri Jun 23 11:07:45 2023
+Fri Jun 23 12:19:21 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -50,7 +50,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun 23 11:07:45 2023      ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 23 12:19:20 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; vga_rgb                                    ;
 ; Top-level Entity Name           ; main_vga_module                            ;
@@ -256,22 +256,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------------------------------+
 ; Resource                                    ; Usage                                                 ;
 +---------------------------------------------+-------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 20187                                                 ;
+; Estimate of Logic utilization (ALMs needed) ; 20397                                                 ;
 ;                                             ;                                                       ;
-; Combinational ALUT usage for logic          ; 25337                                                 ;
-;     -- 7 input functions                    ; 2042                                                  ;
-;     -- 6 input functions                    ; 12992                                                 ;
-;     -- 5 input functions                    ; 3231                                                  ;
-;     -- 4 input functions                    ; 2611                                                  ;
-;     -- <=3 input functions                  ; 4461                                                  ;
+; Combinational ALUT usage for logic          ; 25541                                                 ;
+;     -- 7 input functions                    ; 2021                                                  ;
+;     -- 6 input functions                    ; 13230                                                 ;
+;     -- 5 input functions                    ; 3206                                                  ;
+;     -- 4 input functions                    ; 2653                                                  ;
+;     -- <=3 input functions                  ; 4431                                                  ;
 ;                                             ;                                                       ;
 ; Dedicated logic registers                   ; 653                                                   ;
 ;                                             ;                                                       ;
 ; I/O pins                                    ; 40                                                    ;
 ; Total DSP Blocks                            ; 91                                                    ;
 ; Maximum fan-out node                        ; horizontal_and_vertical_counter:instance_2|h_count[0] ;
-; Maximum fan-out                             ; 1812                                                  ;
-; Total fan-out                               ; 132273                                                ;
+; Maximum fan-out                             ; 1941                                                  ;
+; Total fan-out                               ; 133525                                                ;
 ; Average fan-out                             ; 5.06                                                  ;
 +---------------------------------------------+-------------------------------------------------------+
 
@@ -281,9 +281,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
-; |main_vga_module                                ; 25337 (25306)     ; 653 (630)    ; 0                 ; 91         ; 40   ; 0            ; |main_vga_module                                            ; work         ;
+; |main_vga_module                                ; 25541 (25509)     ; 653 (630)    ; 0                 ; 91         ; 40   ; 0            ; |main_vga_module                                            ; work         ;
 ;    |clock_divider:instance_1|                   ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|clock_divider:instance_1                   ; work         ;
-;    |horizontal_and_vertical_counter:instance_2| ; 30 (30)           ; 22 (22)      ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2 ; work         ;
+;    |horizontal_and_vertical_counter:instance_2| ; 31 (31)           ; 22 (22)      ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2 ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -446,41 +446,41 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main_vga_module|red_8bit                                        ;
-; 10:1               ; 28 bits   ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; No         ; |main_vga_module|number_digits_generic_g.raddr_a[2]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|green_8bit                                      ;
+; 10:1               ; 28 bits   ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; No         ; |main_vga_module|number_digits_generic_g.raddr_a[7]              ;
 ; 10:1               ; 14 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |main_vga_module|number_digits_generic_r.raddr_a[1]              ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux98                                           ;
-; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux78                                           ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux100                                          ;
-; 32:1               ; 4 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux98                                           ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux115                                          ;
+; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux79                                           ;
+; 3:1                ; 36 bits   ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux90                                           ;
+; 32:1               ; 4 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux114                                          ;
 ; 15020:1            ; 2 bits    ; 20026 LEs     ; 13004 LEs            ; 7022 LEs               ; No         ; |main_vga_module|red_8bit                                        ;
-; 15020:1            ; 2 bits    ; 20026 LEs     ; 12882 LEs            ; 7144 LEs               ; No         ; |main_vga_module|green_8bit                                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main_vga_module|triangle_y[3]                                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_vga_module|t_last_position_lst[3]                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_vga_module|c_last_position_lst[3]                          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main_vga_module|delay_error_blinking_1000ms_counter[16]         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main_vga_module|delay_before_new_round_blinking_10s_counter[27] ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |main_vga_module|in_shift_reg[7]~reg0                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main_vga_module|check_start_x[2]                                ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |main_vga_module|check_start_x[0]                                ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |main_vga_module|check_start_y[0]                                ;
-; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux5                                            ;
-; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux2                                            ;
-; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux57                                           ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |main_vga_module|state_to_be_returned                            ;
-; 12:1               ; 5 bits    ; 40 LEs        ; 15 LEs               ; 25 LEs                 ; No         ; |main_vga_module|state_now                                       ;
-; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux9                                            ;
-; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux16                                           ;
+; 15027:1            ; 2 bits    ; 20036 LEs     ; 13134 LEs            ; 6902 LEs               ; No         ; |main_vga_module|blue_8bit                                       ;
+; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux17                                           ;
 ; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux32                                           ;
 ; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux40                                           ;
 ; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux44                                           ;
 ; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux52                                           ;
+; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux27                                           ;
 ; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux12                                           ;
-; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux20                                           ;
-; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux26                                           ;
+; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux21                                           ;
 ; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux28                                           ;
-; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux37                                           ;
+; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux36                                           ;
 ; 50:1               ; 4 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux49                                           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main_vga_module|delay_error_blinking_1000ms_counter[29]         ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main_vga_module|delay_before_new_round_blinking_10s_counter[12] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main_vga_module|check_start_x[2]                                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |main_vga_module|check_start_x[0]                                ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |main_vga_module|check_start_y[3]                                ;
+; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux5                                            ;
+; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux8                                            ;
+; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux3                                            ;
+; 100:1              ; 4 bits    ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux59                                           ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |main_vga_module|state_to_be_returned                            ;
+; 12:1               ; 5 bits    ; 40 LEs        ; 15 LEs               ; 25 LEs                 ; No         ; |main_vga_module|state_now                                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_vga_module|t_last_position_lst[1]                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_vga_module|c_last_position_lst[1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main_vga_module|triangle_x[2]                                   ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |main_vga_module|in_shift_reg[4]~reg0                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 
 
@@ -640,7 +640,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:02:06     ;
+; Top            ; 00:02:09     ;
 +----------------+--------------+
 
 
@@ -650,7 +650,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Jun 23 11:05:26 2023
+    Info: Processing started: Fri Jun 23 12:16:59 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_rgb -c vga_rgb
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
@@ -663,18 +663,6 @@ Info (12127): Elaborating entity "main_vga_module" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1391): object "deadzone_r" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1392): object "deadzone_g" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1393): object "deadzone_b" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1423): object "right_diagonal_circle_r" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1424): object "right_diagonal_circle_g" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1425): object "right_diagonal_circle_b" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1427): object "left_diagonal_circle_r" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1428): object "left_diagonal_circle_g" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1429): object "left_diagonal_circle_b" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1431): object "vertical_circle_r" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1432): object "vertical_circle_g" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1433): object "vertical_circle_b" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1435): object "horizontal_circle_r" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1436): object "horizontal_circle_g" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1437): object "horizontal_circle_b" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1477): object "letter_digits_generic_g" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at main_vga_module.v(1478): object "letter_digits_generic_b" assigned a value but never read
 Warning (10230): Verilog HDL assignment warning at main_vga_module.v(400): truncated value with size 32 to match size of target (4)
@@ -835,9 +823,25 @@ Warning (10235): Verilog HDL Always Construct warning at main_vga_module.v(1987)
 Warning (10230): Verilog HDL assignment warning at main_vga_module.v(1989): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at main_vga_module.v(1990): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at main_vga_module.v(1991): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at main_vga_module.v(1993): variable "grid_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10230): Verilog HDL assignment warning at main_vga_module.v(1995): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at main_vga_module.v(1996): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at main_vga_module.v(1997): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at main_vga_module.v(1999): variable "grid_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2001): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2002): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2003): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at main_vga_module.v(2005): variable "grid_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2007): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2008): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2009): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at main_vga_module.v(2011): variable "grid_data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2013): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2014): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2015): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2019): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2020): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main_vga_module.v(2021): truncated value with size 32 to match size of target (8)
 Warning (10030): Net "dumb_wojak_r.data_a" at main_vga_module.v(1387) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "dumb_wojak_r.waddr_a" at main_vga_module.v(1387) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "dumb_wojak_g.data_a" at main_vga_module.v(1388) has no driver or initial value, using a default initial value '0'
@@ -886,6 +890,30 @@ Warning (10030): Net "circle_g.data_a" at main_vga_module.v(1420) has no driver 
 Warning (10030): Net "circle_g.waddr_a" at main_vga_module.v(1420) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "circle_b.data_a" at main_vga_module.v(1421) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "circle_b.waddr_a" at main_vga_module.v(1421) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_r.data_a" at main_vga_module.v(1423) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_r.waddr_a" at main_vga_module.v(1423) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_g.data_a" at main_vga_module.v(1424) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_g.waddr_a" at main_vga_module.v(1424) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_b.data_a" at main_vga_module.v(1425) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_b.waddr_a" at main_vga_module.v(1425) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_r.data_a" at main_vga_module.v(1427) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_r.waddr_a" at main_vga_module.v(1427) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_g.data_a" at main_vga_module.v(1428) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_g.waddr_a" at main_vga_module.v(1428) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_b.data_a" at main_vga_module.v(1429) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_b.waddr_a" at main_vga_module.v(1429) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_r.data_a" at main_vga_module.v(1431) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_r.waddr_a" at main_vga_module.v(1431) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_g.data_a" at main_vga_module.v(1432) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_g.waddr_a" at main_vga_module.v(1432) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_b.data_a" at main_vga_module.v(1433) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_b.waddr_a" at main_vga_module.v(1433) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_r.data_a" at main_vga_module.v(1435) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_r.waddr_a" at main_vga_module.v(1435) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_g.data_a" at main_vga_module.v(1436) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_g.waddr_a" at main_vga_module.v(1436) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_b.data_a" at main_vga_module.v(1437) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_b.waddr_a" at main_vga_module.v(1437) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "grid_letters_r.data_a" at main_vga_module.v(1439) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "grid_letters_r.waddr_a" at main_vga_module.v(1439) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "grid_letters_g.data_a" at main_vga_module.v(1440) has no driver or initial value, using a default initial value '0'
@@ -970,6 +998,18 @@ Warning (10030): Net "horizontal_triangle_b.we_a" at main_vga_module.v(1417) has
 Warning (10030): Net "circle_r.we_a" at main_vga_module.v(1419) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "circle_g.we_a" at main_vga_module.v(1420) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "circle_b.we_a" at main_vga_module.v(1421) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_r.we_a" at main_vga_module.v(1423) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_g.we_a" at main_vga_module.v(1424) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "right_diagonal_circle_b.we_a" at main_vga_module.v(1425) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_r.we_a" at main_vga_module.v(1427) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_g.we_a" at main_vga_module.v(1428) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "left_diagonal_circle_b.we_a" at main_vga_module.v(1429) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_r.we_a" at main_vga_module.v(1431) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_g.we_a" at main_vga_module.v(1432) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vertical_circle_b.we_a" at main_vga_module.v(1433) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_r.we_a" at main_vga_module.v(1435) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_g.we_a" at main_vga_module.v(1436) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "horizontal_circle_b.we_a" at main_vga_module.v(1437) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "grid_letters_r.we_a" at main_vga_module.v(1439) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "grid_letters_g.we_a" at main_vga_module.v(1440) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "grid_letters_b.we_a" at main_vga_module.v(1441) has no driver or initial value, using a default initial value '0'
@@ -1004,7 +1044,7 @@ Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:in
 Info (12128): Elaborating entity "horizontal_and_vertical_counter" for hierarchy "horizontal_and_vertical_counter:instance_2"
 Warning (10230): Verilog HDL assignment warning at horizontal_and_vertical_counter.v(67): truncated value with size 32 to match size of target (11)
 Warning (10230): Verilog HDL assignment warning at horizontal_and_vertical_counter.v(74): truncated value with size 32 to match size of target (11)
-Info (276014): Found 54 instances of uninferred RAM logic
+Info (276014): Found 66 instances of uninferred RAM logic
     Info (276007): RAM logic "dumb_wojak_r" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "dumb_wojak_g" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "dumb_wojak_b" is uninferred due to asynchronous read logic
@@ -1029,6 +1069,18 @@ Info (276014): Found 54 instances of uninferred RAM logic
     Info (276007): RAM logic "circle_r" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "circle_g" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "circle_b" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "right_diagonal_circle_r" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "right_diagonal_circle_g" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "right_diagonal_circle_b" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "left_diagonal_circle_r" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "left_diagonal_circle_g" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "left_diagonal_circle_b" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "vertical_circle_r" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "vertical_circle_g" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "vertical_circle_b" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "horizontal_circle_r" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "horizontal_circle_g" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "horizontal_circle_b" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "grid_letters_r" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "grid_letters_g" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "grid_letters_b" is uninferred due to asynchronous read logic
@@ -1062,49 +1114,49 @@ Info (276014): Found 54 instances of uninferred RAM logic
 Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram0_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram1_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram2_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram36_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram37_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram38_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram39_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram40_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram41_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram24_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram25_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram26_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram27_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram28_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram29_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram30_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram31_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram32_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram33_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram34_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram35_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram42_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram43_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram44_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (8250) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram45_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (8250) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram46_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (8250) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram47_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram51_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram52_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram53_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram48_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram49_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram50_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram48_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram49_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram50_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram51_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram52_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (8000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram53_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram36_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram37_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram38_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram39_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram40_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram41_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram42_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram43_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram44_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram45_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram46_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12600) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram47_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram54_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram55_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (7000) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram56_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (8250) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram57_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (8250) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram58_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (8250) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram59_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram63_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram64_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram65_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram60_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram61_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (8192) in the design file differs from memory depth (6400) in the Memory Initialization File "C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/db/vga_rgb.ram62_main_vga_module_e3f38872.hdl.mif" -- setting initial value for remaining addresses to 0
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 22 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 25477 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 25681 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 25346 logic cells
+    Info (21061): Implemented 25550 logic cells
     Info (21062): Implemented 91 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 376 warnings
-    Info: Peak virtual memory: 5075 megabytes
-    Info: Processing ended: Fri Jun 23 11:07:45 2023
-    Info: Elapsed time: 00:02:19
-    Info: Total CPU time (on all processors): 00:02:17
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 416 warnings
+    Info: Peak virtual memory: 5093 megabytes
+    Info: Processing ended: Fri Jun 23 12:19:21 2023
+    Info: Elapsed time: 00:02:22
+    Info: Total CPU time (on all processors): 00:02:20
 
 

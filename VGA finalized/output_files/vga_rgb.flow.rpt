@@ -1,5 +1,5 @@
 Flow report for vga_rgb
-Fri Jun 23 11:16:37 2023
+Fri Jun 23 12:31:14 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +---------------------------------+--------------------------------------------+
-; Flow Status                     ; Successful - Fri Jun 23 11:16:37 2023      ;
+; Flow Status                     ; Successful - Fri Jun 23 12:31:14 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; vga_rgb                                    ;
 ; Top-level Entity Name           ; main_vga_module                            ;
 ; Family                          ; Cyclone V                                  ;
 ; Device                          ; 5CSEMA5F31C6                               ;
 ; Timing Models                   ; Preliminary                                ;
-; Logic utilization (in ALMs)     ; 20,041 / 32,070 ( 62 % )                   ;
-; Total registers                 ; 661                                        ;
+; Logic utilization (in ALMs)     ; 20,229 / 32,070 ( 63 % )                   ;
+; Total registers                 ; 669                                        ;
 ; Total pins                      ; 40 / 457 ( 9 % )                           ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                      ;
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/23/2023 11:05:27 ;
+; Start date & time ; 06/23/2023 12:16:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vga_rgb             ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------+---------------+-----------------+----------------+
 ; Assignment Name                     ; Value                                                                                       ; Default Value ; Entity Name     ; Section Id     ;
 +-------------------------------------+---------------------------------------------------------------------------------------------+---------------+-----------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 150241222627911.168750752704216                                                             ; --            ; --              ; --             ;
+; COMPILER_SIGNATURE_ID               ; 150241222627911.168751181900652                                                             ; --            ; --              ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                                                          ; --            ; --              ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR       ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA_example/VGA_rgb/simulation/qsim/ ; --            ; --              ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                                 ; --            ; --              ; eda_simulation ;
@@ -98,12 +98,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:02:16     ; 1.0                     ; 5075 MB             ; 00:02:14                           ;
-; Fitter                    ; 00:07:08     ; 1.0                     ; 5878 MB             ; 00:07:05                           ;
-; Assembler                 ; 00:00:13     ; 1.0                     ; 4958 MB             ; 00:00:14                           ;
-; TimeQuest Timing Analyzer ; 00:01:13     ; 1.0                     ; 5259 MB             ; 00:01:13                           ;
-; EDA Netlist Writer        ; 00:00:07     ; 1.0                     ; 4885 MB             ; 00:00:07                           ;
-; Total                     ; 00:10:57     ; --                      ; --                  ; 00:10:53                           ;
+; Analysis & Synthesis      ; 00:02:19     ; 1.0                     ; 5092 MB             ; 00:02:17                           ;
+; Fitter                    ; 00:08:57     ; 1.0                     ; 5848 MB             ; 00:08:56                           ;
+; Assembler                 ; 00:00:20     ; 1.0                     ; 4954 MB             ; 00:00:20                           ;
+; TimeQuest Timing Analyzer ; 00:02:11     ; 1.0                     ; 5266 MB             ; 00:02:11                           ;
+; EDA Netlist Writer        ; 00:00:08     ; 1.0                     ; 4897 MB             ; 00:00:07                           ;
+; Total                     ; 00:13:55     ; --                      ; --                  ; 00:13:51                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

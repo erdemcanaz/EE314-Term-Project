@@ -153,7 +153,7 @@ always @(posedge clock_builtin_50MHZ)
 			
 			delay_state_300ms:
 				begin
-					if(delay_300ms_counter <= 15000000) // each clock cycle is 20ns
+					if(delay_300ms_counter <= 25000000) // each clock cycle is 20ns
 						begin
 							state_now <= delay_state_300ms; //continue sleeping
 							delay_300ms_counter <= delay_300ms_counter+1;
@@ -1990,7 +1990,31 @@ always @(h_count, v_count)
 									green_8bit =  32*left_diagonal_triangle_g[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
 									blue_8bit =  32*left_diagonal_triangle_b[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
 								end
-							else
+							else if(grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) ) ] == 1 && grid_data[4*(  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) )+1] == 0 && grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) )+2 ] == 1 && grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) ) +3] == 0)
+								begin
+									red_8bit = 32*horizontal_circle_r[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	) ]+31;
+									green_8bit =  32*horizontal_circle_g[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+									blue_8bit =  32*horizontal_circle_b[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+								end
+							else if(grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) ) ] == 1 && grid_data[4*(  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) )+1] == 0 && grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) )+2 ] == 0 && grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) ) +3] == 1)
+								begin
+									red_8bit = 32*vertical_circle_r[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	) ]+31;
+									green_8bit =  32*vertical_circle_g[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+									blue_8bit =  32*vertical_circle_b[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+								end
+							else if(grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) ) ] == 0 && grid_data[4*(  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) )+1] == 1 && grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) )+2 ] == 1 && grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) ) +3] == 1)
+								begin
+									red_8bit = 32*right_diagonal_circle_r[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	) ]+31;
+									green_8bit =  32*right_diagonal_circle_g[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+									blue_8bit =  32*right_diagonal_circle_b[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+								end
+							else if(grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) ) ] == 1 && grid_data[4*(  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) )+1] == 0 && grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) )+2 ] == 0 && grid_data[4* (  ((h_count-grid_start_x)/32)  + (10*((v_count-grid_start_y)/32)) ) +3] == 0)
+								begin
+									red_8bit = 32*left_diagonal_circle_r[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	) ]+31;
+									green_8bit =  32*left_diagonal_circle_g[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+									blue_8bit =  32*left_diagonal_circle_b[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+								end		
+							else							
 								begin
 									red_8bit = 32*empty_grid_r[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	) ]+31;
 									green_8bit =  32*empty_grid_g[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
