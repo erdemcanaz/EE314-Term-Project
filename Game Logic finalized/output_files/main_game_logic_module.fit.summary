@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Jun 22 23:54:09 2023
+Fitter Status : Successful - Fri Jun 23 03:25:32 2023
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : main_game_logic_module
 Top-level Entity Name : main_game_logic_module
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Preliminary
-Logic utilization (in ALMs) : 817 / 32,070 ( 3 % )
-Total registers : 553
+Logic utilization (in ALMs) : 6,204 / 32,070 ( 19 % )
+Total registers : 1126
 Total pins : 62 / 457 ( 14 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )

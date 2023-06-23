@@ -24,9 +24,10 @@ output reg [3:0] c_last_position_lst;
 reg [7:0] state_now; //there are 256 states to be assigned, which is far more than sufficient.
 reg [7:0] state_to_be_returned; // null -> 0
 reg [399:0] grid_data;
+reg [399:0] grid_data_counter; 
+reg [4:0] total_move_counter;
 
 reg[4:0] game_status;// 32 game status is available
-reg[1:0] triangle_win_at_which_check;
 reg[3:0] triangle_x; // null -> 15
 reg[3:0] triangle_y; // null -> 15
 
@@ -38,7 +39,8 @@ reg[31:0] delay_300ms_counter; // 26 bits is neccesarry to count up to 50x10^6
 reg[31:0] delay_error_blinking_1000ms_counter; // 26 bits is neccesarry to count up to 50x10^6 
 reg[31:0] delay_before_new_round_blinking_10s_counter; // 26 bits is neccesarry to count up to 50x10^6 
 reg[3:0] check_start_x;
-reg[3:0] check_start_y;  
+reg[3:0] check_start_y; 
+reg[6:0] grid_incrementer_check_index; 
              
 //state assignments
 parameter setup_state = 0;
@@ -81,6 +83,8 @@ parameter circle_wins_state = 36;
 parameter delay_before_new_round_blinking_10s = 37;
 parameter delay_error_state_with_blinking_1000ms = 38;
 parameter delay_state_300ms = 39;
+parameter grid_incrementer_state = 40;
+parameter grid_incrementer_sub_state = 41;
 
 //game status assignments 
 parameter setup_status = 0;
@@ -112,9 +116,13 @@ always @(posedge clock_builtin_50MHZ)
 					
 					check_start_x<=0;
 					check_start_y<=0;
+					grid_incrementer_check_index<=0;
+					grid_data_counter<=0;
+					total_move_counter<=0;
+					
 					//outputs & inputs
 					in_shift_reg <=0 ;
-					grid_data <=0;
+					grid_data <=0;										
 					whose_turn<=0;
 					t_move_count_sig<=0;
 					t_move_count_lst<=0;
@@ -207,7 +215,145 @@ always @(posedge clock_builtin_50MHZ)
 							state_now <=state_to_be_returned;
 						end
 				end
+				
 			
+			grid_incrementer_state: //if the cell in investigation is a circle or triangle, increments its value. however if it is already 11 -> make it lava
+				begin	
+					if(total_move_counter  == 25)// check if game is draw
+						begin
+							state_now <= grid_incrementer_state; //TODO CURRENTLY BUG -> LOCKED AT LOOP			
+						end				
+					//check if it is 11, then make it lava
+					else if(grid_data_counter[grid_incrementer_check_index]== 1 && grid_data_counter[grid_incrementer_check_index+1]==0 && grid_data_counter[grid_incrementer_check_index+2]== 1 && grid_data_counter[grid_incrementer_check_index+3]== 1)
+						begin
+							//lava cell -> 1011
+							grid_data[grid_incrementer_check_index  ]<=1;
+							grid_data[grid_incrementer_check_index+1] <=0;
+							grid_data[grid_incrementer_check_index+2] <=1;
+							grid_data[grid_incrementer_check_index+3] <=1;						
+							state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+						end
+					// if the grid is not empty, increment its value
+					else if(grid_data[grid_incrementer_check_index] != 0 ||grid_data[grid_incrementer_check_index+1] != 0 ||grid_data[grid_incrementer_check_index+2] != 0 ||grid_data[grid_incrementer_check_index+3] != 0)
+						begin
+							//if count is 0
+							if(grid_data_counter[grid_incrementer_check_index] == 0 ||grid_data_counter[grid_incrementer_check_index+1] == 0 ||grid_data_counter[grid_incrementer_check_index+2] == 0 ||grid_data_counter[grid_incrementer_check_index+3] == 0)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 0;
+									grid_data_counter[grid_incrementer_check_index+1] <= 0;
+									grid_data_counter[grid_incrementer_check_index+2] <= 0;
+									grid_data_counter[grid_incrementer_check_index+3] <= 1;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 1
+							else if(grid_data_counter[grid_incrementer_check_index] == 0 ||grid_data_counter[grid_incrementer_check_index+1] == 0 ||grid_data_counter[grid_incrementer_check_index+2] == 0 ||grid_data_counter[grid_incrementer_check_index+3] == 1)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 0;
+									grid_data_counter[grid_incrementer_check_index+1] <= 0;
+									grid_data_counter[grid_incrementer_check_index+2] <= 1;
+									grid_data_counter[grid_incrementer_check_index+3] <= 0;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 2
+							else if(grid_data_counter[grid_incrementer_check_index] == 0 ||grid_data_counter[grid_incrementer_check_index+1] == 0 ||grid_data_counter[grid_incrementer_check_index+2] == 1 ||grid_data_counter[grid_incrementer_check_index+3] == 0)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 0;
+									grid_data_counter[grid_incrementer_check_index+1] <= 0;
+									grid_data_counter[grid_incrementer_check_index+2] <= 1;
+									grid_data_counter[grid_incrementer_check_index+3] <= 1;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 3
+							else if(grid_data_counter[grid_incrementer_check_index] == 0 ||grid_data_counter[grid_incrementer_check_index+1] == 0 ||grid_data_counter[grid_incrementer_check_index+2] == 1 ||grid_data_counter[grid_incrementer_check_index+3] == 1)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 0;
+									grid_data_counter[grid_incrementer_check_index+1] <= 1;
+									grid_data_counter[grid_incrementer_check_index+2] <= 0;
+									grid_data_counter[grid_incrementer_check_index+3] <= 0;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 4
+							else if(grid_data_counter[grid_incrementer_check_index] == 0 ||grid_data_counter[grid_incrementer_check_index+1] == 1 ||grid_data_counter[grid_incrementer_check_index+2] == 0 ||grid_data_counter[grid_incrementer_check_index+3] == 0)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 0;
+									grid_data_counter[grid_incrementer_check_index+1] <= 1;
+									grid_data_counter[grid_incrementer_check_index+2] <= 0;
+									grid_data_counter[grid_incrementer_check_index+3] <= 1;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 5
+							else if(grid_data_counter[grid_incrementer_check_index] == 0 ||grid_data_counter[grid_incrementer_check_index+1] == 1 ||grid_data_counter[grid_incrementer_check_index+2] == 0 ||grid_data_counter[grid_incrementer_check_index+3] == 1)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 0;
+									grid_data_counter[grid_incrementer_check_index+1] <= 1;
+									grid_data_counter[grid_incrementer_check_index+2] <= 1;
+									grid_data_counter[grid_incrementer_check_index+3] <= 0;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 6
+							else if(grid_data_counter[grid_incrementer_check_index] == 0 ||grid_data_counter[grid_incrementer_check_index+1] == 1 ||grid_data_counter[grid_incrementer_check_index+2] == 1 ||grid_data_counter[grid_incrementer_check_index+3] == 0)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 0;
+									grid_data_counter[grid_incrementer_check_index+1] <= 1;
+									grid_data_counter[grid_incrementer_check_index+2] <= 1;
+									grid_data_counter[grid_incrementer_check_index+3] <= 1;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 7
+							else if(grid_data_counter[grid_incrementer_check_index] == 0 ||grid_data_counter[grid_incrementer_check_index+1] == 1 ||grid_data_counter[grid_incrementer_check_index+2] == 1 ||grid_data_counter[grid_incrementer_check_index+3] == 1)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 1;
+									grid_data_counter[grid_incrementer_check_index+1] <= 0;
+									grid_data_counter[grid_incrementer_check_index+2] <= 0;
+									grid_data_counter[grid_incrementer_check_index+3] <= 0;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 8
+							else if(grid_data_counter[grid_incrementer_check_index] == 1 ||grid_data_counter[grid_incrementer_check_index+1] == 0 ||grid_data_counter[grid_incrementer_check_index+2] == 0 ||grid_data_counter[grid_incrementer_check_index+3] == 0)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 1;
+									grid_data_counter[grid_incrementer_check_index+1] <= 0;
+									grid_data_counter[grid_incrementer_check_index+2] <= 0;
+									grid_data_counter[grid_incrementer_check_index+3] <= 1;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 9
+							else if(grid_data_counter[grid_incrementer_check_index] == 1 ||grid_data_counter[grid_incrementer_check_index+1] == 0 ||grid_data_counter[grid_incrementer_check_index+2] == 0 ||grid_data_counter[grid_incrementer_check_index+3] == 1)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 1;
+									grid_data_counter[grid_incrementer_check_index+1] <= 0;
+									grid_data_counter[grid_incrementer_check_index+2] <= 1;
+									grid_data_counter[grid_incrementer_check_index+3] <= 0;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end
+							//if count is 10
+							else if(grid_data_counter[grid_incrementer_check_index] == 1 ||grid_data_counter[grid_incrementer_check_index+1] == 0 ||grid_data_counter[grid_incrementer_check_index+2] == 1 ||grid_data_counter[grid_incrementer_check_index+3] == 0)
+								begin
+									grid_data_counter[grid_incrementer_check_index] <= 1;
+									grid_data_counter[grid_incrementer_check_index+1] <= 0;
+									grid_data_counter[grid_incrementer_check_index+2] <= 1;
+									grid_data_counter[grid_incrementer_check_index+3] <= 1;
+									state_now <= grid_incrementer_sub_state;//increment grid_incrementer_check_index
+								end						
+																	
+						end
+				end
+				
+			grid_incrementer_sub_state://grid_data_counter;grid_incrementer_check_index; 
+					begin
+						if(grid_incrementer_check_index<396)
+							begin
+								grid_incrementer_check_index <= grid_incrementer_check_index+4;
+								state_now <= grid_incrementer_state;
+							end
+						else
+							begin
+								grid_incrementer_check_index<=0;
+								state_now <= state_to_be_returned;
+							end
+					end
+					
+				
 			
 			//===============================================================================
 			//####################### TRIANGLE RELATED TASKS ################################
@@ -737,7 +883,11 @@ always @(posedge clock_builtin_50MHZ)
 							t_move_count_lst <= 0;
 							t_move_count_sig <= t_move_count_sig +1;
 						end
-					state_now <= circle_inputting_state;
+					
+					total_move_counter <= total_move_counter+1;
+					grid_incrementer_check_index<=0;
+					state_now <= grid_incrementer_state;
+					state_to_be_returned <= circle_inputting_state;
 				end	
 			
 			//===============================================================================
@@ -751,6 +901,9 @@ always @(posedge clock_builtin_50MHZ)
 					c_move_count_sig<= 0;
 					c_move_count_lst<= 10;
 					grid_data <= 0;
+					grid_data_counter <= 0;
+					total_move_counter <= 0;
+					
 					whose_turn <= 2; //triangle's turn
 					if(t_win_count_lst <9)
 						begin
@@ -1291,7 +1444,11 @@ always @(posedge clock_builtin_50MHZ)
 							c_move_count_lst <= 0;
 							c_move_count_sig <= c_move_count_sig +1;
 						end
-					state_now <= triangle_inputting_state;
+					
+					total_move_counter <= total_move_counter+1;
+					grid_incrementer_check_index<=0;
+					state_now <= grid_incrementer_state;
+					state_to_be_returned <= triangle_inputting_state;		
 				end	
 			
 			//===============================================================================
@@ -1305,6 +1462,9 @@ always @(posedge clock_builtin_50MHZ)
 					t_move_count_sig<= 0;
 					t_move_count_lst<= 10;
 					grid_data <= 0;
+					grid_data_counter <=0;
+					total_move_counter <= 0;
+					
 					whose_turn <= 1; //circle's turn
 					if(c_win_count_lst <9)
 						begin
