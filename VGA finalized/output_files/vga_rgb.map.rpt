@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_rgb
-Fri Jun 23 09:46:08 2023
+Fri Jun 23 10:30:16 2023
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -50,7 +50,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun 23 09:46:08 2023      ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 23 10:30:15 2023      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; vga_rgb                                    ;
 ; Top-level Entity Name           ; main_vga_module                            ;
@@ -183,6 +183,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; memb_files/grid_letters_r.txt            ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/grid_letters_r.txt            ;         ;
 ; memb_files/circle_turn_active_g.txt      ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/circle_turn_active_g.txt      ;         ;
 ; memb_files/vertical_triangle_r.txt       ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/vertical_triangle_r.txt       ;         ;
+; memb_files/dumb_wojak_g.txt              ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/dumb_wojak_g.txt              ;         ;
 ; memb_files/informative_symbols_g.txt     ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/informative_symbols_g.txt     ;         ;
 ; memb_files/grid_numbers_r.txt            ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/grid_numbers_r.txt            ;         ;
 ; memb_files/grid_numbers_g.txt            ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/grid_numbers_g.txt            ;         ;
@@ -190,9 +191,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; memb_files/horizontal_circle_r.txt       ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/horizontal_circle_r.txt       ;         ;
 ; memb_files/triangle_winner_g.txt         ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_winner_g.txt         ;         ;
 ; memb_files/letter_digits_generic_r.txt   ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/letter_digits_generic_r.txt   ;         ;
+; memb_files/grid_letters_g.txt            ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/grid_letters_g.txt            ;         ;
 ; memb_files/horizontal_circle_g.txt       ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/horizontal_circle_g.txt       ;         ;
 ; memb_files/vertical_triangle_g.txt       ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/vertical_triangle_g.txt       ;         ;
-; memb_files/grid_letters_g.txt            ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/grid_letters_g.txt            ;         ;
 ; memb_files/number_digits_generic_g.txt   ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/number_digits_generic_g.txt   ;         ;
 ; memb_files/horizontal_triangle_r.txt     ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/horizontal_triangle_r.txt     ;         ;
 ; memb_files/left_diagonal_triangle_g.txt  ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/left_diagonal_triangle_g.txt  ;         ;
@@ -200,6 +201,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; memb_files/deadzone_g.txt                ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/deadzone_g.txt                ;         ;
 ; memb_files/left_diagonal_circle_g.txt    ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/left_diagonal_circle_g.txt    ;         ;
 ; memb_files/triangle_turn_pasive_b.txt    ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_turn_pasive_b.txt    ;         ;
+; memb_files/dumb_wojak_b.txt              ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/dumb_wojak_b.txt              ;         ;
 ; memb_files/empty_grid_g.txt              ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/empty_grid_g.txt              ;         ;
 ; memb_files/triangle_winner_r.txt         ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/triangle_winner_r.txt         ;         ;
 ; memb_files/right_diagonal_circle_g.txt   ; yes             ; Auto-Found File        ; C:/Users/Levovo20x/Documents/GitHub/EE314-Term-Project/VGA finalized/memb_files/right_diagonal_circle_g.txt   ;         ;
@@ -254,23 +256,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------------------------------+
 ; Resource                                    ; Usage                                                 ;
 +---------------------------------------------+-------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 13946                                                 ;
+; Estimate of Logic utilization (ALMs needed) ; 14101                                                 ;
 ;                                             ;                                                       ;
-; Combinational ALUT usage for logic          ; 16998                                                 ;
-;     -- 7 input functions                    ; 1920                                                  ;
-;     -- 6 input functions                    ; 8951                                                  ;
-;     -- 5 input functions                    ; 1713                                                  ;
-;     -- 4 input functions                    ; 1354                                                  ;
-;     -- <=3 input functions                  ; 3060                                                  ;
+; Combinational ALUT usage for logic          ; 17169                                                 ;
+;     -- 7 input functions                    ; 1935                                                  ;
+;     -- 6 input functions                    ; 9073                                                  ;
+;     -- 5 input functions                    ; 1732                                                  ;
+;     -- 4 input functions                    ; 1366                                                  ;
+;     -- <=3 input functions                  ; 3063                                                  ;
 ;                                             ;                                                       ;
 ; Dedicated logic registers                   ; 453                                                   ;
 ;                                             ;                                                       ;
 ; I/O pins                                    ; 40                                                    ;
 ; Total DSP Blocks                            ; 91                                                    ;
 ; Maximum fan-out node                        ; horizontal_and_vertical_counter:instance_2|h_count[0] ;
-; Maximum fan-out                             ; 1530                                                  ;
-; Total fan-out                               ; 90482                                                 ;
-; Average fan-out                             ; 5.13                                                  ;
+; Maximum fan-out                             ; 1629                                                  ;
+; Total fan-out                               ; 91465                                                 ;
+; Average fan-out                             ; 5.14                                                  ;
 +---------------------------------------------+-------------------------------------------------------+
 
 
@@ -279,9 +281,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
-; |main_vga_module                                ; 16998 (16968)     ; 453 (430)    ; 0                 ; 91         ; 40   ; 0            ; |main_vga_module                                            ; work         ;
+; |main_vga_module                                ; 17169 (17138)     ; 453 (430)    ; 0                 ; 91         ; 40   ; 0            ; |main_vga_module                                            ; work         ;
 ;    |clock_divider:instance_1|                   ; 1 (1)             ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|clock_divider:instance_1                   ; work         ;
-;    |horizontal_and_vertical_counter:instance_2| ; 29 (29)           ; 22 (22)      ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2 ; work         ;
+;    |horizontal_and_vertical_counter:instance_2| ; 30 (30)           ; 22 (22)      ; 0                 ; 0          ; 0    ; 0            ; |main_vga_module|horizontal_and_vertical_counter:instance_2 ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -540,173 +542,173 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main_vga_module|triangle_y[0]                                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_vga_module|t_last_position_lst[3]                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_vga_module|c_last_position_lst[3]                          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main_vga_module|delay_error_blinking_1000ms_counter[23]         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main_vga_module|delay_before_new_round_blinking_10s_counter[23] ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[0]                                    ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[4]                                    ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[11]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[12]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[16]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[20]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[27]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[31]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[34]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[39]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[43]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[46]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[50]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[55]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[58]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[62]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[67]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[71]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[75]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[78]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[82]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[86]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[90]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[94]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[96]                                   ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[103]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[107]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[108]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[115]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[116]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[122]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[126]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[130]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[132]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[138]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[140]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[147]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[150]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[155]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[159]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[162]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[166]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[170]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[175]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[179]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[180]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[184]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[191]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[195]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[196]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[200]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[204]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[208]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[212]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[218]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[220]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[224]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[228]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[232]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[238]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[242]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[246]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[250]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[254]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[258]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[262]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[266]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[270]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[272]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[279]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[280]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[287]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[288]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[292]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[296]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[303]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[307]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[310]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[315]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[316]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[323]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[327]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[330]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[334]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[338]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[342]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[346]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[350]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[352]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[359]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[363]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[364]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[368]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[375]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[378]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[380]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[386]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[388]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[392]                                  ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[396]                                  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |main_vga_module|in_shift_reg[7]~reg0                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main_vga_module|check_start_x[3]                                ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |main_vga_module|check_start_x[1]                                ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |main_vga_module|check_start_y[3]                                ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|green_8bit                                      ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux22                                           ;
-; 3:1                ; 36 bits   ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux22                                           ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux15                                           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux16                                           ;
-; 4:1                ; 36 bits   ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux23                                           ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux32                                           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux19                                           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux23                                           ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux12                                           ;
-; 100:1              ; 2 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux2                                            ;
-; 100:1              ; 2 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux7                                            ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux35                                           ;
-; 10:1               ; 28 bits   ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; No         ; |main_vga_module|number_digits_generic_b.raddr_a[4]              ;
-; 10:1               ; 14 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |main_vga_module|number_digits_generic_r.raddr_a[10]             ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |main_vga_module|state_to_be_returned                            ;
-; 12:1               ; 5 bits    ; 40 LEs        ; 15 LEs               ; 25 LEs                 ; No         ; |main_vga_module|state_now                                       ;
-; 50:1               ; 2 bits    ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux85                                           ;
-; 50:1               ; 2 bits    ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux80                                           ;
-; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux31                                           ;
-; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux11                                           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux83                                           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux78                                           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux1                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux29                                           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux9                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux5                                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux17                                           ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux58                                           ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux15                                           ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux56                                           ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux13                                           ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux25                                           ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux21                                           ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux41                                           ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux49                                           ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux45                                           ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux36                                           ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux23                                           ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux53                                           ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux26                                           ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux33                                           ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux18                                           ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux42                                           ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux51                                           ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux55                                           ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux35                                           ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux46                                           ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux38                                           ;
-; 15019:1            ; 2 bits    ; 20024 LEs     ; 12880 LEs            ; 7144 LEs               ; No         ; |main_vga_module|green_8bit                                      ;
-; 15020:1            ; 2 bits    ; 20026 LEs     ; 13004 LEs            ; 7022 LEs               ; No         ; |main_vga_module|red_8bit                                        ;
-; 15021:1            ; 2 bits    ; 20028 LEs     ; 13126 LEs            ; 6902 LEs               ; No         ; |main_vga_module|blue_8bit                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main_vga_module|triangle_x[0]                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_vga_module|t_last_position_lst[1]                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main_vga_module|c_last_position_lst[3]                         ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main_vga_module|delay_error_blinking_1000ms_counter[28]        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main_vga_module|delay_before_new_round_blinking_10s_counter[3] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[3]                                   ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[7]                                   ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[11]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[15]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[18]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[20]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[26]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[28]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[34]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[38]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[40]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[44]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[48]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[55]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[56]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[60]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[66]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[71]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[72]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[78]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[82]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[86]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[90]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[92]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[96]                                  ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[102]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[106]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[110]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[112]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[118]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[120]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[126]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[131]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[135]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[138]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[142]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[147]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[151]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[155]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[159]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[160]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[166]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[168]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[172]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[179]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[182]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[184]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[191]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[195]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[199]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[203]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[204]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[210]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[214]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[219]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[222]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[227]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[230]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[234]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[238]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[240]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[244]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[251]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[255]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[259]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[263]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[267]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[271]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[274]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[278]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[283]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[287]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[288]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[294]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[299]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[303]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[307]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[308]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[312]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[316]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[320]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[326]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[330]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[332]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[336]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[343]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[346]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[351]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[355]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[358]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[362]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[364]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[368]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[374]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[378]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[380]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[384]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[388]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[392]                                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main_vga_module|grid_data[396]                                 ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |main_vga_module|in_shift_reg[4]~reg0                           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |main_vga_module|check_start_x[2]                               ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |main_vga_module|check_start_x[0]                               ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |main_vga_module|check_start_y[1]                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|green_8bit                                     ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux20                                          ;
+; 3:1                ; 36 bits   ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux23                                          ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux14                                          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux18                                          ;
+; 4:1                ; 36 bits   ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux22                                          ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux34                                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux19                                          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux22                                          ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux15                                          ;
+; 100:1              ; 2 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux3                                           ;
+; 100:1              ; 2 bits    ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; No         ; |main_vga_module|Mux7                                           ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux32                                          ;
+; 10:1               ; 28 bits   ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; No         ; |main_vga_module|number_digits_generic_g.raddr_a[4]             ;
+; 10:1               ; 14 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |main_vga_module|number_digits_generic_r.raddr_a[13]            ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |main_vga_module|state_to_be_returned                           ;
+; 12:1               ; 5 bits    ; 40 LEs        ; 15 LEs               ; 25 LEs                 ; No         ; |main_vga_module|state_now                                      ;
+; 50:1               ; 2 bits    ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux84                                          ;
+; 50:1               ; 2 bits    ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux81                                          ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux31                                          ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux11                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux82                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux78                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux0                                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux29                                          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux8                                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux5                                           ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux16                                          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux58                                          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux14                                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux56                                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux12                                          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux25                                          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux21                                          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux41                                          ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux48                                          ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux45                                          ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |main_vga_module|Mux37                                          ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux22                                          ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux52                                          ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux27                                          ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux32                                          ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux18                                          ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux43                                          ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux50                                          ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux55                                          ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux34                                          ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux46                                          ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main_vga_module|Mux38                                          ;
+; 15020:1            ; 2 bits    ; 20026 LEs     ; 13004 LEs            ; 7022 LEs               ; No         ; |main_vga_module|red_8bit                                       ;
+; 15020:1            ; 2 bits    ; 20026 LEs     ; 12882 LEs            ; 7144 LEs               ; No         ; |main_vga_module|green_8bit                                     ;
+; 15022:1            ; 2 bits    ; 20028 LEs     ; 13128 LEs            ; 6900 LEs               ; No         ; |main_vga_module|blue_8bit                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -865,7 +867,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:59     ;
+; Top            ; 00:02:01     ;
 +----------------+--------------+
 
 
@@ -875,7 +877,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Jun 23 09:43:59 2023
+    Info: Processing started: Fri Jun 23 10:28:10 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_rgb -c vga_rgb
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
@@ -1269,15 +1271,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 22 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 17338 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 17509 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 17207 logic cells
+    Info (21061): Implemented 17378 logic cells
     Info (21062): Implemented 91 DSP elements
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 336 warnings
-    Info: Peak virtual memory: 5026 megabytes
-    Info: Processing ended: Fri Jun 23 09:46:08 2023
-    Info: Elapsed time: 00:02:09
-    Info: Total CPU time (on all processors): 00:02:09
+    Info: Peak virtual memory: 5004 megabytes
+    Info: Processing ended: Fri Jun 23 10:30:16 2023
+    Info: Elapsed time: 00:02:06
+    Info: Total CPU time (on all processors): 00:02:05
 
 
