@@ -1,10 +1,4 @@
 
-State Machine - |main_vga_module|whose_turn
-Name whose_turn.00 whose_turn.10 whose_turn.01 
-whose_turn.00 0 0 0 
-whose_turn.01 1 0 1 
-whose_turn.10 1 1 0 
-
 State Machine - |main_vga_module|state_to_be_returned
 Name state_to_be_returned.triangle_wins_clear_table state_to_be_returned.circle_wins_clear_table state_to_be_returned.circle_inputting_state state_to_be_returned.triangle_input_formatting_state state_to_be_returned.00000001 state_to_be_returned.00000000 state_to_be_returned.circle_input_formatting_state 
 state_to_be_returned.00000000 0 0 0 0 0 0 0 
@@ -66,3 +60,9 @@ state_now.delay_error_state_with_blinking_1000ms 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
 state_now.delay_state_300ms 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state_now.circle_wins_clear_table 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 state_now.triangle_wins_clear_table 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |main_vga_module|whose_turn
+Name whose_turn.00 whose_turn.10 whose_turn.01 
+whose_turn.00 0 0 0 
+whose_turn.01 1 0 1 
+whose_turn.10 1 1 0 
