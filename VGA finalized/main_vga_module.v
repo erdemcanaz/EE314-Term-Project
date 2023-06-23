@@ -84,6 +84,8 @@ parameter circle_wins_state = 36;
 parameter delay_before_new_round_blinking_10s = 37;
 parameter delay_error_state_with_blinking_1000ms = 38;
 parameter delay_state_300ms = 39;
+parameter circle_wins_clear_table = 40;
+parameter triangle_wins_clear_table = 41;
 
 //game status assignments 
 parameter setup_status = 0;
@@ -101,7 +103,15 @@ always @(posedge clock_builtin_50MHZ)
 	begin
 		if(not_change_state_forcefully == 0)
 			begin
-				state_now<=1;
+				if(whose_turn==2)
+					begin
+						state_now<=triangle_inputting_state;
+					end
+				else	
+					begin
+						state_now<=circle_inputting_state;
+					end
+				
 			end
 		else
 			begin
@@ -132,11 +142,11 @@ always @(posedge clock_builtin_50MHZ)
 					t_last_position_sig<=0;
 					t_last_position_lst<=10;
 					c_move_count_sig<=0;
-					c_move_count_lst<=10;
+					c_move_count_lst<=0;
 					c_win_count_sig<=0;
 					c_win_count_lst<=0;
 					c_last_position_sig<=0;
-					c_last_position_lst<=0;
+					c_last_position_lst<=10;
 					
 					
 				end				
@@ -225,7 +235,7 @@ always @(posedge clock_builtin_50MHZ)
 			triangle_inputting_state :
 				begin
 					whose_turn<= 2;
-					game_status <= triangle_is_inputing_status;
+					game_status <= 0;//game continue
 					if(not_logic_0 == 0)
 						begin
 							state_now <= delay_state_300ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
@@ -672,32 +682,35 @@ always @(posedge clock_builtin_50MHZ)
 			
 			//===============================================================================
 			triangle_wins_state:				
-				begin
-					//BE AWARE THAT WIN COUNT ASSUMED TO BE LESS THAN 99.
-					//output reg [3:0] t_win_count_sig;
-					//output reg [3:0] t_win_count_lst;					
-					t_move_count_sig<= 0;
-					t_move_count_lst<= 10;
-					c_move_count_sig<= 0;
-					c_move_count_lst<= 10;
-					grid_data <= 0;
-					whose_turn <= 2; //triangle's turn
-					
-					if(t_win_count_lst <9)
-						begin
-							t_win_count_lst <= t_win_count_lst +1;
-						end
-					else
-						begin
-							t_win_count_lst <= 0;
-							t_win_count_sig <= t_win_count_sig+1;
-						end
-						
-						state_now <= delay_before_new_round_blinking_10s;
-						state_to_be_returned <= triangle_inputting_state;
-						
-				end	
+				begin		
+					game_status <= 2;
+					state_now <= delay_before_new_round_blinking_10s;
+					state_to_be_returned <= triangle_wins_clear_table;	
+		
 				
+				end	
+			//===============================================================================
+				triangle_wins_clear_table:
+					begin
+						t_move_count_sig<= 0;
+						t_move_count_lst<= 0;
+						c_move_count_sig<= 0;
+						c_move_count_lst<= 0;
+						grid_data <= 0;
+						whose_turn <= 2; //triangle's turn
+						
+						if(t_win_count_lst <9)
+							begin
+								t_win_count_lst <= t_win_count_lst +1;
+							end
+						else
+							begin
+								t_win_count_lst <= 0;
+								t_win_count_sig <= t_win_count_sig+1;
+							end
+							
+							state_now <= triangle_inputting_state;
+					end
 							
 			
 			//===============================================================================
@@ -706,7 +719,7 @@ always @(posedge clock_builtin_50MHZ)
 			circle_inputting_state :
 				begin
 					whose_turn<= 1;
-					game_status <= circle_inputting_state;
+					game_status <= 0;//game continue
 					if(not_logic_0 == 0)
 						begin
 							state_now <= delay_state_300ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
@@ -1154,29 +1167,39 @@ always @(posedge clock_builtin_50MHZ)
 				//===============================================================================
 				circle_wins_state:				
 					begin
+						game_status <= 1;
+						state_now <= delay_before_new_round_blinking_10s;
+						state_to_be_returned <= circle_wins_clear_table;		
+						
+					end
+					
+				//===============================================================================
+				circle_wins_clear_table:
+					begin
 						//BE AWARE THAT WIN COUNT ASSUMED TO BE LESS THAN 99.
-						//output reg [3:0] t_win_count_sig;
-						//output reg [3:0] t_win_count_lst;					
-						c_move_count_sig<= 0;
-						c_move_count_lst<= 10;
-						t_move_count_sig<= 0;
-						t_move_count_lst<= 10;
-						grid_data <= 0;
-						whose_turn <= 1; //circle's turn
-						if(c_win_count_lst <9)
-							begin
-								c_win_count_lst <= c_win_count_lst +1;
-							end
-						else
-							begin
-								c_win_count_lst <= 0;
-								c_win_count_sig <= c_win_count_sig+1;
-							end
-							
-							state_now <= delay_before_new_round_blinking_10s;
-							state_to_be_returned <= circle_inputting_state;
-							
-					end							
+					//output reg [3:0] t_win_count_sig;
+					//output reg [3:0] t_win_count_lst;					
+					c_move_count_sig<= 0;
+					c_move_count_lst<= 0;
+					t_move_count_sig<= 0;
+					t_move_count_lst<= 0;
+					grid_data <= 0;
+					whose_turn <= 1; //circle's turn					
+					if(c_win_count_lst <9)
+						begin
+							c_win_count_lst <= c_win_count_lst +1;
+						end
+					else
+						begin
+							c_win_count_lst <= 0;
+							c_win_count_sig <= c_win_count_sig+1;
+						end
+						
+						state_now <= circle_inputting_state;
+					end
+				
+				
+						
 					default:
 						begin
 							state_now <=triangle_inputting_state;
@@ -1200,6 +1223,10 @@ output reg [7:0] blue_8bit;
 reg [2:0] deadzone_r [1023:0];//32^2
 reg [2:0] deadzone_g [1023:0];//32^2
 reg [2:0] deadzone_b [1023:0];//32^2
+
+reg [2:0] empty_grid_r [1023:0];//32^2
+reg [2:0] empty_grid_g [1023:0];//32^2
+reg [2:0] empty_grid_b [1023:0];//32^2
 
 reg [2:0] triangle_r [1023:0];//32^2
 reg [2:0] triangle_g [1023:0];//32^2
@@ -1329,6 +1356,10 @@ initial
 		$readmemb("memb_files/horizontal_circle_g.txt",horizontal_circle_g);
 		$readmemb("memb_files/horizontal_circle_b.txt",horizontal_circle_b);
 		
+		$readmemb("memb_files/empty_grid_r.txt",empty_grid_r);
+		$readmemb("memb_files/empty_grid_g.txt",empty_grid_g);
+		$readmemb("memb_files/empty_grid_b.txt",empty_grid_b);
+
 		$readmemb("memb_files/triangle_r.txt",triangle_r);
 		$readmemb("memb_files/triangle_g.txt",triangle_g);
 		$readmemb("memb_files/triangle_b.txt",triangle_b);
@@ -1518,7 +1549,7 @@ always @(h_count, v_count)
 									red_8bit = 32*triangle_winner_r[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
 									green_8bit =  32*triangle_winner_g[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
 									blue_8bit =  32*triangle_winner_b[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
-								end
+								end							
 							else
 								begin
 									red_8bit = 8'hFF;
@@ -1757,9 +1788,9 @@ always @(h_count, v_count)
 								end
 							else
 								begin
-									red_8bit = 8'hFF;
-									green_8bit =  8'hFF;
-									blue_8bit =  8'hFF;
+									red_8bit = 32*empty_grid_r[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	) ]+31;
+									green_8bit =  32*empty_grid_g[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
+									blue_8bit =  32*empty_grid_b[(		(h_count-grid_start_x) % cell_width		) + cell_width*(		(v_count-grid_start_y) % cell_height	)]+31;
 								end
 		
 																		

@@ -9,8 +9,8 @@ void setup() {
 
   int image_width = 32;
   int image_height = 32;
-  String file_name = "horizontal_triangle";
-  img = loadImage("horizontal_triangle_32_32.png");
+  String file_name = "empty_grid";
+  img = loadImage("empty_grid_32_32.png");
   image(img, 0, 0);
 
   //generate row array
