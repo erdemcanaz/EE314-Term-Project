@@ -5,12 +5,12 @@
 //define start,end points and width height
 //edit if condition
 
-module main_vga_module(blinking_led,not_logic_0, not_logic_1, not_activity,in_shift_reg, clock_builtin_50MHZ,clock_out_25MHZ, h_sync, v_sync, red_8bit, green_8bit, blue_8bit);
+module main_vga_module(not_change_state_forcefully ,not_logic_0, not_logic_1, not_activity,in_shift_reg, clock_builtin_50MHZ,clock_out_25MHZ, h_sync, v_sync, red_8bit, green_8bit, blue_8bit);
 input clock_builtin_50MHZ;
 input not_logic_0;
 input not_logic_1;
 input not_activity;
-output blinking_led;
+input not_change_state_forcefully;
 
 output reg [7:0] in_shift_reg; //shifts left, new bit is at the least location
 reg [1:0] whose_turn;
@@ -99,9 +99,9 @@ initial
 
 always @(posedge clock_builtin_50MHZ)
 	begin
-		if()
+		if(not_change_state_forcefully == 0)
 			begin
-			
+				state_now<=1;
 			end
 		else
 			begin
@@ -682,6 +682,7 @@ always @(posedge clock_builtin_50MHZ)
 					c_move_count_lst<= 10;
 					grid_data <= 0;
 					whose_turn <= 2; //triangle's turn
+					
 					if(t_win_count_lst <9)
 						begin
 							t_win_count_lst <= t_win_count_lst +1;
