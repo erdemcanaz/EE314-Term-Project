@@ -7,10 +7,10 @@ void setup() {
   frameRate(1);
   size(640, 480);
 
-  int image_width = 32;
-  int image_height = 32;
-  String file_name = "empty_grid";
-  img = loadImage("empty_grid_32_32.png");
+  int image_width = 80;
+  int image_height = 80;
+  String file_name = "dumb_wojak";
+  img = loadImage("dumb_wojak_80_80.png");
   image(img, 0, 0);
 
   //generate row array

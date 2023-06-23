@@ -195,7 +195,7 @@ always @(posedge clock_builtin_50MHZ)
 							state_now <=state_to_be_returned;
 						end
 				end
-				
+			
 			delay_before_new_round_blinking_10s:
 				begin
 					if(delay_before_new_round_blinking_10s_counter < 125000000) // each clock cycle is 20ns
@@ -627,6 +627,7 @@ always @(posedge clock_builtin_50MHZ)
 			triangle_input_is_wrong_state:
 				begin			
 					in_shift_reg <= 0;
+					game_status <= 3; //wrong input;
 					state_now <= delay_error_state_with_blinking_1000ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
 					state_to_be_returned <= triangle_inputting_state ;
 							
@@ -1111,6 +1112,7 @@ always @(posedge clock_builtin_50MHZ)
 				circle_input_is_wrong_state:
 					begin			
 						in_shift_reg <= 0;
+						game_status <= 3; //wrong input;
 						state_now <= delay_error_state_with_blinking_1000ms; //next state. since button is triggered, do nothing for a 300ms (~debouncing)
 						state_to_be_returned <= circle_inputting_state ;
 								
@@ -1183,6 +1185,12 @@ always @(posedge clock_builtin_50MHZ)
 					c_move_count_lst<= 0;
 					t_move_count_sig<= 0;
 					t_move_count_lst<= 0;
+					
+					t_last_position_sig<=0;
+					t_last_position_lst<=10;
+					c_last_position_sig<=0;
+					c_last_position_lst<=10;
+					
 					grid_data <= 0;
 					whose_turn <= 1; //circle's turn					
 					if(c_win_count_lst <9)
@@ -1220,6 +1228,10 @@ output reg [7:0] green_8bit;
 output reg [7:0] blue_8bit;
 
 //grid related images
+reg [2:0] dumb_wojak_r[6399:0];//80x80
+reg [2:0] dumb_wojak_g[6399:0];//80x80
+reg [2:0] dumb_wojak_b[6399:0];//80x80
+
 reg [2:0] deadzone_r [1023:0];//32^2
 reg [2:0] deadzone_g [1023:0];//32^2
 reg [2:0] deadzone_b [1023:0];//32^2
@@ -1332,6 +1344,10 @@ parameter V_VISIBLE_AREA = 480;
 initial
 	begin
 		// import image pixels from .mem files
+		$readmemb("memb_files/dumb_wojak_r.txt",dumb_wojak_r);
+		$readmemb("memb_files/dumb_wojak_g.txt",dumb_wojak_g);
+		$readmemb("memb_files/dumb_wojak_b.txt",dumb_wojak_b);
+		
 		$readmemb("memb_files/deadzone_r.txt",deadzone_r);
 		$readmemb("memb_files/deadzone_g.txt",deadzone_g);
 		$readmemb("memb_files/deadzone_b.txt",deadzone_b);
@@ -1549,7 +1565,15 @@ always @(h_count, v_count)
 									red_8bit = 32*triangle_winner_r[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
 									green_8bit =  32*triangle_winner_g[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
 									blue_8bit =  32*triangle_winner_b[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
-								end							
+								end
+							else if(game_status == 3)//dumb wojak
+								begin
+									//relative horizontal count -> (		(h_count-game_status_start_x)	)
+									//relative vertical count   -> (		(v_count-game_status_start_y)	)
+									red_8bit = 32*dumb_wojak_r[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+									green_8bit =  32*dumb_wojak_g[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+									blue_8bit =  32*dumb_wojak_b[(h_count-game_status_start_x)+game_status_width*(v_count-game_status_start_y)]+31;
+								end
 							else
 								begin
 									red_8bit = 8'hFF;
